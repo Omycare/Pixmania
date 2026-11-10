@@ -165,27 +165,30 @@
       <div class="card">
         <div class="section-label">✓ Points forts</div>
         <ul class="check-list">
-          <li>13 vues configurées avec structure de base solide (par statut, canal, priorité)</li>
-          <li>Shopify connecté : intégration e-commerce active pour les commandes</li>
-          <li>Facebook Messenger connecté : canal social actif</li>
-          <li>On-hold actif : statut "En pause" correctement utilisé</li>
-          <li>Plusieurs SLA définis : effort de configuration présent, à optimiser</li>
-          <li>France SC Pixmania : un trigger bien structuré à prendre comme modèle</li>
-          <li>Social Messaging installé : base pour WhatsApp/réseaux sociaux</li>
+          <li>39 vues configurées avec structure de base solide et emojis (par statut, canal, priorité)</li>
+          <li>Shopify connecté : données commandes accessibles depuis la sidebar agent en temps réel</li>
+          <li>Facebook Messenger actif + Channel Reply (eBay/Amazon) : couverture multi-marketplace</li>
+          <li>On-hold actif : statut "En pause" correctement utilisé pour les tickets en attente fournisseur</li>
+          <li>SLA configurés : effort de configuration présent, valeurs correctes (Urgent 1h, Normal 24h), à corriger sur la base de déclenchement</li>
+          <li>France SC Pixmania : trigger bien structuré (conditions ALL + canal + création), modèle à dupliquer</li>
+          <li>Champ Catégories + Commande n° : bases d'une catégorisation structurée déjà en place</li>
+          <li>IA Zendesk active : tags <code>ia_escalade</code> et <code>ia_cat_commande</code> générés automatiquement</li>
+          <li>Social Messaging installé : prêt pour extension WhatsApp, Instagram</li>
         </ul>
       </div>
       <div class="card">
         <div class="section-label">✗ Problèmes détectés</div>
         <ul class="check-list cross-list">
-          <li><strong>8+ triggers cassés</strong> : conditions manquantes, logique incorrecte, basés sur email non fonctionnel</li>
-          <li><strong>Aucun contenu dynamique</strong> : duplication massive des triggers, macros et notifications par langue</li>
+          <li><strong>Statut "Fermé" = Pending</strong> : 10 482 tickets bloqués, rapports et SLA entièrement faussés</li>
+          <li><strong>8+ triggers cassés sur 43</strong> (RVSFR ×2, Espagne SC, Italie ×3, Cas juridique, PriceMinister) — routage silencieusement défaillant</li>
+          <li><strong>99,8% des tickets sans priorité</strong> : 222 Urgent sur 106 545 — les SLA ne s'appliquent jamais</li>
+          <li><strong>Aucun contenu dynamique</strong> : 4 triggers de notification identiques par langue au lieu d'1 seul</li>
           <li><strong>Select an Address absent</strong> : toutes les réponses partent de support@pixmania.zendesk.com</li>
-          <li><strong>Help Center vide</strong> : actif publiquement mais sans aucun article</li>
-          <li><strong>Statut "En attente" renommé "Fermé"</strong> : brise les rapports et les automations de relance</li>
-          <li><strong>SPF errors sur l'email personnel</strong> + un email non fonctionnel</li>
-          <li><strong>Copilot désactivé</strong> malgré son inclusion dans le plan</li>
-          <li><strong>Template email</strong> avec watermark Zendesk, sans logo ni charte Pixmania</li>
-          <li><strong>6/8 automations à 0 utilisation</strong> cette semaine — quelque chose ne fonctionne pas</li>
+          <li><strong>145 macros à 0 usage</strong> : existent mais les agents ne les utilisent pas ou ne les connaissent pas</li>
+          <li><strong>Help Center vide</strong> : 6 articles Zendesk par défaut, 0 contenu Pixmania, exposé publiquement</li>
+          <li><strong>11/18 automations inactives</strong> : CSAT off, Bump Bump Solve off, TrustPilot cassée</li>
+          <li><strong>Copilot désactivé</strong> malgré son inclusion dans le plan Zendesk actuel</li>
+          <li><strong>Champ Catégories non structuré</strong> : sans sous-catégories ni connexion au routage/SLA/macros</li>
         </ul>
         <div class="card" style="margin-top:14px;">
           <div class="section-label">Score global du compte</div>
@@ -498,12 +501,23 @@
     <div class="card">
       <div class="section-label">Plan de reconstruction SLA recommandé</div>
       <div style="font-size:11px;color:var(--text-mid);line-height:1.8;">
-        <strong>Étape 1</strong> : Créer un schedule "Heures ouvrées" (ex: Lun–Sam 8h–20h, fuseau Europe/Paris)<br>
-        <strong>Étape 2</strong> : Créer un trigger "Priorité par défaut : Normale" sur tout ticket créé sans priorité<br>
-        <strong>Étape 3</strong> : Reconstruire les SLA basés sur champs de ticket (priorité, formulaire, canal) — pas sur des tags<br>
-        <strong>Étape 4</strong> : Activer les métriques SLA en "heures ouvrées" (business hours) — pas en temps continu<br>
-        <strong>Étape 5</strong> : Activer l'automation Bump Bump Solve pour les relances clients en attente<br>
-        <strong>Étape 6</strong> : Activer l'automation CSAT pour mesurer la satisfaction client
+        <strong>Étape 1</strong> : Créer un schedule "Heures ouvrées FR" (Lun–Sam 8h–20h, Europe/Paris) — prérequis de tout SLA<br>
+        <strong>Étape 2</strong> : Créer un trigger "Priorité par défaut : Normale" sur tout ticket créé sans priorité assignée<br>
+        <strong>Étape 3</strong> : Reconstruire les SLA basés sur <strong>champ Priorité + champ Catégorie</strong> (non sur des tags) — ex: Remboursement = Haute priorité = 4h réponse<br>
+        <strong>Étape 4</strong> : Activer les métriques SLA en "heures ouvrées" (business hours) — pas en temps continu 24/7<br>
+        <strong>Étape 5</strong> : Activer l'automation Bump Bump Solve (relance 24h + 5 jours si ticket toujours en attente)<br>
+        <strong>Étape 6</strong> : Activer l'automation CSAT (enquête satisfaction 24h après résolution)<br><br>
+        <strong style="font-size:11px;">SLA recommandés par catégorie :</strong>
+        <table style="margin-top:6px;font-size:10px;">
+          <thead><tr><th>Catégorie</th><th>Priorité suggérée</th><th>1ère réponse</th><th>Résolution</th></tr></thead>
+          <tbody>
+            <tr><td>Remboursement</td><td><span class="badge badge-red">Haute</span></td><td>4h</td><td>24h</td></tr>
+            <tr><td>Livraison perdue</td><td><span class="badge badge-red">Haute</span></td><td>4h</td><td>48h</td></tr>
+            <tr><td>Commande / statut</td><td><span class="badge badge-yellow">Normale</span></td><td>8h</td><td>48h</td></tr>
+            <tr><td>Retour / SAV</td><td><span class="badge badge-yellow">Normale</span></td><td>8h</td><td>72h</td></tr>
+            <tr><td>Compte client</td><td><span class="badge badge-gray">Basse</span></td><td>24h</td><td>96h</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -575,12 +589,18 @@
           <div class="alert-title" style="font-size:11px;">1 seul formulaire de ticket</div>
           <div class="alert-body">Pas de formulaire par type de demande (commande, retour, réclamation). Les champs conditionnels pour les sous-catégories sont absents. Le formulaire est décrit comme "un peu désordonné". <strong>Le champ Priorité est manquant</strong> (lié au dysfonctionnement des SLA).</div>
         </div>
-        <div class="section-label" style="margin-top:8px;">Champs de ticket</div>
-        <ul class="check-list warn-list">
-          <li>Catégories présentes mais pas de sous-catégories</li>
-          <li>Champ Priorité absent</li>
-          <li>Pas de champs conditionnels</li>
-        </ul>
+        <div class="section-label" style="margin-top:8px;">Champs de ticket (25 champs)</div>
+        <table style="font-size:10px;margin-bottom:6px;">
+          <thead><tr><th>Champ</th><th>Statut</th></tr></thead>
+          <tbody>
+            <tr><td>Catégories</td><td><span class="badge badge-orange">Existe, sans sous-catégories</span></td></tr>
+            <tr><td>Commande n°</td><td><span class="badge badge-green">Utile, actif</span></td></tr>
+            <tr><td>Résumé</td><td><span class="badge badge-yellow">Rempli manuellement</span></td></tr>
+            <tr><td>Transfert SC N2 demandé</td><td><span class="badge badge-yellow">À connecter aux triggers</span></td></tr>
+            <tr><td>Info Call</td><td><span class="badge badge-yellow">Usage à vérifier</span></td></tr>
+            <tr><td>Priorité</td><td><span class="badge badge-red">ABSENT — bloque les SLA</span></td></tr>
+          </tbody>
+        </table>
         <div class="section-label" style="margin-top:10px;">Champs utilisateur</div>
         <ul class="check-list cross-list">
           <li>Champ VIP (checkbox) : seul champ personnalisé utilisateur</li>
@@ -615,6 +635,53 @@
         </div>
       </div>
     </div>
+    <!-- CATÉGORIES FIELD -->
+    <div class="alert alert-orange" style="margin-top:14px;">
+      <div class="alert-title"><span class="badge badge-orange">C3</span> Champ "Catégories" sous-exploité — clé de voûte de toute l'organisation</div>
+      <div class="alert-body">
+        Le champ <strong>Catégories</strong> existe dans le formulaire de ticket mais il n'est ni structuré en sous-catégories, ni connecté aux triggers de routage, ni utilisé dans les SLA. Pourtant, les tags API révèlent que l'IA Zendesk catégorise déjà certains tickets automatiquement (<code>ia_cat_commande</code> : 20 occurrences, <code>ia_escalade</code> : 61 occurrences). Le contenu est là, la structure manque.
+        <br><br>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0;">
+          <div>
+            <strong style="font-size:11px;">Arborescence recommandée</strong>
+            <table style="margin-top:6px;font-size:10px;">
+              <thead><tr><th>Catégorie (N1)</th><th>Sous-catégorie (N2)</th></tr></thead>
+              <tbody>
+                <tr><td rowspan="3">Commande</td><td>Statut / suivi</td></tr>
+                <tr><td>Modification / annulation</td></tr>
+                <tr><td>Problème à la commande</td></tr>
+                <tr><td rowspan="3">Livraison</td><td>Retard</td></tr>
+                <tr><td>Colis perdu / endommagé</td></tr>
+                <tr><td>Erreur d'adresse</td></tr>
+                <tr><td rowspan="3">Retour / SAV</td><td>Retour produit</td></tr>
+                <tr><td>Échange / remplacement</td></tr>
+                <tr><td>Garantie</td></tr>
+                <tr><td rowspan="2">Paiement</td><td>Remboursement</td></tr>
+                <tr><td>Litige / facture</td></tr>
+                <tr><td rowspan="2">Compte client</td><td>Accès / connexion</td></tr>
+                <tr><td>Données personnelles</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <strong style="font-size:11px;">Ce que ça débloque si structuré</strong>
+            <ul class="check-list" style="margin-top:6px;">
+              <li><strong>Routage automatique</strong> : trigger "Si Catégorie = Retour → assigner à RVR/SAV" — fin de l'assignation manuelle</li>
+              <li><strong>SLA par catégorie</strong> : Remboursement = 24h, Commande statut = 48h (au lieu de SLA basés sur des tags)</li>
+              <li><strong>Macros par dossier</strong> : réorganiser les 145 macros par catégorie (Commande::statut, Retour::remboursement, etc.)</li>
+              <li><strong>Copilot AI</strong> : articles HC et procédures taggués par catégorie → suggestions de réponse précises par thème</li>
+              <li><strong>Explore</strong> : dashboard volume par catégorie → identification des pics de demandes par produit ou période</li>
+              <li><strong>Champs conditionnels</strong> : si N1 = "Retour" → afficher champ "N° commande d'origine" et "motif retour"</li>
+            </ul>
+            <div class="alert alert-indigo" style="margin-top:8px;">
+              <div class="alert-body" style="font-size:10px;">Les tags <code>ia_cat_commande</code> et <code>ia_escalade</code> montrent que l'IA tente déjà de catégoriser. Aligner le champ Catégories sur ces valeurs permettrait de <strong>compléter automatiquement le champ</strong> via un trigger sur le tag IA, sans action agent.</div>
+            </div>
+          </div>
+        </div>
+        <strong>Action :</strong> (1) Restructurer le champ Catégories en liste déroulante N1 + champ conditionnel N2. (2) Créer des triggers de routage par catégorie. (3) Reconstruire les SLA basés sur Catégories. (4) Réorganiser les macros en dossiers par catégorie.
+      </div>
+    </div>
+
     <div class="grid grid-2" style="margin-top:14px;">
       <div class="card">
         <div class="section-label">Équipe (données API)</div>
@@ -696,19 +763,19 @@
         <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px;">
           <div style="display:flex;gap:10px;align-items:flex-start;">
             <div style="width:24px;height:24px;border-radius:50%;background:#EF4444;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-            <div style="font-size:11px;color:var(--text-mid);"><strong>Semaine 1 :</strong> Désactiver l'accès public au HC en attendant le contenu. Importer/rédiger 10 articles FAQ prioritaires (commandes, livraisons, retours, paiements)</div>
+            <div style="font-size:11px;color:var(--text-mid);"><strong>Semaine 1 :</strong> Désactiver l'accès public au HC. Rédiger les 10 articles prioritaires alignés sur les top tags API : remboursement, commande, livraison, retour, SAV — 2 articles par catégorie N1</div>
           </div>
           <div style="display:flex;gap:10px;align-items:flex-start;">
             <div style="width:24px;height:24px;border-radius:50%;background:#F97316;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
-            <div style="font-size:11px;color:var(--text-mid);"><strong>Semaine 2 :</strong> Activer Agent Copilot Auto Assist. Créer 5-10 procédures sur les thèmes les plus fréquents</div>
+            <div style="font-size:11px;color:var(--text-mid);"><strong>Semaine 2 :</strong> Activer Agent Copilot Auto Assist. Créer 5-10 procédures couvrant les catégories N1 (une procédure = un flux de résolution par catégorie). Tagger chaque article et procédure avec la catégorie correspondante</div>
           </div>
           <div style="display:flex;gap:10px;align-items:flex-start;">
             <div style="width:24px;height:24px;border-radius:50%;background:#EAB308;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-            <div style="font-size:11px;color:var(--text-mid);"><strong>Mois 1 :</strong> Configurer la recherche générative dans le HC (réponses en langage naturel). Activer l'AI Agent pour le widget</div>
+            <div style="font-size:11px;color:var(--text-mid);"><strong>Mois 1 :</strong> Activer la recherche générative dans le HC. Configurer AI Agent sur le widget pour les questions "Où est ma commande ?" et "Comment retourner ?" — les deux catégories les plus fréquentes</div>
           </div>
           <div style="display:flex;gap:10px;align-items:flex-start;">
             <div style="width:24px;height:24px;border-radius:50%;background:#22C55E;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
-            <div style="font-size:11px;color:var(--text-mid);"><strong>Trimestre 1 :</strong> Développer HC multilingue (FR/ES/IT). Mesurer taux de déflexion et acceptance rate Copilot.</div>
+            <div style="font-size:11px;color:var(--text-mid);"><strong>Trimestre 1 :</strong> HC multilingue FR/ES/IT (1 article FR + variants ES/IT par thème). Mesurer taux de déflexion par catégorie et acceptance rate Copilot. Objectif : 20-30% des tickets "commande statut" résolus sans agent</div>
           </div>
         </div>
       </div>
@@ -738,7 +805,8 @@
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Champ Priorité manquant</strong> dans le formulaire — SLA non applicable</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">SPF errors + email non fonctionnel sur une adresse email configurée</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Branding : 0 logo, 0 couleurs, URL zendesk.com exposée, watermark email</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">1 seul formulaire, sans champs conditionnels ni sous-catégories</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Champ Catégories non structuré</strong> : sans sous-catégories, non connecté au routage ni aux SLA</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">1 seul formulaire, sans champs conditionnels — les sous-catégories s'affichent selon la catégorie choisie</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Vues : pas de dossiers, vue SLA en danger inutilisable</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">145 macros configurées mais 0 utilisées cette semaine — à auditer et réorganiser</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Groupes : distribution à valider, pas de signatures agents personnalisées</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
@@ -807,6 +875,8 @@
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C1]</strong> Corriger les erreurs SPF et vérifier la configuration email de chaque adresse</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C1]</strong> Créer trigger "Priorité par défaut : Normale" sur tout ticket créé</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C1]</strong> Supprimer ou corriger les 8 triggers cassés (RVSFR ×2, Espagne SC, Italie ×3, Cas juridique, PriceMinister)</span></div>
+          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C2]</strong> Structurer le champ Catégories : N1 (Commande, Livraison, Retour, Paiement, Compte) + champs conditionnels N2</span></div>
+          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C2]</strong> Créer triggers de routage par catégorie (Retour → RVR/SAV, Remboursement → Finance, etc.)</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C2]</strong> Créer le contenu dynamique multilingue et refactoriser les 4 triggers langue en 1</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C2]</strong> Supprimer l'automation TrustPilot cassée (condition canal supprimé)</span></div>
         </div>
@@ -816,7 +886,7 @@
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C3]</strong> Supprimer le watermark Zendesk du template email</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C3]</strong> Activer Copilot Auto Assist + créer 5 procédures prioritaires (commandes, retours, livraisons)</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C4]</strong> Réactiver CSAT et Bump Bump Solve dans les automations</span></div>
-          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C4]</strong> Reconstruire les SLA basés sur champs (non tags) + activer schedule horaires ouvrées</span></div>
+          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C4]</strong> Créer schedule "Heures ouvrées FR" + reconstruire SLA basés sur Priorité + Catégorie (non tags) : Remboursement/Livraison = 4h, Commande = 8h</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C4]</strong> Réorganiser l'ordre des triggers (recréation > notification > routage > assignation)</span></div>
         </div>
       </div>
@@ -869,11 +939,17 @@
       <div class="card">
         <div style="font-size:28px;margin-bottom:8px;">📋</div>
         <div class="section-label">Copilot + Procédures agents</div>
-        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Copilot est inclus dans le plan et désactivé. En créant 10 procédures sur les thèmes récurrents (commandes, retours, litiges), les agents reçoivent des suggestions de réponse en temps réel. <strong>Réduction estimée du temps de traitement moyen : 20-30%.</strong></p>
+        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Copilot est inclus dans le plan et désactivé. En créant 10 procédures alignées sur les catégories N1 (Commande, Livraison, Retour, Paiement, Compte), les agents reçoivent des suggestions de réponse précises en temps réel. Les 145 macros réorganisées par catégorie (Commande::statut, Retour::remboursement...) deviennent accessibles en 2 clics. <strong>Réduction estimée du temps de traitement moyen : 20-30%.</strong></p>
         <span class="badge badge-orange">Impact : Élevé</span>
       </div>
     </div>
     <div class="grid grid-3">
+      <div class="card">
+        <div style="font-size:28px;margin-bottom:8px;">🏷️</div>
+        <div class="section-label">Catégorisation structurée : le pivot de tout</div>
+        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Structurer le champ Catégories (N1 + N2) est la seule action qui débloque simultanément le routage automatique, les SLA précis, l'organisation des macros, les suggestions Copilot et les dashboards Explore. <strong>Un seul champ bien configuré remplace 10 triggers manuels et triple la lisibilité des rapports.</strong></p>
+        <span class="badge badge-red">Impact : Très élevé</span>
+      </div>
       <div class="card">
         <div style="font-size:28px;margin-bottom:8px;">📊</div>
         <div class="section-label">Reporting e-commerce dédié</div>
