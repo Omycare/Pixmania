@@ -166,7 +166,6 @@
         <div class="section-label">✓ Points forts</div>
         <ul class="check-list">
           <li>39 vues configurées avec structure de base solide et emojis (par statut, canal, priorité)</li>
-          <li>Shopify connecté : données commandes accessibles depuis la sidebar agent en temps réel</li>
           <li>Facebook Messenger actif : canal social configuré et opérationnel</li>
           <li>On-hold actif : statut "En pause" correctement utilisé pour les tickets en attente fournisseur</li>
           <li>SLA configurés : effort de configuration présent, valeurs correctes (Urgent 1h, Normal 24h), à corriger sur la base de déclenchement</li>
@@ -442,8 +441,10 @@
           <tr><td>France MAIL SC</td><td>Seule condition dans "ANY" — usage de ANY avec 1 seule valeur est logiquement incorrect</td><td><span class="badge badge-orange">Important</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/10370723752465" target="_blank" class="zd-link">↗</a></td></tr>
           <tr><td>Transfert SC N2</td><td>Condition de mise à jour manquante — risque de boucle. Objectif à clarifier.</td><td><span class="badge badge-orange">Important</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/51100707555857" target="_blank" class="zd-link">↗</a></td></tr>
           <tr><td>4 triggers notifications langue (FR/ES/IT/...)</td><td>Devraient être 1 seul trigger avec contenu dynamique</td><td><span class="badge badge-orange">Important</span></td><td></td></tr>
-          <tr><td>IA flux N8N / Appels entrants / IA engagement</td><td>0 utilisation cette semaine — vérifier si actifs et pertinents</td><td><span class="badge badge-orange">Important</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52064204512657" target="_blank" class="zd-link">↗</a></td></tr>
-          <tr><td>France SC Pixmania</td><td>Bon exemple à prendre comme modèle pour les autres</td><td><span class="badge badge-green">OK</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/10251311724817" target="_blank" class="zd-link">↗</a></td></tr>
+          <tr><td>IA flux N8N / Appels entrants / IA engagement</td><td>0 utilisation cette semaine — vérifier si actifs et pertinents. Pour N8N : le flux IA est-il fonctionnel ? Pour Appels entrants : condition basée sur le groupe "Team Pix" avant assignation, ce qui peut expliquer le 0 déclenchement. Pour IA engagement : nécessite contexte pour évaluer l'utilité des tags ia_action_requise / retour_conseillers.</td><td><span class="badge badge-orange">Important</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52064204512657" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52714477588753" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52714368878097" target="_blank" class="zd-link">↗</a></td></tr>
+          <tr><td>Affecter automatiquement au premier agent répondant par e-mail</td><td>Trigger inactif — logique de round-robin par email non active.</td><td><span class="badge badge-orange">Inactif</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/51762443684241" target="_blank" class="zd-link">↗</a></td></tr>
+          <tr><td>Priority normal when ticket created</td><td>Trigger inactif — ce trigger devrait pourtant être actif pour que les SLA se déclenchent (99,8% des tickets n'ont pas de priorité).</td><td><span class="badge badge-red">Critique (inactif)</span></td><td></td></tr>
+          <tr><td>France SC Pixmania</td><td>Bon exemple à prendre comme modèle pour les autres : conditions ALL (ticket créé + canal email) bien structurées.</td><td><span class="badge badge-green">OK</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/10251311724817" target="_blank" class="zd-link">↗</a></td></tr>
         </tbody>
       </table>
     </div>
@@ -700,14 +701,12 @@
         <table>
           <thead><tr><th>App</th><th>Utilité</th><th>Source</th><th>Statut</th></tr></thead>
           <tbody>
-            <tr><td>Tymeshift</td><td>Suivi du temps agents</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé</span></td></tr>
-            <tr><td>VoiceManagement</td><td>Gestion voix/téléphonie</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé</span></td></tr>
-            <tr><td>Knowledge Capture</td><td>Capture d'articles HC depuis ticket</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé</span></td></tr>
-            <tr><td>Reminder App</td><td>Rappels sur tickets</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé</span></td></tr>
-            <tr><td>Shopify</td><td>Intégration e-commerce</td><td><span class="badge badge-purple">Doc Pixmania</span></td><td><span class="badge badge-green">Confirmé</span></td></tr>
-            <tr><td>Bubbly</td><td>Chat</td><td><span class="badge badge-purple">Doc Pixmania</span></td><td><span class="badge badge-yellow">À vérifier</span></td></tr>
-            <tr><td>Advanced Search</td><td>Recherche avancée tickets</td><td><span class="badge badge-purple">Doc Pixmania</span></td><td><span class="badge badge-yellow">À vérifier</span></td></tr>
-            <tr><td>Zendesk Prioritizer / Priority Highlight</td><td>Extensions Chrome agents</td><td><span class="badge badge-purple">Doc Pixmania</span></td><td><span class="badge badge-gray">Chrome only</span></td></tr>
+            <tr><td>Tymeshift</td><td>Suivi du temps agents</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé API</span></td></tr>
+            <tr><td>VoiceManagement</td><td>Gestion voix/téléphonie</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé API</span></td></tr>
+            <tr><td>Knowledge Capture</td><td>Capture d'articles HC depuis ticket</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé API</span></td></tr>
+            <tr><td>Reminder App</td><td>Rappels sur tickets</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé API</span></td></tr>
+            <tr><td>Advanced Search</td><td>Recherche avancée tickets</td><td><span class="badge badge-orange">Recommandation audit</span></td><td><span class="badge badge-yellow">À installer</span></td></tr>
+            <tr><td>Attachment Plus</td><td>Pièces jointes améliorées</td><td><span class="badge badge-orange">Recommandation audit</span></td><td><span class="badge badge-yellow">À installer</span></td></tr>
           </tbody>
         </table>
         <div class="alert alert-red" style="margin-top:8px;">
@@ -889,7 +888,7 @@
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Formulaire de contact client : connexion directe Zendesk non visible / non vérifiée</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun dashboard Explore personnalisé — reporting limité aux vues par défaut</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">FAQ du site non intégrée — agents n'y ont pas accès depuis l'interface</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#166534;">Shopify connecté : intégration e-commerce active</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun rapport Explore basé sur les champs personnalisés (catégorie, statut personnalisé)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr><td style="padding:5px 6px;color:#166534;">On-hold actif : statut "En pause" correctement utilisé</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
           </tbody>
         </table>
@@ -971,7 +970,7 @@
       <div class="card">
         <div style="font-size:22px;margin-bottom:6px;">🤖</div>
         <div class="section-label">AI Agent pour déflexion e-commerce</div>
-        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Avec Shopify connecté, un AI Agent répond automatiquement aux questions "Où est ma commande ?", "Comment retourner ?", "Paiement confirmé ?". <strong>Estimation : 20-35% des tickets résolus sans agent.</strong></p>
+        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Un AI Agent Chat peut répondre automatiquement aux questions récurrentes de type "Où est ma commande ?", "Comment retourner ?", "Paiement confirmé ?" — les premiers sujets de contact selon les tags API. <strong>Estimation : 20-35% des tickets résolus sans agent.</strong></p>
         <span class="badge badge-orange">Impact : Élevé</span>
       </div>
       <div class="card">
@@ -989,7 +988,7 @@
       <div class="card">
         <div style="font-size:22px;margin-bottom:6px;">📊</div>
         <div class="section-label">Reporting &amp; Canaux</div>
-        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Dashboards Explore par catégorie/canal/langue connectés à Shopify. Extension WhatsApp + Instagram via Social Messaging natif pour centraliser tous les canaux dans Zendesk. <strong>Vision 360° du service client.</strong></p>
+        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Dashboards Explore par catégorie/canal/langue basés sur les champs personnalisés (catégorie, statut). Extension WhatsApp + Instagram via Social Messaging natif pour centraliser tous les canaux dans Zendesk. <strong>Vision 360° du service client.</strong></p>
         <span class="badge badge-yellow">Impact : Moyen-élevé</span>
       </div>
     </div>
