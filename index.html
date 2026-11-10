@@ -509,13 +509,16 @@
         <strong>Étape 6</strong> : Activer l'automation CSAT (enquête satisfaction 24h après résolution)<br><br>
         <strong style="font-size:11px;">SLA recommandés par catégorie :</strong>
         <table style="margin-top:6px;font-size:10px;">
-          <thead><tr><th>Catégorie</th><th>Priorité suggérée</th><th>1ère réponse</th><th>Résolution</th></tr></thead>
+          <thead><tr><th>Catégorie (valeur réelle du champ)</th><th>Priorité</th><th>1ère réponse</th><th>Résolution</th></tr></thead>
           <tbody>
-            <tr><td>Remboursement</td><td><span class="badge badge-red">Haute</span></td><td>4h</td><td>24h</td></tr>
-            <tr><td>Livraison perdue</td><td><span class="badge badge-red">Haute</span></td><td>4h</td><td>48h</td></tr>
-            <tr><td>Commande / statut</td><td><span class="badge badge-yellow">Normale</span></td><td>8h</td><td>48h</td></tr>
-            <tr><td>Retour / SAV</td><td><span class="badge badge-yellow">Normale</span></td><td>8h</td><td>72h</td></tr>
-            <tr><td>Compte client</td><td><span class="badge badge-gray">Basse</span></td><td>24h</td><td>96h</td></tr>
+            <tr><td>💳 Remboursement</td><td><span class="badge badge-red">Haute</span></td><td>4h</td><td>24h</td></tr>
+            <tr><td>🚚 Livraison (perdue/endommagée)</td><td><span class="badge badge-red">Haute</span></td><td>4h</td><td>48h</td></tr>
+            <tr><td>🛒 Commande</td><td><span class="badge badge-yellow">Normale</span></td><td>8h</td><td>48h</td></tr>
+            <tr><td>↩️ Retour</td><td><span class="badge badge-yellow">Normale</span></td><td>8h</td><td>72h</td></tr>
+            <tr><td>🔧 SAV / Produit reçu</td><td><span class="badge badge-yellow">Normale</span></td><td>8h</td><td>72h</td></tr>
+            <tr><td>💰 Financement</td><td><span class="badge badge-yellow">Normale</span></td><td>8h</td><td>48h</td></tr>
+            <tr><td>🛒 Avant-vente / Services Pixmania</td><td><span class="badge badge-gray">Basse</span></td><td>24h</td><td>96h</td></tr>
+            <tr><td>👤 Compte client</td><td><span class="badge badge-gray">Basse</span></td><td>24h</td><td>96h</td></tr>
           </tbody>
         </table>
       </div>
@@ -637,48 +640,45 @@
     </div>
     <!-- CATÉGORIES FIELD -->
     <div class="alert alert-orange" style="margin-top:14px;">
-      <div class="alert-title"><span class="badge badge-orange">C3</span> Champ "Catégories" sous-exploité — clé de voûte de toute l'organisation</div>
+      <div class="alert-title"><span class="badge badge-orange">C3</span> Champ "Catégories" bien conçu mais non connecté — 10 valeurs présentes, 0 sous-catégories, 0 routage</div>
       <div class="alert-body">
-        Le champ <strong>Catégories</strong> existe dans le formulaire de ticket mais il n'est ni structuré en sous-catégories, ni connecté aux triggers de routage, ni utilisé dans les SLA. Pourtant, les tags API révèlent que l'IA Zendesk catégorise déjà certains tickets automatiquement (<code>ia_cat_commande</code> : 20 occurrences, <code>ia_escalade</code> : 61 occurrences). Le contenu est là, la structure manque.
+        Le champ <strong>Catégories</strong> contient déjà <strong>10 valeurs N1 bien pensées</strong> couvrant tout le parcours e-commerce Pixmania. Mais il n'est ni connecté aux triggers de routage, ni aux SLA, ni aux macros. C'est une fondation solide sous-exploitée : les agents sélectionnent la catégorie, mais rien ne se déclenche automatiquement derrière.
         <br><br>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0;">
           <div>
-            <strong style="font-size:11px;">Arborescence recommandée</strong>
+            <strong style="font-size:11px;">Valeurs actuelles + feedback + sous-catégories recommandées</strong>
             <table style="margin-top:6px;font-size:10px;">
-              <thead><tr><th>Catégorie (N1)</th><th>Sous-catégorie (N2)</th></tr></thead>
+              <thead><tr><th>Catégorie N1 (existante)</th><th>Feedback</th><th>Sous-catégories N2 à créer</th></tr></thead>
               <tbody>
-                <tr><td rowspan="3">Commande</td><td>Statut / suivi</td></tr>
-                <tr><td>Modification / annulation</td></tr>
-                <tr><td>Problème à la commande</td></tr>
-                <tr><td rowspan="3">Livraison</td><td>Retard</td></tr>
-                <tr><td>Colis perdu / endommagé</td></tr>
-                <tr><td>Erreur d'adresse</td></tr>
-                <tr><td rowspan="3">Retour / SAV</td><td>Retour produit</td></tr>
-                <tr><td>Échange / remplacement</td></tr>
-                <tr><td>Garantie</td></tr>
-                <tr><td rowspan="2">Paiement</td><td>Remboursement</td></tr>
-                <tr><td>Litige / facture</td></tr>
-                <tr><td rowspan="2">Compte client</td><td>Accès / connexion</td></tr>
-                <tr><td>Données personnelles</td></tr>
+                <tr><td>🛒 Avant-vente</td><td><span class="badge badge-yellow">OK</span></td><td>Info produit · Conseil achat · Disponibilité</td></tr>
+                <tr><td>🛒 Commande</td><td><span class="badge badge-green">Priorité</span></td><td>Statut/suivi · Modification · Annulation · Problème</td></tr>
+                <tr><td>🚚 Livraison</td><td><span class="badge badge-green">Priorité</span></td><td>Retard · Colis perdu · Endommagé · Erreur adresse</td></tr>
+                <tr><td>📦 Produit reçu</td><td><span class="badge badge-orange">À fusionner ?</span></td><td>Conforme · Non conforme · Incomplet — peut rejoindre SAV</td></tr>
+                <tr><td>↩️ Retour</td><td><span class="badge badge-green">Priorité</span></td><td>Remboursement · Échange · Délai retour · Procédure</td></tr>
+                <tr><td>🔧 SAV</td><td><span class="badge badge-green">Priorité</span></td><td>Panne · Garantie · Réparation · Pièce détachée</td></tr>
+                <tr><td>💳 Remboursement</td><td><span class="badge badge-orange">Doublon ?</span></td><td>Statut remboursement · Délai · Non reçu — peut rejoindre Retour</td></tr>
+                <tr><td>💰 Financement</td><td><span class="badge badge-yellow">OK</span></td><td>Demande financement · Échéance · Litige</td></tr>
+                <tr><td>🎁 Services Pixmania</td><td><span class="badge badge-yellow">À préciser</span></td><td>Abonnement · Carte fidélité · Offre spéciale</td></tr>
+                <tr><td>👤 Compte client</td><td><span class="badge badge-yellow">OK</span></td><td>Accès/connexion · Données perso · Suppression compte</td></tr>
               </tbody>
             </table>
           </div>
           <div>
-            <strong style="font-size:11px;">Ce que ça débloque si structuré</strong>
+            <strong style="font-size:11px;">Ce que ça débloque si connecté</strong>
             <ul class="check-list" style="margin-top:6px;">
-              <li><strong>Routage automatique</strong> : trigger "Si Catégorie = Retour → assigner à RVR/SAV" — fin de l'assignation manuelle</li>
-              <li><strong>SLA par catégorie</strong> : Remboursement = 24h, Commande statut = 48h (au lieu de SLA basés sur des tags)</li>
-              <li><strong>Macros par dossier</strong> : réorganiser les 145 macros par catégorie (Commande::statut, Retour::remboursement, etc.)</li>
-              <li><strong>Copilot AI</strong> : articles HC et procédures taggués par catégorie → suggestions de réponse précises par thème</li>
-              <li><strong>Explore</strong> : dashboard volume par catégorie → identification des pics de demandes par produit ou période</li>
-              <li><strong>Champs conditionnels</strong> : si N1 = "Retour" → afficher champ "N° commande d'origine" et "motif retour"</li>
+              <li><strong>Routage automatique</strong> : Retour/SAV → groupe RVR/SAV · Remboursement → Finance · Livraison → Logistique</li>
+              <li><strong>SLA par catégorie</strong> : Remboursement = 4h · Livraison perdue = 4h · Commande = 8h · SAV = 24h</li>
+              <li><strong>Macros en dossiers</strong> : réorganiser les 145 macros par catégorie (Commande::, Retour::, SAV::, etc.)</li>
+              <li><strong>Copilot AI</strong> : procédures et articles HC taggués par catégorie → suggestions précises en temps réel</li>
+              <li><strong>Explore</strong> : volume par catégorie → identification des pics (ex: Remboursement explose en décembre)</li>
+              <li><strong>Champs conditionnels</strong> : si Retour → afficher "N° commande", si SAV → afficher "N° série produit"</li>
             </ul>
             <div class="alert alert-indigo" style="margin-top:8px;">
-              <div class="alert-body" style="font-size:10px;">Les tags <code>ia_cat_commande</code> et <code>ia_escalade</code> montrent que l'IA tente déjà de catégoriser. Aligner le champ Catégories sur ces valeurs permettrait de <strong>compléter automatiquement le champ</strong> via un trigger sur le tag IA, sans action agent.</div>
+              <div class="alert-body" style="font-size:10px;"><strong>Point à clarifier :</strong> "Remboursement" et "Retour" se chevauchent. Et "Produit reçu" pourrait rejoindre "SAV". Réduire à <strong>8 catégories claires</strong> (supprimer les doublons) avant de créer les sous-catégories. Les tags API <code>ia_cat_commande</code> (20) et <code>ia_escalade</code> (61) suggèrent que l'IA tente déjà de catégoriser — aligner les valeurs du champ sur ces tags permettrait une <strong>auto-complétion via trigger</strong>.</div>
             </div>
           </div>
         </div>
-        <strong>Action :</strong> (1) Restructurer le champ Catégories en liste déroulante N1 + champ conditionnel N2. (2) Créer des triggers de routage par catégorie. (3) Reconstruire les SLA basés sur Catégories. (4) Réorganiser les macros en dossiers par catégorie.
+        <strong>Actions :</strong> (1) Auditer les 10 catégories : fusionner Remboursement dans Retour et Produit reçu dans SAV → 8 catégories. (2) Créer champs conditionnels N2 pour chaque N1. (3) Créer triggers de routage par catégorie (Retour → RVR/SAV, Financement → Finance). (4) Reconstruire les SLA sur le champ Catégorie. (5) Réorganiser les 145 macros en dossiers par catégorie.
       </div>
     </div>
 
@@ -927,7 +927,7 @@
       <div class="card">
         <div style="font-size:22px;margin-bottom:6px;">🏷️</div>
         <div class="section-label">Catégorisation structurée</div>
-        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Structurer le champ Catégories (N1 + N2 conditionnel) débloque simultanément le routage automatique, les SLA précis, l'organisation des 145 macros et les dashboards Explore. <strong>Un seul champ bien configuré remplace 10 triggers manuels.</strong></p>
+        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">10 catégories déjà configurées (Commande, Livraison, Retour, SAV, Remboursement, Financement...) mais sans sous-catégories ni connexion au routage/SLA. Ajouter les N2 conditionnels + triggers de routage par catégorie débloque tout : routage auto, SLA précis, 145 macros organisées, Copilot ciblé, dashboards. <strong>La fondation est là, il manque la connexion.</strong></p>
         <span class="badge badge-red">Impact : Très élevé</span>
       </div>
       <div class="card">
