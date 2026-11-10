@@ -123,11 +123,11 @@
     <div class="pix-logo-bg"><img src="pixmanialogo.png" alt="Pixmania" style="height:48px;"></div>
     <p style="font-size:15px;color:rgba(255,255,255,.38);letter-spacing:.5px;margin-top:14px;">pixmania.zendesk.com</p>
     <div class="cstat-row">
-      <div class="cstat-item"><div class="cn" style="color:#EF4444;">8+</div><div class="cl">Triggers cassés</div></div>
-      <div class="cstat-item"><div class="cn" style="color:#EF4444;">0</div><div class="cl">Articles HC</div></div>
-      <div class="cstat-item"><div class="cn">13</div><div class="cl">Vues configurées</div></div>
-      <div class="cstat-item"><div class="cn">15+</div><div class="cl">Apps installées</div></div>
-      <div class="cstat-item"><div class="cn" style="color:#F97316;">Inactif</div><div class="cl">Copilot AI</div></div>
+      <div class="cstat-item"><div class="cn">106K</div><div class="cl">Tickets total</div></div>
+      <div class="cstat-item"><div class="cn" style="color:#F97316;">59%</div><div class="cl">Score CSAT</div></div>
+      <div class="cstat-item"><div class="cn">24</div><div class="cl">Agents actifs</div></div>
+      <div class="cstat-item"><div class="cn" style="color:#EF4444;">10 482</div><div class="cl">En attente</div></div>
+      <div class="cstat-item"><div class="cn" style="color:#EF4444;">0</div><div class="cl">Articles HC réels</div></div>
     </div>
   </div>
 </div>
@@ -136,24 +136,24 @@
 <div class="slide" id="slide-2">
   <div class="slide-header">
     <h2>📊 Diagnostic du compte Pixmania</h2>
-    <span class="sh-badge">E-COMMERCE · MULTILINGUE FR/ES/IT · B2C</span>
+    <span class="sh-badge">106K TICKETS · 59% CSAT · 24 AGENTS · 14 GROUPES</span>
   </div>
   <div class="slide-body">
     <div class="grid grid-4" style="margin-bottom:16px;">
       <div class="card stat">
-        <div class="stat-num" style="color:#EF4444;">8+</div>
-        <div class="stat-label">Triggers cassés</div>
-        <div class="stat-sub">Logique incorrecte ou conditions manquantes</div>
+        <div class="stat-num">106K</div>
+        <div class="stat-label">Tickets total</div>
+        <div class="stat-sub">200 new · 2 104 ouverts · 10 482 en attente</div>
       </div>
       <div class="card stat">
-        <div class="stat-num" style="color:#EF4444;">0</div>
-        <div class="stat-label">Articles Help Center</div>
-        <div class="stat-sub">HC public actif mais vide</div>
+        <div class="stat-num" style="color:#F97316;">59%</div>
+        <div class="stat-label">Score CSAT</div>
+        <div class="stat-sub">24 bons · 17 mauvais · faible échantillon (41)</div>
       </div>
       <div class="card stat">
-        <div class="stat-num" style="color:#F97316;">6/8</div>
-        <div class="stat-label">Automations à 0 usage</div>
-        <div class="stat-sub">Inactive ou broken cette semaine</div>
+        <div class="stat-num" style="color:#EF4444;">145</div>
+        <div class="stat-label">Macros — 0 usage</div>
+        <div class="stat-sub">145 créées, aucune utilisée cette semaine</div>
       </div>
       <div class="card stat">
         <div class="stat-num" style="color:#EF4444;">Fermé</div>
@@ -226,7 +226,8 @@
             <tr><td>Vision agents</td><td><span class="badge badge-red">Confusion opérationnelle</span> — un ticket "fermé" apparaît dans les vues actives</td></tr>
           </tbody>
         </table>
-        <br><strong>Action immédiate :</strong> Renommer ce statut en "En attente client" ou utiliser le statut natif Pending et supprimer la personnalisation incorrecte.
+        <br><br>L'API confirme <strong>10 482 tickets actuellement en statut "pending"</strong> sur 106 545 total (9,8%). Ce volume anormalement élevé est probablement lié à ce statut mal nommé : les agents ferment des tickets avec "Fermé" (qui est en réalité pending), les faisant s'accumuler sans être vraiment résolus.
+        <br><br><strong>Action immédiate :</strong> Renommer ce statut en "En attente client" ou utiliser le statut natif Pending et supprimer la personnalisation incorrecte.
       </div>
     </div>
 
@@ -271,7 +272,8 @@
       <div class="alert-body">
         Les politiques SLA de Pixmania sont configurées <strong>par priorité de ticket</strong> (Urgent : 1h, Normal : 24h). Or le formulaire de ticket ne contient pas de champ Priorité, et aucun trigger ne définit automatiquement la priorité à la création. Résultat : tous les tickets restent sans priorité, les SLA ne s'appliquent jamais, et les métriques de délai sont inutilisables.
         <br><br>
-        <strong>Action :</strong> Ajouter un trigger "Priorité par défaut au ticket créé" (Normal) + ajouter un champ Priorité conditionnel au formulaire pour les cas Urgent identifiés par le client.
+        L'API confirme : sur 106 545 tickets, seuls <strong>222 ont une priorité "Urgent"</strong>, 1 "Normal", et 0 "High" ou "Low". Soit 99,8% des tickets n'ont aucune priorité assignée. Les SLA qui se basent sur la priorité ne s'appliquent donc jamais.
+        <br><br><strong>Action :</strong> Ajouter un trigger "Priorité par défaut au ticket créé" (Normal) + ajouter un champ Priorité conditionnel au formulaire pour les cas Urgent identifiés par le client.
       </div>
     </div>
 
@@ -332,11 +334,11 @@
     </div>
 
     <div class="alert alert-orange">
-      <div class="alert-title"><span class="badge badge-orange">C5</span> Aucune macro de réponse prédéfinie — productivité agents à zéro</div>
+      <div class="alert-title"><span class="badge badge-orange">C5</span> 145 macros configurées — aucune utilisée cette semaine</div>
       <div class="alert-body">
-        Le compte ne contient <strong>aucune macro de réponse prédéfinie</strong>. Pour un e-commerce B2C multilingue avec des demandes répétitives (statut commande, retours, livraisons), l'absence de macros est un frein direct à la productivité. Les agents rédigent chaque réponse from scratch.
+        Le compte contient <strong>145 macros configurées</strong>, mais l'API confirme <strong>0 utilisation sur les 7 derniers jours</strong>. Deux explications possibles : les macros ne correspondent plus aux besoins réels (nommage obsolète, contenu dépassé), ou les agents ne les connaissent pas / ne savent pas les utiliser. Dans les deux cas, la productivité agents est impactée : les réponses sont rédigées manuellement sur chaque ticket.
         <br><br>
-        <strong>Action :</strong> Créer au minimum 10 macros sur les thèmes récurrents (commande en cours, remboursement, retour, délai livraison, réclamation) avec contenu dynamique multilingue.
+        <strong>Action :</strong> Auditer les 145 macros : supprimer les obsolètes, renommer clairement les utiles, créer des dossiers thématiques (Commandes, Retours, Livraisons, Paiements), et former les agents à leur usage.
       </div>
     </div>
 
@@ -347,49 +349,52 @@
 <div class="slide" id="slide-5">
   <div class="slide-header">
     <h2>⚡ Triggers &amp; Automations : analyse détaillée</h2>
-    <span class="sh-badge">8+ CASSÉS · LOGIQUE À REFONDRE</span>
+    <span class="sh-badge">43 TRIGGERS · 24 ACTIFS · 18 AUTOMATIONS · 7 ACTIVES · 145 MACROS</span>
   </div>
   <div class="slide-body">
 
     <div class="grid grid-2" style="margin-bottom:14px;">
       <!-- Donut SVG trigger status -->
       <div class="card">
-        <div class="section-label">Statut des triggers</div>
+        <div class="section-label">Statut des triggers (43 total)</div>
         <div style="display:flex;align-items:center;gap:24px;">
           <svg width="110" height="110" viewBox="0 0 110 110">
             <circle cx="55" cy="55" r="40" fill="none" stroke="#E5E7EB" stroke-width="18"/>
-            <!-- Cassés: 8 → rouge, ~40% arc -->
-            <circle cx="55" cy="55" r="40" fill="none" stroke="#EF4444" stroke-width="18" stroke-dasharray="100 151" stroke-dashoffset="0" transform="rotate(-90 55 55)"/>
-            <!-- Inactifs/0 use: 6 → orange, ~30% arc -->
-            <circle cx="55" cy="55" r="40" fill="none" stroke="#F97316" stroke-width="18" stroke-dasharray="75 176" stroke-dashoffset="-100" transform="rotate(-90 55 55)"/>
-            <!-- Actifs: reste → vert -->
-            <circle cx="55" cy="55" r="40" fill="none" stroke="#22C55E" stroke-width="18" stroke-dasharray="76 175" stroke-dashoffset="-175" transform="rotate(-90 55 55)"/>
-            <text x="55" y="51" text-anchor="middle" font-size="13" font-weight="800" fill="#1E1B4B">20+</text>
+            <!-- Cassés: 8/43 = 18.6% → 47 sur 251 -->
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#EF4444" stroke-width="18" stroke-dasharray="47 204" stroke-dashoffset="0" transform="rotate(-90 55 55)"/>
+            <!-- Inactifs (non-cassés): 11/43 = 25.6% → 64 -->
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#F97316" stroke-width="18" stroke-dasharray="64 187" stroke-dashoffset="-47" transform="rotate(-90 55 55)"/>
+            <!-- Actifs: 24/43 = 55.8% → 140 -->
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#22C55E" stroke-width="18" stroke-dasharray="140 111" stroke-dashoffset="-111" transform="rotate(-90 55 55)"/>
+            <text x="55" y="51" text-anchor="middle" font-size="13" font-weight="800" fill="#1E1B4B">43</text>
             <text x="55" y="64" text-anchor="middle" font-size="9" fill="#9CA3AF">triggers</text>
           </svg>
           <div style="display:flex;flex-direction:column;gap:7px;font-size:11px;">
             <div style="display:flex;align-items:center;gap:7px;"><div style="width:10px;height:10px;border-radius:50%;background:#EF4444;flex-shrink:0;"></div><span>Cassés / logique incorrecte : <strong>8+</strong></span></div>
-            <div style="display:flex;align-items:center;gap:7px;"><div style="width:10px;height:10px;border-radius:50%;background:#F97316;flex-shrink:0;"></div><span>Inactifs ou 0 usage : <strong>6</strong></span></div>
-            <div style="display:flex;align-items:center;gap:7px;"><div style="width:10px;height:10px;border-radius:50%;background:#22C55E;flex-shrink:0;"></div><span>Actifs fonctionnels : <strong>~6</strong></span></div>
+            <div style="display:flex;align-items:center;gap:7px;"><div style="width:10px;height:10px;border-radius:50%;background:#F97316;flex-shrink:0;"></div><span>Inactifs (19 total) : <strong>~11</strong></span></div>
+            <div style="display:flex;align-items:center;gap:7px;"><div style="width:10px;height:10px;border-radius:50%;background:#22C55E;flex-shrink:0;"></div><span>Actifs fonctionnels : <strong>24</strong></span></div>
           </div>
         </div>
       </div>
       <!-- Automation donut -->
       <div class="card">
-        <div class="section-label">Statut des automations (8 total)</div>
+        <div class="section-label">Statut des automations (18 total)</div>
         <div style="display:flex;align-items:center;gap:24px;">
           <svg width="110" height="110" viewBox="0 0 110 110">
             <circle cx="55" cy="55" r="40" fill="none" stroke="#E5E7EB" stroke-width="18"/>
-            <circle cx="55" cy="55" r="40" fill="none" stroke="#EF4444" stroke-width="18" stroke-dasharray="31 220" stroke-dashoffset="0" transform="rotate(-90 55 55)"/>
-            <circle cx="55" cy="55" r="40" fill="none" stroke="#F97316" stroke-width="18" stroke-dasharray="94 157" stroke-dashoffset="-31" transform="rotate(-90 55 55)"/>
-            <circle cx="55" cy="55" r="40" fill="none" stroke="#22C55E" stroke-width="18" stroke-dasharray="126 125" stroke-dashoffset="-125" transform="rotate(-90 55 55)"/>
-            <text x="55" y="51" text-anchor="middle" font-size="13" font-weight="800" fill="#1E1B4B">8</text>
+            <!-- Cassée 1/18 = 5.6% → 14 sur 251 -->
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#EF4444" stroke-width="18" stroke-dasharray="14 237" stroke-dashoffset="0" transform="rotate(-90 55 55)"/>
+            <!-- Inactives 10/18 = 55.6% → 140 -->
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#F97316" stroke-width="18" stroke-dasharray="140 111" stroke-dashoffset="-14" transform="rotate(-90 55 55)"/>
+            <!-- Actives 7/18 = 38.9% → 97 -->
+            <circle cx="55" cy="55" r="40" fill="none" stroke="#22C55E" stroke-width="18" stroke-dasharray="97 154" stroke-dashoffset="-154" transform="rotate(-90 55 55)"/>
+            <text x="55" y="51" text-anchor="middle" font-size="13" font-weight="800" fill="#1E1B4B">18</text>
             <text x="55" y="64" text-anchor="middle" font-size="9" fill="#9CA3AF">automations</text>
           </svg>
           <div style="display:flex;flex-direction:column;gap:7px;font-size:11px;">
             <div style="display:flex;align-items:center;gap:7px;"><div style="width:10px;height:10px;border-radius:50%;background:#EF4444;flex-shrink:0;"></div><span>Cassée (TrustPilot) : <strong>1</strong></span></div>
-            <div style="display:flex;align-items:center;gap:7px;"><div style="width:10px;height:10px;border-radius:50%;background:#F97316;flex-shrink:0;"></div><span>Inactives / 0 usage : <strong>5</strong></span></div>
-            <div style="display:flex;align-items:center;gap:7px;"><div style="width:10px;height:10px;border-radius:50%;background:#22C55E;flex-shrink:0;"></div><span>Actives : <strong>2</strong></span></div>
+            <div style="display:flex;align-items:center;gap:7px;"><div style="width:10px;height:10px;border-radius:50%;background:#F97316;flex-shrink:0;"></div><span>Inactives / 0 usage : <strong>10</strong></span></div>
+            <div style="display:flex;align-items:center;gap:7px;"><div style="width:10px;height:10px;border-radius:50%;background:#22C55E;flex-shrink:0;"></div><span>Actives : <strong>7</strong></span></div>
           </div>
         </div>
       </div>
@@ -415,6 +420,17 @@
           <tr><td>France SC Pixmania</td><td>Bon exemple à prendre comme modèle pour les autres</td><td><span class="badge badge-green">OK</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/10251311724817" target="_blank" class="zd-link">↗</a></td></tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="card" style="margin-bottom:14px;">
+      <div class="section-label">Macros : 145 créées — 0 utilisées cette semaine (données API)</div>
+      <div style="display:flex;align-items:center;gap:16px;margin-top:8px;">
+        <div style="flex:1;">
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;"><span>Macros utilisées (7 derniers jours)</span><span style="font-weight:700;color:#991B1B;">0 / 145</span></div>
+          <div class="progress-bar" style="height:10px;"><div class="progress-fill" style="width:0%;background:#EF4444;"></div></div>
+        </div>
+        <div style="font-size:10px;color:var(--text-mid);max-width:300px;line-height:1.5;">145 macros existent mais aucune n'a été utilisée. Soit les agents ne les connaissent pas, soit elles ne correspondent plus aux besoins réels. À auditer et nettoyer en priorité.</div>
+      </div>
     </div>
 
     <div class="card">
@@ -497,7 +513,7 @@
 <div class="slide" id="slide-7">
   <div class="slide-header">
     <h2>👁 Vues &amp; Organisation des tickets</h2>
-    <span class="sh-badge">13 VUES · STRUCTURE CORRECTE · AMÉLIORATIONS POSSIBLES</span>
+    <span class="sh-badge">39 VUES TOTAL · 13 REVUES EN DÉTAIL · AMÉLIORATIONS POSSIBLES</span>
   </div>
   <div class="slide-body">
     <div class="grid grid-2" style="margin-bottom:14px;">
@@ -525,7 +541,7 @@
       <div>
         <div class="alert alert-orange" style="margin-bottom:10px;">
           <div class="alert-title"><span class="badge badge-orange">C4</span> Organisation des vues : pas de dossiers</div>
-          <div class="alert-body">Les 13 vues ne sont pas organisées en dossiers. Pour une équipe multilingue multi-canal, il est recommandé de créer des dossiers par type (Mes tickets, Équipe, Par canal, Par priorité). Les emojis ajoutent déjà une bonne lisibilité visuelle.</div>
+          <div class="alert-body">Le compte contient <strong>39 vues au total</strong> (13 analysées en détail ici). Sans organisation en dossiers, les agents voient une liste plate difficile à parcourir. Pour une équipe multilingue multi-canal, il est recommandé de créer des dossiers par type (Mes tickets, Équipe, Par canal, Par priorité). Les emojis ajoutent déjà une bonne lisibilité visuelle.</div>
         </div>
         <div class="alert alert-red" style="margin-bottom:10px;">
           <div class="alert-title"><span class="badge badge-red">C2</span> Vue "SLA en danger" inutilisable</div>
@@ -549,7 +565,7 @@
 <div class="slide" id="slide-8">
   <div class="slide-header">
     <h2>📋 Formulaires, Champs &amp; Apps</h2>
-    <span class="sh-badge">1 FORMULAIRE · 15+ APPS</span>
+    <span class="sh-badge">1 FORMULAIRE · 25 CHAMPS · APPS MULTIPLES</span>
   </div>
   <div class="slide-body">
     <div class="grid grid-3" style="margin-bottom:14px;">
@@ -596,6 +612,50 @@
         <div class="alert alert-red" style="margin-top:10px;">
           <div class="alert-title" style="font-size:11px;">❌ App manquante critique : Select an Address</div>
           <div class="alert-body">Sans cette app, toutes les réponses partent de support@pixmania.zendesk.com quelle que soit l'adresse de destination du client.</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-2" style="margin-top:14px;">
+      <div class="card">
+        <div class="section-label">Équipe (données API)</div>
+        <div class="grid grid-4" style="gap:8px;margin-bottom:10px;">
+          <div style="text-align:center;"><div style="font-size:22px;font-weight:800;color:#8B5CF6;">5</div><div style="font-size:9px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;">Admins</div></div>
+          <div style="text-align:center;"><div style="font-size:22px;font-weight:800;color:#374151;">14</div><div style="font-size:9px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;">Agents</div></div>
+          <div style="text-align:center;"><div style="font-size:22px;font-weight:800;color:#374151;">14</div><div style="font-size:9px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;">Groupes</div></div>
+          <div style="text-align:center;"><div style="font-size:22px;font-weight:800;color:#374151;">24</div><div style="font-size:9px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;">Total</div></div>
+        </div>
+        <table style="font-size:10px;">
+          <thead><tr><th>Admin</th><th>Rôle</th></tr></thead>
+          <tbody>
+            <tr><td>Olivier B.</td><td><span class="badge badge-purple">Admin</span></td></tr>
+            <tr><td>Ahmed AYOUCHE</td><td><span class="badge badge-purple">Admin</span></td></tr>
+            <tr><td>Assistant IA Pixmania</td><td><span class="badge badge-purple">Admin</span></td></tr>
+            <tr><td>Eleonore</td><td><span class="badge badge-purple">Admin</span></td></tr>
+            <tr><td>Guillaume · OmyCare</td><td><span class="badge badge-blue">Admin audit</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <div class="section-label">Groupes configurés (14 groupes)</div>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:4px;">
+          <span class="badge badge-purple">Admin</span>
+          <span class="badge badge-gray">Comptabilité</span>
+          <span class="badge badge-gray">Finance</span>
+          <span class="badge badge-gray">Logistique</span>
+          <span class="badge badge-gray">Marketing</span>
+          <span class="badge badge-gray">RBT DEV</span>
+          <span class="badge badge-gray">Reprise</span>
+          <span class="badge badge-gray">RVR / SAV</span>
+          <span class="badge badge-gray">SC N2</span>
+          <span class="badge badge-gray">Service B2B</span>
+          <span class="badge badge-blue">Service Client FR</span>
+          <span class="badge badge-blue">Servicio Clientes ES</span>
+          <span class="badge badge-blue">Servizio Clienti IT</span>
+          <span class="badge badge-green">Team Pix (défaut)</span>
+        </div>
+        <div class="alert alert-yellow" style="margin-top:10px;">
+          <div class="alert-title" style="font-size:11px;">⚠ Groupes non liés au routage des tickets</div>
+          <div class="alert-body">14 groupes dont 4 sans lien évident avec le support (Comptabilité, Finance, Marketing, Logistique). À vérifier si ces groupes reçoivent des tickets ou sont juste des artefacts d'organisation.</div>
         </div>
       </div>
     </div>
@@ -680,7 +740,7 @@
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Branding : 0 logo, 0 couleurs, URL zendesk.com exposée, watermark email</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">1 seul formulaire, sans champs conditionnels ni sous-catégories</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Vues : pas de dossiers, vue SLA en danger inutilisable</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucune macro de réponse prédéfinie pour les thèmes récurrents</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">145 macros configurées mais 0 utilisées cette semaine — à auditer et réorganiser</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Groupes : distribution à valider, pas de signatures agents personnalisées</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
             <tr><td style="padding:5px 6px;color:#166534;">13 vues configurées avec structure de base solide et emojis</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
           </tbody>
@@ -695,12 +755,12 @@
         <table style="width:100%;border-collapse:collapse;font-size:10px;">
           <thead><tr style="background:#F3F4F6;"><th style="text-align:left;padding:4px 6px;font-weight:600;color:#374151;">Observation</th><th style="padding:4px 6px;white-space:nowrap;">Priorité</th></tr></thead>
           <tbody>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>8+ triggers cassés</strong> : RVSFR ×2, Espagne MAIL SC, Italie/Espagne SC ×3, Cas juridique, PriceMinister</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>8+ triggers cassés sur 43</strong> (19 inactifs) : RVSFR ×2, Espagne MAIL SC, Italie/Espagne SC ×3, Cas juridique, PriceMinister</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Aucun contenu dynamique</strong> — 4 triggers langue dupliqués (devraient être 1 seul)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Ordre des triggers désorganisé — l'ordre impacte directement le comportement</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">TrustPilot automation cassée — condition sur canal supprimé</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Mise à jour ticket en pause : logique incompréhensible, à revoir</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">6/8 automations à 0 utilisation cette semaine</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">11/18 automations inactives · 145 macros à 0 usage cette semaine</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">CSAT inactif — enquêtes de satisfaction non envoyées</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Bump Bump Solve inactif — relances clients absentes</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">SLA basés sur tags (non recommandé), aucun trigger de priorité par défaut</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
@@ -763,7 +823,7 @@
       <div>
         <div class="card" style="margin-bottom:10px;">
           <div class="section-label" style="color:#EAB308;">🟡 Améliorations (C5–C7)</div>
-          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C5]</strong> Créer 10+ macros de réponse prédéfinies (commandes, retours, réclamations) avec contenu dynamique</span></div>
+          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C5]</strong> Auditer les 145 macros : supprimer les obsolètes, réorganiser en dossiers, former les agents à leur usage</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C5]</strong> Importer contenu FAQ pixmania.com dans le Help Center Zendesk</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C5]</strong> Vérifier et corriger le trigger "Mise à jour ticket en pause" (objectif à clarifier)</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C5]</strong> Vérifier l'installation du widget sur pixmania.com + configurer formulaire de contact</span></div>
@@ -827,7 +887,7 @@
       <div class="card">
         <div style="font-size:28px;margin-bottom:8px;">⚡</div>
         <div class="section-label">Refonte triggers : de 20 à 8</div>
-        <p style="font-size:11px;color:var(--text-mid);">Avec contenu dynamique, les 4 triggers de notification langue deviennent 1. Les 8 cassés sont supprimés. Les triggers d'assignation groupe sont consolidés par canal (non par groupe). <strong>Résultat estimé : réduction de 20+ triggers à 8-10 triggers clairs et maintenables.</strong></p>
+        <p style="font-size:11px;color:var(--text-mid);">Avec contenu dynamique, les 4 triggers de notification langue deviennent 1. Les 8 cassés sont supprimés. Les 19 inactifs sont audités et consolidés. <strong>Résultat estimé : réduction de 43 triggers à 10-12 triggers clairs et maintenables.</strong></p>
       </div>
     </div>
   </div>
@@ -837,14 +897,14 @@
 <div class="slide" id="slide-12">
   <div class="slide-header">
     <h2>📈 Dashboard KPI &amp; Scores par domaine</h2>
-    <span class="sh-badge">ANALYSE QUALITATIVE · DONNÉES AUDIT</span>
+    <span class="sh-badge">DONNÉES API RÉELLES · NOVEMBRE 2026</span>
   </div>
   <div class="slide-body">
     <div class="grid grid-4" style="margin-bottom:16px;">
-      <div class="card stat"><div class="stat-num" style="color:#EF4444;">26%</div><div class="stat-label">Score global</div><div class="stat-sub">Compte avec potentiel fort mais configuration fragile</div></div>
-      <div class="card stat"><div class="stat-num" style="color:#EF4444;">8+</div><div class="stat-label">Triggers cassés</div><div class="stat-sub">Sur ~20 triggers configurés</div></div>
-      <div class="card stat"><div class="stat-num" style="color:#EF4444;">0</div><div class="stat-label">Contenu dynamique</div><div class="stat-sub">Duplication ×3-4 de la config</div></div>
-      <div class="card stat"><div class="stat-num" style="color:#22C55E;">13</div><div class="stat-label">Vues configurées</div><div class="stat-sub">Structure de base solide</div></div>
+      <div class="card stat"><div class="stat-num">106 545</div><div class="stat-label">Tickets total (API)</div><div class="stat-sub">200 new · 2 104 open · 10 482 pending · 493 solved</div></div>
+      <div class="card stat"><div class="stat-num" style="color:#F97316;">59%</div><div class="stat-label">Score CSAT (API)</div><div class="stat-sub">24 bons · 17 mauvais · 41 notes au total</div></div>
+      <div class="card stat"><div class="stat-num">24</div><div class="stat-label">Agents actifs (API)</div><div class="stat-sub">5 admins · 14 agents · 14 groupes</div></div>
+      <div class="card stat"><div class="stat-num" style="color:#EF4444;">145</div><div class="stat-label">Macros — 0 usage</div><div class="stat-sub">Aucune macro utilisée cette semaine</div></div>
     </div>
 
     <div class="grid grid-2" style="margin-bottom:14px;">
@@ -913,33 +973,43 @@
           </div>
         </div>
 
-        <!-- Bar chart statut triggers -->
+        <!-- Bar chart données réelles API -->
         <div class="card">
-          <div class="section-label">Statut des règles métier</div>
+          <div class="section-label">Répartition tickets par statut (données API)</div>
           <div style="display:flex;flex-direction:column;gap:9px;font-size:10px;margin-top:4px;">
             <div>
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Triggers cassés / incorrects</span><span style="font-weight:700;color:#991B1B;">8+</span></div>
-              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:40%;height:100%;background:#EF4444;border-radius:4px;"></div></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Fermés (closed)</span><span style="font-weight:700;color:#166534;">93 250</span></div>
+              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:87%;height:100%;background:#22C55E;border-radius:4px;"></div></div>
             </div>
             <div>
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Triggers inactifs / 0 usage</span><span style="font-weight:700;color:#92400E;">6</span></div>
-              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:30%;height:100%;background:#F97316;border-radius:4px;"></div></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>En attente (pending)</span><span style="font-weight:700;color:#991B1B;">10 482</span></div>
+              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:10%;height:100%;background:#EF4444;border-radius:4px;"></div></div>
             </div>
             <div>
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Triggers actifs fonctionnels</span><span style="font-weight:700;color:#166534;">~6</span></div>
-              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:30%;height:100%;background:#22C55E;border-radius:4px;"></div></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Ouverts (open)</span><span style="font-weight:700;color:#92400E;">2 104</span></div>
+              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:2%;height:100%;background:#F97316;border-radius:4px;"></div></div>
             </div>
             <div>
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Automations à 0 usage</span><span style="font-weight:700;color:#92400E;">6/8</span></div>
-              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:75%;height:100%;background:#F97316;border-radius:4px;"></div></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Résolus (solved)</span><span style="font-weight:700;color:#166534;">493</span></div>
+              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:0.5%;height:100%;background:#22C55E;border-radius:4px;"></div></div>
             </div>
             <div>
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Articles Help Center</span><span style="font-weight:700;color:#991B1B;">0</span></div>
-              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:0%;height:100%;background:#EF4444;border-radius:4px;"></div></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Nouveaux (new)</span><span style="font-weight:700;color:#92400E;">200</span></div>
+              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:0.2%;height:100%;background:#F97316;border-radius:4px;"></div></div>
             </div>
             <div>
-              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>Vues configurées</span><span style="font-weight:700;color:#166534;">13</span></div>
-              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:65%;height:100%;background:#22C55E;border-radius:4px;"></div></div>
+              <div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span>En pause (hold)</span><span style="font-weight:700;color:#166534;">16</span></div>
+              <div style="background:#E5E7EB;border-radius:4px;height:10px;"><div style="width:0.1%;height:100%;background:#3B82F6;border-radius:4px;"></div></div>
+            </div>
+          </div>
+          <div style="margin-top:10px;padding-top:8px;border-top:1px solid #E5E7EB;">
+            <div class="section-label" style="margin-bottom:6px;">Top tags (données API)</div>
+            <div style="display:flex;flex-direction:column;gap:6px;font-size:10px;">
+              <div><div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>remboursement</span><span style="font-weight:700;">108</span></div><div style="background:#E5E7EB;border-radius:4px;height:7px;"><div style="width:100%;height:100%;background:#8B5CF6;border-radius:4px;"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>commande</span><span style="font-weight:700;">61</span></div><div style="background:#E5E7EB;border-radius:4px;height:7px;"><div style="width:56%;height:100%;background:#8B5CF6;border-radius:4px;"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>ia_escalade</span><span style="font-weight:700;">61</span></div><div style="background:#E5E7EB;border-radius:4px;height:7px;"><div style="width:56%;height:100%;background:#F97316;border-radius:4px;"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>sav</span><span style="font-weight:700;">29</span></div><div style="background:#E5E7EB;border-radius:4px;height:7px;"><div style="width:27%;height:100%;background:#8B5CF6;border-radius:4px;"></div></div></div>
+              <div><div style="display:flex;justify-content:space-between;margin-bottom:2px;"><span>livraison</span><span style="font-weight:700;">24</span></div><div style="background:#E5E7EB;border-radius:4px;height:7px;"><div style="width:22%;height:100%;background:#8B5CF6;border-radius:4px;"></div></div></div>
             </div>
           </div>
         </div>
