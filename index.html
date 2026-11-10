@@ -167,13 +167,12 @@
         <ul class="check-list">
           <li>39 vues configurées avec structure de base solide et emojis (par statut, canal, priorité)</li>
           <li>Shopify connecté : données commandes accessibles depuis la sidebar agent en temps réel</li>
-          <li>Facebook Messenger actif + Channel Reply (eBay/Amazon) : couverture multi-marketplace</li>
+          <li>Facebook Messenger actif : canal social configuré et opérationnel</li>
           <li>On-hold actif : statut "En pause" correctement utilisé pour les tickets en attente fournisseur</li>
           <li>SLA configurés : effort de configuration présent, valeurs correctes (Urgent 1h, Normal 24h), à corriger sur la base de déclenchement</li>
           <li>France SC Pixmania : trigger bien structuré (conditions ALL + canal + création), modèle à dupliquer</li>
           <li>Champ Catégories + Commande n° : bases d'une catégorisation structurée déjà en place</li>
           <li>IA Zendesk active : tags <code>ia_escalade</code> et <code>ia_cat_commande</code> générés automatiquement</li>
-          <li>Social Messaging installé : prêt pour extension WhatsApp, Instagram</li>
         </ul>
       </div>
       <div class="card">
@@ -611,27 +610,27 @@
         </ul>
       </div>
       <div class="card" style="grid-column: span 2;">
-        <div class="section-label">Apps installées (15+ apps)</div>
+        <div class="section-label">Apps installées (confirmées)</div>
+        <div class="alert alert-indigo" style="margin-bottom:8px;">
+          <div class="alert-body" style="font-size:10px;">Sources : API Zendesk (4 apps retournées) + onglet Apps du document de travail Pixmania. D'autres apps peuvent être installées — à vérifier manuellement dans Admin Center &gt; Apps et intégrations.</div>
+        </div>
         <table>
-          <thead><tr><th>App</th><th>Utilité</th><th>Statut</th></tr></thead>
+          <thead><tr><th>App</th><th>Utilité</th><th>Source</th><th>Statut</th></tr></thead>
           <tbody>
-            <tr><td>Shopify</td><td>Intégration e-commerce</td><td><span class="badge badge-green">Actif</span></td></tr>
-            <tr><td>Social Messaging</td><td>Facebook / réseaux sociaux</td><td><span class="badge badge-green">Actif</span></td></tr>
-            <tr><td>Agnostack</td><td>Order ID Magento</td><td><span class="badge badge-green">Actif</span></td></tr>
-            <tr><td>Tymeshift</td><td>Contrôle du travail agents</td><td><span class="badge badge-green">Actif</span></td></tr>
-            <tr><td>Bubbly</td><td>Chat</td><td><span class="badge badge-yellow">À vérifier</span></td></tr>
-            <tr><td>Advanced Search</td><td>Recherche avancée</td><td><span class="badge badge-green">Actif</span></td></tr>
-            <tr><td>Lovely Views</td><td>Organisation vues</td><td><span class="badge badge-green">Actif</span></td></tr>
-            <tr><td>Linked Tickets / Myndbend</td><td>Tickets enfants — doublon (2 apps pour le même besoin)</td><td><span class="badge badge-orange">Doublon à auditer</span></td></tr>
-            <tr><td>Channel Reply</td><td>eBay / Amazon</td><td><span class="badge badge-yellow">À vérifier</span></td></tr>
-            <tr><td>Round Robin</td><td>Assignation automatique</td><td><span class="badge badge-yellow">À vérifier</span></td></tr>
-            <tr><td>Shreeder</td><td>Automation tickets suspendus</td><td><span class="badge badge-yellow">À vérifier</span></td></tr>
-            <tr><td>User Data</td><td>Données client</td><td><span class="badge badge-green">Actif</span></td></tr>
-            <tr><td>Chargedesk</td><td>Remboursements</td><td><span class="badge badge-green">Actif</span></td></tr>
-            <tr><td>Easy Insight</td><td>Rapports avancés</td><td><span class="badge badge-yellow">À vérifier</span></td></tr>
-            <tr><td>Zendesk Prioritizer / Priority Highlight</td><td>Extensions Chrome</td><td><span class="badge badge-gray">Chrome only</span></td></tr>
+            <tr><td>Tymeshift</td><td>Suivi du temps agents</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé</span></td></tr>
+            <tr><td>VoiceManagement</td><td>Gestion voix/téléphonie</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé</span></td></tr>
+            <tr><td>Knowledge Capture</td><td>Capture d'articles HC depuis ticket</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé</span></td></tr>
+            <tr><td>Reminder App</td><td>Rappels sur tickets</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé</span></td></tr>
+            <tr><td>Shopify</td><td>Intégration e-commerce</td><td><span class="badge badge-purple">Doc Pixmania</span></td><td><span class="badge badge-green">Confirmé</span></td></tr>
+            <tr><td>Bubbly</td><td>Chat</td><td><span class="badge badge-purple">Doc Pixmania</span></td><td><span class="badge badge-yellow">À vérifier</span></td></tr>
+            <tr><td>Advanced Search</td><td>Recherche avancée tickets</td><td><span class="badge badge-purple">Doc Pixmania</span></td><td><span class="badge badge-yellow">À vérifier</span></td></tr>
+            <tr><td>Zendesk Prioritizer / Priority Highlight</td><td>Extensions Chrome agents</td><td><span class="badge badge-purple">Doc Pixmania</span></td><td><span class="badge badge-gray">Chrome only</span></td></tr>
           </tbody>
         </table>
+        <div class="alert alert-yellow" style="margin-top:8px;">
+          <div class="alert-title" style="font-size:11px;">⚠ Autres apps à vérifier manuellement</div>
+          <div class="alert-body">L'API retourne uniquement les apps natives Zendesk. Les apps marketplace (Social Messaging, Round Robin, Linked Tickets, etc.) doivent être vérifiées dans Admin Center &gt; Apps et intégrations &gt; Applications installées.</div>
+        </div>
         <div class="alert alert-red" style="margin-top:10px;">
           <div class="alert-title" style="font-size:11px;">❌ App manquante critique : Select an Address</div>
           <div class="alert-body">Sans cette app, toutes les réponses partent de support@pixmania.zendesk.com quelle que soit l'adresse de destination du client.</div>
@@ -850,14 +849,12 @@
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Copilot désactivé</strong> malgré son inclusion dans le plan Zendesk</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun AI Agent Chat — pas de résolution autonome des demandes simples</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Widget Web présent mais 0 ticket créé — probablement non installé sur le site</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Facebook connecté via ancien système — à migrer vers Social Messaging</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Facebook connecté : vérifier si canal est à jour et correctement configuré</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Formulaire de contact client : connexion directe Zendesk non visible / non vérifiée</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun dashboard Explore personnalisé — reporting limité aux vues par défaut</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">FAQ du site non intégrée — agents n'y ont pas accès depuis l'interface</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Doublon apps child-tickets : Linked Tickets + Myndbend (même fonctionnalité)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#166534;">Shopify connecté : intégration e-commerce active</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#166534;">On-hold actif : statut "En pause" correctement utilisé</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
-            <tr><td style="padding:5px 6px;color:#166534;">Channel Reply (eBay/Amazon) + Agnostack (Magento) : couverture multi-marketplace</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
+            <tr><td style="padding:5px 6px;color:#166534;">On-hold actif : statut "En pause" correctement utilisé</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -897,10 +894,9 @@
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C5]</strong> Importer contenu FAQ pixmania.com dans le Help Center Zendesk</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C5]</strong> Vérifier et corriger le trigger "Mise à jour ticket en pause" (objectif à clarifier)</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C5]</strong> Vérifier l'installation du widget sur pixmania.com + configurer formulaire de contact</span></div>
-          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C6]</strong> Migrer Facebook depuis l'ancien système vers Social Messaging natif</span></div>
+          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C6]</strong> Vérifier la configuration du canal Facebook et migrer vers Messaging natif si nécessaire</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C6]</strong> Créer dossiers de vues (par statut, canal, priorité) pour l'organisation</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C6]</strong> Ajouter champs conditionnels et sous-catégories au formulaire de ticket</span></div>
-          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C6]</strong> Désinstaller l'une des 2 apps child-tickets (Linked Tickets ou Myndbend — doublon)</span></div>
         </div>
         <div class="card">
           <div class="section-label" style="color:#22C55E;">🟢 Optimisations (C8+)</div>
@@ -908,7 +904,7 @@
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C7]</strong> Créer un dashboard Explore personnalisé (SLA, CSAT, volume par langue/canal)</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C8]</strong> Développer HC multilingue (FR/ES/IT) avec articles par langue</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C8]</strong> Évaluer et configurer proprement les flux N8N et IA engagement (ou les supprimer)</span></div>
-          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C9]</strong> Configurer WhatsApp via Social Messaging (Respira ou natif) pour le canal messaging</span></div>
+          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C9]</strong> Configurer WhatsApp via Social Messaging natif Zendesk pour centraliser les canaux</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C9]</strong> Ajouter signatures personnalisées par agent et par groupe</span></div>
         </div>
       </div>
@@ -956,8 +952,8 @@
       </div>
       <div class="card">
         <div style="font-size:22px;margin-bottom:6px;">📊</div>
-        <div class="section-label">Reporting &amp; Social Messaging</div>
-        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Dashboards Explore par catégorie/canal/langue connectés à Shopify. Extension WhatsApp via Respira (déjà installé) + Instagram pour centraliser tous les canaux dans Zendesk. <strong>Vision 360° du service client.</strong></p>
+        <div class="section-label">Reporting &amp; Canaux</div>
+        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Dashboards Explore par catégorie/canal/langue connectés à Shopify. Extension WhatsApp + Instagram via Social Messaging natif pour centraliser tous les canaux dans Zendesk. <strong>Vision 360° du service client.</strong></p>
         <span class="badge badge-yellow">Impact : Moyen-élevé</span>
       </div>
     </div>
