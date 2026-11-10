@@ -601,21 +601,80 @@
   </div>
 </div>
 
-<!-- ══ SLIDE 8 : FORMULAIRES & CHAMPS & APPS ══ -->
+<!-- ══ SLIDE 8 : CHAMP CATÉGORIES ══ -->
 <div class="slide" id="slide-8">
   <div class="slide-header">
-    <h2>📋 Formulaires, Champs &amp; Apps</h2>
-    <span class="sh-badge">1 FORMULAIRE · 25 CHAMPS · APPS MULTIPLES</span>
+    <h2>🏷 Champ Catégories : analyse &amp; recommandations</h2>
+    <span class="sh-badge">10 VALEURS N1 · 0 SOUS-CATÉGORIES · 0 ROUTAGE AUTOMATIQUE</span>
+  </div>
+  <div class="slide-body">
+    <div class="alert alert-orange" style="margin-bottom:14px;">
+      <div class="alert-title"><span class="badge badge-orange">C3</span> Champ "Catégories" bien conçu mais non connecté — fondation solide sous-exploitée</div>
+      <div class="alert-body">Le champ <strong>Catégories</strong> contient déjà <strong>10 valeurs N1</strong> couvrant tout le parcours e-commerce Pixmania. Mais il n'est ni connecté aux triggers de routage, ni aux SLA, ni aux macros. Les agents sélectionnent la catégorie — rien ne se déclenche automatiquement derrière. L'IA génère déjà le tag <code>ia_cat_commande</code> (20 tickets cette semaine) : aligner le champ sur ces tags permettrait une auto-complétion via trigger.</div>
+    </div>
+    <div class="grid grid-2">
+      <div class="card">
+        <div class="section-label">Valeurs N1 existantes · Feedback · Sous-catégories N2 à créer</div>
+        <table style="font-size:10px;margin-top:6px;">
+          <thead><tr><th>Catégorie N1</th><th>Feedback</th><th>Sous-catégories N2 recommandées</th></tr></thead>
+          <tbody>
+            <tr><td>🛒 Avant-vente</td><td><span class="badge badge-yellow">OK</span></td><td>Info produit · Conseil achat · Disponibilité</td></tr>
+            <tr><td>🛒 Commande</td><td><span class="badge badge-green">Priorité</span></td><td>Statut/suivi · Modification · Annulation · Problème</td></tr>
+            <tr><td>🚚 Livraison</td><td><span class="badge badge-green">Priorité</span></td><td>Retard · Colis perdu · Endommagé · Erreur adresse</td></tr>
+            <tr><td>📦 Produit reçu</td><td><span class="badge badge-orange">Fusionner dans SAV ?</span></td><td>Conforme · Non conforme · Incomplet</td></tr>
+            <tr><td>↩️ Retour</td><td><span class="badge badge-green">Priorité</span></td><td>Remboursement · Échange · Délai · Procédure</td></tr>
+            <tr><td>🔧 SAV</td><td><span class="badge badge-green">Priorité</span></td><td>Panne · Garantie · Réparation · Pièce détachée</td></tr>
+            <tr><td>💳 Remboursement</td><td><span class="badge badge-orange">Doublon avec Retour ?</span></td><td>Statut · Délai · Non reçu</td></tr>
+            <tr><td>💰 Financement</td><td><span class="badge badge-yellow">OK</span></td><td>Demande · Échéance · Litige</td></tr>
+            <tr><td>🎁 Services Pixmania</td><td><span class="badge badge-yellow">À préciser</span></td><td>Abonnement · Fidélité · Offre spéciale</td></tr>
+            <tr><td>👤 Compte client</td><td><span class="badge badge-yellow">OK</span></td><td>Accès/connexion · Données perso · Suppression</td></tr>
+          </tbody>
+        </table>
+        <div class="alert alert-indigo" style="margin-top:10px;">
+          <div class="alert-body" style="font-size:11px;"><strong>Recommandation :</strong> Fusionner "Remboursement" dans "Retour" et "Produit reçu" dans "SAV" → <strong>8 catégories claires</strong> avant de créer les sous-catégories N2. Moins de catégories = meilleure adoption agents + données Explore plus lisibles.</div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:12px;">
+          <div class="section-label">Ce que le champ Catégories débloque si connecté</div>
+          <ul class="check-list" style="margin-top:8px;">
+            <li><strong>Routage automatique par groupe</strong> : Retour/SAV → RVR/SAV · Remboursement → Finance · Livraison → Logistique — aujourd'hui ces assignments sont manuels ou inexistants</li>
+            <li><strong>SLA différenciés par catégorie</strong> : Remboursement = 4h · Livraison perdue = 4h · Commande = 8h · SAV = 24h — aujourd'hui les SLA ne se déclenchent jamais (99,8% sans priorité)</li>
+            <li><strong>Macros organisées en dossiers</strong> : réorganiser les 145 macros par catégorie (Commande:: · Retour:: · SAV::) — aujourd'hui 0 utilisation cette semaine</li>
+            <li><strong>Copilot AI ciblé</strong> : procédures et articles HC taggués par catégorie → suggestions précises en temps réel aux agents</li>
+            <li><strong>Reporting Explore par catégorie</strong> : identifier les pics de volume (ex: Remboursement explose en décembre, SAV en janvier après Noël)</li>
+            <li><strong>Champs conditionnels</strong> : si Retour → afficher "N° commande requis" · si SAV → afficher "N° série produit"</li>
+          </ul>
+        </div>
+        <div class="card" style="background:#FFF7ED;border:1px solid #F97316;">
+          <div class="section-label" style="color:#9A3412;">Plan d'action Catégories (5 étapes)</div>
+          <div style="font-size:11px;color:#374151;line-height:1.9;">
+            <strong>Étape 1</strong> : Auditer les 10 valeurs N1 — fusionner Remboursement → Retour et Produit reçu → SAV pour obtenir 8 catégories propres<br>
+            <strong>Étape 2</strong> : Créer les sous-catégories N2 par champ conditionnel (Admin Center &gt; Objets &gt; Tickets &gt; Champs)<br>
+            <strong>Étape 3</strong> : Créer triggers de routage par catégorie : Retour/SAV → groupe RVR/SAV · Financement → Finance · Logistique → Logistique<br>
+            <strong>Étape 4</strong> : Reconstruire les politiques SLA sur le champ Catégorie + Priorité (supprimer les SLA tags-based)<br>
+            <strong>Étape 5</strong> : Réorganiser les 145 macros en dossiers thématiques par catégorie + former les agents à leur usage
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 9 : FORMULAIRES, APPS & ÉQUIPE ══ -->
+<div class="slide" id="slide-9">
+  <div class="slide-header">
+    <h2>📋 Formulaires, Apps &amp; Équipe</h2>
+    <span class="sh-badge">1 FORMULAIRE · 25 CHAMPS · 5 ADMINS · 14 AGENTS · 14 GROUPES</span>
   </div>
   <div class="slide-body">
     <div class="grid grid-3" style="margin-bottom:14px;">
       <div class="card">
-        <div class="section-label">Formulaires</div>
+        <div class="section-label">Formulaires &amp; champs de ticket</div>
         <div class="alert alert-yellow" style="margin-bottom:8px;">
           <div class="alert-title" style="font-size:11px;">1 seul formulaire de ticket</div>
-          <div class="alert-body">Pas de formulaire par type de demande (commande, retour, réclamation). Les champs conditionnels pour les sous-catégories sont absents. Le formulaire est décrit comme "un peu désordonné". <strong>Le champ Priorité est manquant</strong> (lié au dysfonctionnement des SLA).</div>
+          <div class="alert-body">Pas de formulaire par type de demande. Les champs conditionnels pour les sous-catégories sont absents. <strong>Le champ Priorité est manquant</strong> — bloque tous les SLA.</div>
         </div>
-        <div class="section-label" style="margin-top:8px;">Champs de ticket (25 champs)</div>
         <table style="font-size:10px;margin-bottom:6px;">
           <thead><tr><th>Champ</th><th>Statut</th></tr></thead>
           <tbody>
@@ -629,14 +688,14 @@
         </table>
         <div class="section-label" style="margin-top:10px;">Champs utilisateur</div>
         <ul class="check-list cross-list">
-          <li>Champ VIP (checkbox) : seul champ personnalisé utilisateur</li>
-          <li>Pas d'autres champs client utiles (langue, pays, segment)</li>
+          <li>Champ VIP : seul champ personnalisé utilisateur</li>
+          <li>Pas de champs client utiles (langue, pays, segment)</li>
         </ul>
       </div>
       <div class="card" style="grid-column: span 2;">
         <div class="section-label">Apps installées (confirmées)</div>
         <div class="alert alert-indigo" style="margin-bottom:8px;">
-          <div class="alert-body" style="font-size:10px;">Sources : API Zendesk (4 apps retournées) + onglet Apps du document de travail Pixmania. D'autres apps peuvent être installées — à vérifier manuellement dans Admin Center &gt; Apps et intégrations.</div>
+          <div class="alert-body" style="font-size:10px;">Sources : API Zendesk (4 apps) + document de travail Pixmania. D'autres apps peuvent exister — vérifier dans Admin Center &gt; Apps et intégrations &gt; Applications installées.</div>
         </div>
         <table>
           <thead><tr><th>App</th><th>Utilité</th><th>Source</th><th>Statut</th></tr></thead>
@@ -651,61 +710,14 @@
             <tr><td>Zendesk Prioritizer / Priority Highlight</td><td>Extensions Chrome agents</td><td><span class="badge badge-purple">Doc Pixmania</span></td><td><span class="badge badge-gray">Chrome only</span></td></tr>
           </tbody>
         </table>
-        <div class="alert alert-yellow" style="margin-top:8px;">
-          <div class="alert-title" style="font-size:11px;">⚠ Autres apps à vérifier manuellement</div>
-          <div class="alert-body">L'API retourne uniquement les apps natives Zendesk. Les apps marketplace (Social Messaging, Round Robin, Linked Tickets, etc.) doivent être vérifiées dans Admin Center &gt; Apps et intégrations &gt; Applications installées.</div>
-        </div>
-        <div class="alert alert-red" style="margin-top:10px;">
+        <div class="alert alert-red" style="margin-top:8px;">
           <div class="alert-title" style="font-size:11px;">❌ App manquante critique : Select an Address</div>
-          <div class="alert-body">Sans cette app, toutes les réponses partent de support@pixmania.zendesk.com quelle que soit l'adresse de destination du client.</div>
+          <div class="alert-body">Sans cette app, toutes les réponses partent de support@pixmania.zendesk.com quelle que soit l'adresse d'entrée du client (ES, IT, FR).</div>
         </div>
-      </div>
-    </div>
-    <!-- CATÉGORIES FIELD -->
-    <div class="alert alert-orange" style="margin-top:14px;">
-      <div class="alert-title"><span class="badge badge-orange">C3</span> Champ "Catégories" bien conçu mais non connecté — 10 valeurs présentes, 0 sous-catégories, 0 routage</div>
-      <div class="alert-body">
-        Le champ <strong>Catégories</strong> contient déjà <strong>10 valeurs N1 bien pensées</strong> couvrant tout le parcours e-commerce Pixmania. Mais il n'est ni connecté aux triggers de routage, ni aux SLA, ni aux macros. C'est une fondation solide sous-exploitée : les agents sélectionnent la catégorie, mais rien ne se déclenche automatiquement derrière.
-        <br><br>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:8px 0;">
-          <div>
-            <strong style="font-size:11px;">Valeurs actuelles + feedback + sous-catégories recommandées</strong>
-            <table style="margin-top:6px;font-size:10px;">
-              <thead><tr><th>Catégorie N1 (existante)</th><th>Feedback</th><th>Sous-catégories N2 à créer</th></tr></thead>
-              <tbody>
-                <tr><td>🛒 Avant-vente</td><td><span class="badge badge-yellow">OK</span></td><td>Info produit · Conseil achat · Disponibilité</td></tr>
-                <tr><td>🛒 Commande</td><td><span class="badge badge-green">Priorité</span></td><td>Statut/suivi · Modification · Annulation · Problème</td></tr>
-                <tr><td>🚚 Livraison</td><td><span class="badge badge-green">Priorité</span></td><td>Retard · Colis perdu · Endommagé · Erreur adresse</td></tr>
-                <tr><td>📦 Produit reçu</td><td><span class="badge badge-orange">À fusionner ?</span></td><td>Conforme · Non conforme · Incomplet — peut rejoindre SAV</td></tr>
-                <tr><td>↩️ Retour</td><td><span class="badge badge-green">Priorité</span></td><td>Remboursement · Échange · Délai retour · Procédure</td></tr>
-                <tr><td>🔧 SAV</td><td><span class="badge badge-green">Priorité</span></td><td>Panne · Garantie · Réparation · Pièce détachée</td></tr>
-                <tr><td>💳 Remboursement</td><td><span class="badge badge-orange">Doublon ?</span></td><td>Statut remboursement · Délai · Non reçu — peut rejoindre Retour</td></tr>
-                <tr><td>💰 Financement</td><td><span class="badge badge-yellow">OK</span></td><td>Demande financement · Échéance · Litige</td></tr>
-                <tr><td>🎁 Services Pixmania</td><td><span class="badge badge-yellow">À préciser</span></td><td>Abonnement · Carte fidélité · Offre spéciale</td></tr>
-                <tr><td>👤 Compte client</td><td><span class="badge badge-yellow">OK</span></td><td>Accès/connexion · Données perso · Suppression compte</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div>
-            <strong style="font-size:11px;">Ce que ça débloque si connecté</strong>
-            <ul class="check-list" style="margin-top:6px;">
-              <li><strong>Routage automatique</strong> : Retour/SAV → groupe RVR/SAV · Remboursement → Finance · Livraison → Logistique</li>
-              <li><strong>SLA par catégorie</strong> : Remboursement = 4h · Livraison perdue = 4h · Commande = 8h · SAV = 24h</li>
-              <li><strong>Macros en dossiers</strong> : réorganiser les 145 macros par catégorie (Commande::, Retour::, SAV::, etc.)</li>
-              <li><strong>Copilot AI</strong> : procédures et articles HC taggués par catégorie → suggestions précises en temps réel</li>
-              <li><strong>Explore</strong> : volume par catégorie → identification des pics (ex: Remboursement explose en décembre)</li>
-              <li><strong>Champs conditionnels</strong> : si Retour → afficher "N° commande", si SAV → afficher "N° série produit"</li>
-            </ul>
-            <div class="alert alert-indigo" style="margin-top:8px;">
-              <div class="alert-body" style="font-size:10px;"><strong>Point à clarifier :</strong> "Remboursement" et "Retour" se chevauchent. Et "Produit reçu" pourrait rejoindre "SAV". Réduire à <strong>8 catégories claires</strong> (supprimer les doublons) avant de créer les sous-catégories. Les tags API <code>ia_cat_commande</code> (20) et <code>ia_escalade</code> (61) suggèrent que l'IA tente déjà de catégoriser — aligner les valeurs du champ sur ces tags permettrait une <strong>auto-complétion via trigger</strong>.</div>
-            </div>
-          </div>
-        </div>
-        <strong>Actions :</strong> (1) Auditer les 10 catégories : fusionner Remboursement dans Retour et Produit reçu dans SAV → 8 catégories. (2) Créer champs conditionnels N2 pour chaque N1. (3) Créer triggers de routage par catégorie (Retour → RVR/SAV, Financement → Finance). (4) Reconstruire les SLA sur le champ Catégorie. (5) Réorganiser les 145 macros en dossiers par catégorie.
       </div>
     </div>
 
-    <div class="grid grid-2" style="margin-top:14px;">
+    <div class="grid grid-2">
       <div class="card">
         <div class="section-label">Équipe (données API)</div>
         <div class="grid grid-4" style="gap:8px;margin-bottom:10px;">
@@ -752,8 +764,8 @@
   </div>
 </div>
 
-<!-- ══ SLIDE 9 : HELP CENTER & IA ══ -->
-<div class="slide" id="slide-9">
+<!-- ══ SLIDE 10 : HELP CENTER & IA ══ -->
+<div class="slide" id="slide-10">
   <div class="slide-header">
     <h2>📚 Help Center &amp; Intelligence Artificielle</h2>
     <span class="sh-badge">HC VIDE · COPILOT INACTIF · POTENTIEL ÉLEVÉ</span>
@@ -806,8 +818,8 @@
   </div>
 </div>
 
-<!-- ══ SLIDE 10 : SYNTHESE & PLAN D'ACTION ══ -->
-<div class="slide" id="slide-10">
+<!-- ══ SLIDE 11 : SYNTHESE & PLAN D'ACTION ══ -->
+<div class="slide" id="slide-11">
   <div class="slide-header">
     <h2>📋 Synthèse &amp; Plan d'action</h2>
     <span class="sh-badge">3 DOMAINES · 6 CRITIQUES · 15+ CORRECTIONS</span>
@@ -936,8 +948,8 @@
   </div>
 </div>
 
-<!-- ══ SLIDE 11 : OPPORTUNITES ══ -->
-<div class="slide" id="slide-11">
+<!-- ══ SLIDE 12 : OPPORTUNITES ══ -->
+<div class="slide" id="slide-12">
   <div class="slide-header">
     <h2>🚀 Opportunités &amp; Gains identifiés</h2>
     <span class="sh-badge">POTENTIEL DE TRANSFORMATION ÉLEVÉ</span>
@@ -984,8 +996,8 @@
   </div>
 </div>
 
-<!-- ══ SLIDE 12 : DASHBOARD KPI ══ -->
-<div class="slide" id="slide-12">
+<!-- ══ SLIDE 13 : DASHBOARD KPI ══ -->
+<div class="slide" id="slide-13">
   <div class="slide-header">
     <h2>📈 Dashboard KPI &amp; Scores par domaine</h2>
     <span class="sh-badge">DONNÉES API RÉELLES · NOVEMBRE 2026</span>
@@ -1109,8 +1121,8 @@
   </div>
 </div>
 
-<!-- ══ SLIDE 13 : MERCI ══ -->
-<div class="slide slide-dark" id="slide-13">
+<!-- ══ SLIDE 14 : MERCI ══ -->
+<div class="slide slide-dark" id="slide-14">
   <div class="cover-centered">
     <div style="font-size:48px;margin-bottom:16px;">🙏</div>
     <h1 style="font-size:clamp(26px,3.8vw,46px);font-weight:800;color:#fff;white-space:nowrap;margin-bottom:12px;">
@@ -1154,11 +1166,11 @@
   <button onclick="goTo(current-1)">←</button>
   <div class="dots" id="dots"></div>
   <button onclick="goTo(current+1)">→</button>
-  <span class="slide-counter" id="counter">1 / 13</span>
+  <span class="slide-counter" id="counter">1 / 14</span>
 </nav>
 
 <script>
-  const total = 13;
+  const total = 14;
   let current = 1;
   const logo = document.querySelector('.logo-fixed');
 
@@ -1180,7 +1192,7 @@
     document.getElementById('slide-' + current).classList.add('active');
     document.getElementById('counter').textContent = current + ' / ' + total;
     buildDots();
-    if (logo) logo.style.display = (current === 13) ? 'none' : '';
+    if (logo) logo.style.display = (current === 14) ? 'none' : '';
   }
 
   buildDots();
