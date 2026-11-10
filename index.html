@@ -191,19 +191,54 @@
       </div>
       <div class="card">
         <div class="section-label">✗ Problèmes détectés</div>
-        <ul class="check-list cross-list">
-          <li><strong>Statut "Fermé" = Pending</strong> : 10 482 tickets bloqués, rapports et SLA entièrement faussés</li>
-          <li><strong>8+ triggers cassés sur 43</strong> (RVSFR ×2, Espagne SC, Italie ×3, Cas juridique, PriceMinister) - routage silencieusement défaillant</li>
-          <li><strong>99,8% des tickets sans priorité</strong> : 222 Urgent sur 106 545 - les SLA ne s'appliquent jamais</li>
-          <li><strong>Aucun contenu dynamique</strong> : 4 triggers de notification identiques par langue au lieu d'1 seul</li>
-          <li><strong>Select an Address absent</strong> : toutes les réponses partent de support@pixmania.zendesk.com</li>
-          <li><strong>145 macros à 0 usage</strong> : existent mais les agents ne les utilisent pas ou ne les connaissent pas</li>
-          <li><strong>Help Center vide</strong> : 6 articles Zendesk par défaut, 0 contenu Pixmania, exposé publiquement</li>
-          <li><strong>11/18 automations inactives</strong> : CSAT off, Bump Bump Solve off, TrustPilot cassée</li>
-          <li><strong>Copilot désactivé</strong> malgré son inclusion dans le plan Zendesk actuel</li>
-          <li><strong>Champ Catégories non structuré</strong> : sans sous-catégories ni connexion au routage/SLA/macros</li>
-          <li><strong>SLA mal configurés</strong> : valeurs présentes (Urgent 1h, Normal 24h) mais déclenchement incorrect - 99,8% des tickets sans priorité, les SLA ne s'appliquent donc jamais en pratique</li>
-        </ul>
+        <table style="width:100%;border-collapse:collapse;font-size:10.5px;margin-top:6px;">
+          <tbody>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px 5px 0;vertical-align:top;white-space:nowrap;color:#EF4444;font-weight:700;padding-right:12px;">✗ Statut "Fermé" = Pending</td>
+              <td style="padding:5px 0;color:#374151;">10 482 tickets bloqués, rapports et SLA entièrement faussés</td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px 5px 0;vertical-align:top;white-space:nowrap;color:#EF4444;font-weight:700;padding-right:12px;">✗ 8+ triggers cassés sur 43</td>
+              <td style="padding:5px 0;color:#374151;">RVSFR ×2, Espagne SC, Italie ×3, Cas juridique, PriceMinister - routage silencieusement défaillant</td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px 5px 0;vertical-align:top;white-space:nowrap;color:#EF4444;font-weight:700;padding-right:12px;">✗ 99,8% tickets sans priorité</td>
+              <td style="padding:5px 0;color:#374151;">222 Urgent sur 106 545 - les SLA ne s'appliquent jamais</td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px 5px 0;vertical-align:top;white-space:nowrap;color:#EF4444;font-weight:700;padding-right:12px;">✗ Aucun contenu dynamique</td>
+              <td style="padding:5px 0;color:#374151;">4 triggers de notification identiques par langue au lieu d'1 seul</td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px 5px 0;vertical-align:top;white-space:nowrap;color:#EF4444;font-weight:700;padding-right:12px;">✗ Select an Address absent</td>
+              <td style="padding:5px 0;color:#374151;">Toutes les réponses partent de support@pixmania.zendesk.com</td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px 5px 0;vertical-align:top;white-space:nowrap;color:#EF4444;font-weight:700;padding-right:12px;">✗ 145 macros à 0 usage</td>
+              <td style="padding:5px 0;color:#374151;">Existent mais les agents ne les utilisent pas ou ne les connaissent pas</td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px 5px 0;vertical-align:top;white-space:nowrap;color:#EF4444;font-weight:700;padding-right:12px;">✗ Help Center vide</td>
+              <td style="padding:5px 0;color:#374151;">6 articles Zendesk par défaut, 0 contenu Pixmania, exposé publiquement</td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px 5px 0;vertical-align:top;white-space:nowrap;color:#EF4444;font-weight:700;padding-right:12px;">✗ 11/18 automations inactives</td>
+              <td style="padding:5px 0;color:#374151;">CSAT off, Bump Bump Solve off, TrustPilot cassée</td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px 5px 0;vertical-align:top;white-space:nowrap;color:#EF4444;font-weight:700;padding-right:12px;">✗ Copilot désactivé</td>
+              <td style="padding:5px 0;color:#374151;">Malgré son inclusion dans le plan Zendesk actuel</td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px 5px 0;vertical-align:top;white-space:nowrap;color:#EF4444;font-weight:700;padding-right:12px;">✗ Champ Catégories non utilisé</td>
+              <td style="padding:5px 0;color:#374151;">0 ticket renseigné - devrait être obligatoire pour le routage/SLA/reporting</td>
+            </tr>
+            <tr>
+              <td style="padding:5px 8px 5px 0;vertical-align:top;white-space:nowrap;color:#EF4444;font-weight:700;padding-right:12px;">✗ SLA mal configurés</td>
+              <td style="padding:5px 0;color:#374151;">Valeurs présentes (Urgent 1h, Normal 24h) mais déclenchement incorrect - ne s'appliquent jamais en pratique</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
