@@ -266,7 +266,7 @@
             <tr><td>Vision agents</td><td><span class="badge badge-red">Confusion opérationnelle</span> - un ticket "fermé" apparaît dans les vues actives</td></tr>
           </tbody>
         </table>
-        <br><br>L'API confirme <strong>10 482 tickets actuellement en statut "pending"</strong> sur 106 545 total (9,8%). Ce volume anormalement élevé est probablement lié à ce statut mal nommé : les agents ferment des tickets avec "Fermé" (qui est en réalité pending), les faisant s'accumuler sans être vraiment résolus.
+        <br><br><strong>10 482 tickets actuellement en statut "pending"</strong> sur 106 545 total (9,8%). Ce volume anormalement élevé est probablement lié à ce statut mal nommé : les agents ferment des tickets avec "Fermé" (qui est en réalité pending), les faisant s'accumuler sans être vraiment résolus.
         <br><br><strong>Action immédiate :</strong> Renommer ce statut en "En attente client" ou utiliser le statut natif Pending et supprimer la personnalisation incorrecte.
       </div>
     </div>
@@ -325,7 +325,7 @@
       <div class="alert-body">
         Les politiques SLA de Pixmania sont configurées <strong>par priorité de ticket</strong> (Urgent : 1h, Normal : 24h). Or le formulaire de ticket ne contient pas de champ Priorité, et aucun trigger ne définit automatiquement la priorité à la création. Résultat : tous les tickets restent sans priorité, les SLA ne s'appliquent jamais, et les métriques de délai sont inutilisables.
         <br><br>
-        L'API confirme : sur 106 545 tickets, seuls <strong>222 ont une priorité "Urgent"</strong>, 1 "Normal", et 0 "High" ou "Low". Soit 99,8% des tickets n'ont aucune priorité assignée. Les SLA qui se basent sur la priorité ne s'appliquent donc jamais.
+        Sur 106 545 tickets, seuls <strong>222 ont une priorité "Urgent"</strong>, 1 "Normal", et 0 "High" ou "Low". Soit 99,8% des tickets n'ont aucune priorité assignée. Les SLA qui se basent sur la priorité ne s'appliquent donc jamais.
         <br><br><strong>Action :</strong> Ajouter un trigger "Priorité par défaut au ticket créé" (Normal) + ajouter un champ Priorité conditionnel au formulaire pour les cas Urgent identifiés par le client.
       </div>
     </div>
