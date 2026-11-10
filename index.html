@@ -1138,18 +1138,21 @@
         </svg>
         </div>
         <div>
-          <div style="font-size:10px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Lecture du graphique</div>
-          <div style="font-size:11px;color:#374151;line-height:1.8;">
-            <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#EF4444;margin-right:5px;vertical-align:middle;"></span>Critique (&gt;80 tickets)<br>
-            <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#F97316;margin-right:5px;vertical-align:middle;"></span>Important (40-80)<br>
-            <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#8B5CF6;margin-right:5px;vertical-align:middle;"></span>Modéré (&lt;40)<br>
-            <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#F97316;opacity:.4;margin-right:5px;vertical-align:middle;"></span>Tag IA (non catégorie)
+          <div style="font-size:10px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">D'où viennent ces chiffres ?</div>
+          <div style="font-size:10px;color:#374151;line-height:1.7;margin-bottom:10px;">
+            Ces données proviennent de l'endpoint <code style="background:#F3F4F6;padding:1px 4px;border-radius:3px;">GET /api/v2/tags</code> de Zendesk, qui retourne les tags les plus utilisés sur les tickets des 7 derniers jours. Les tags <strong>remboursement</strong>, <strong>commande</strong>, <strong>sav</strong>, etc. sont ajoutés manuellement par les agents ou automatiquement par des triggers — ils reflètent les sujets réels traités.
           </div>
-          <div style="margin-top:12px;font-size:10px;color:#9CA3AF;line-height:1.6;border-top:1px solid #E5E7EB;padding-top:8px;">
-            Source : API /tags (7j). Ces tags sont apposés librement sur les tickets — ils reflètent les sujets réels mais ne sont pas structurés comme un champ catégorie.
+          <div style="font-size:10px;font-weight:700;color:#F97316;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;">Tags IA (lignes grises)</div>
+          <div style="font-size:10px;color:#374151;line-height:1.7;margin-bottom:10px;">
+            <code style="background:#F3F4F6;padding:1px 4px;border-radius:3px;">ia_escalade</code> et <code style="background:#F3F4F6;padding:1px 4px;border-radius:3px;">ia_cat_commande</code> sont apposés <em>automatiquement</em> par l'IA Zendesk — pas par les agents. Ils prouvent que l'IA tente de traiter et catégoriser les tickets, mais sans base de connaissances (HC vide), elle escalade systématiquement.
           </div>
-          <div class="alert alert-red" style="margin-top:10px;padding:8px 10px;">
-            <div class="alert-body" style="font-size:10px;"><strong>remboursement</strong> représente le double du volume de commande. Sans SLA ni routage dédié, ces tickets attendent en file commune avec des demandes moins urgentes.</div>
+          <div class="alert alert-red" style="padding:8px 10px;">
+            <div class="alert-body" style="font-size:10px;line-height:1.6;"><strong>Problème clé : le champ Catégories existe mais n'est pas utilisé.</strong><br>Pixmania a créé un champ structuré (11 valeurs N1) mais les agents ne le renseignent pas — 0 ticket catégorisé via ce champ. Ce graphique repose donc sur des tags libres, non sur une donnée fiable. <strong>Ce champ devrait être obligatoire</strong> : il est la seule source d'information structurée sur le type de demande, indispensable pour le routage, les SLA et le reporting Explore.</div>
+          </div>
+          <div style="margin-top:8px;font-size:10px;color:#6B7280;line-height:1.6;border-top:1px solid #E5E7EB;padding-top:8px;">
+            <span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#EF4444;margin-right:4px;vertical-align:middle;"></span>Critique (&gt;80) &nbsp;
+            <span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#F97316;margin-right:4px;vertical-align:middle;"></span>Important (40-80) &nbsp;
+            <span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#8B5CF6;margin-right:4px;vertical-align:middle;"></span>Modéré (&lt;40)
           </div>
         </div>
       </div>
