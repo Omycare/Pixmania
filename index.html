@@ -356,6 +356,50 @@
         Copilot (Auto Assist) est <strong>inclus dans le plan actuel de Pixmania mais désactivé</strong>. Cette fonctionnalité permet aux agents de recevoir des suggestions de réponse en temps réel basées sur les procédures et le Help Center. Sans activation, les agents n'ont aucune assistance IA en cours de traitement de ticket.
         <br><br>
         <strong>Action :</strong> Activer l'Auto Assist dans Admin Center &gt; IA &gt; Agent Copilot.
+        <br><br>
+        <strong>Flux recommandés basés sur le volume de tickets réel :</strong>
+        <table style="width:100%;border-collapse:collapse;font-size:10px;margin-top:8px;">
+          <thead>
+            <tr style="background:rgba(249,115,22,.1);">
+              <th style="text-align:left;padding:5px 8px;color:#92400E;font-weight:700;">Flux Copilot</th>
+              <th style="text-align:left;padding:5px 8px;color:#92400E;font-weight:700;">Volume</th>
+              <th style="text-align:left;padding:5px 8px;color:#92400E;font-weight:700;">Groupe cible</th>
+              <th style="text-align:left;padding:5px 8px;color:#92400E;font-weight:700;">Ce que Copilot fait</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px;font-weight:600;">Remboursement</td>
+              <td style="padding:5px 8px;color:#EF4444;font-weight:700;">108 tickets/sem</td>
+              <td style="padding:5px 8px;">Finance</td>
+              <td style="padding:5px 8px;color:#374151;">Suggère la procédure de remboursement + délais légaux (14j), pré-remplit le tag <code>remboursement</code></td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px;font-weight:600;">Suivi commande</td>
+              <td style="padding:5px 8px;color:#F97316;font-weight:700;">61 tickets/sem</td>
+              <td style="padding:5px 8px;">Service Client FR/ES/IT</td>
+              <td style="padding:5px 8px;color:#374151;">Suggère réponse avec lien tracking, guide vers espace client, réduit les échanges redondants</td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px;font-weight:600;">Escalade IA</td>
+              <td style="padding:5px 8px;color:#F97316;font-weight:700;">61 escalades/sem</td>
+              <td style="padding:5px 8px;">SC N2</td>
+              <td style="padding:5px 8px;color:#374151;">Dès que le tag <code>ia_escalade</code> est présent, Copilot propose le contexte de l'escalade et la procédure N2 adaptée</td>
+            </tr>
+            <tr style="border-bottom:1px solid #FEE2E2;">
+              <td style="padding:5px 8px;font-weight:600;">SAV / Retour produit</td>
+              <td style="padding:5px 8px;color:#8B5CF6;font-weight:700;">48 tickets/sem</td>
+              <td style="padding:5px 8px;">RVR/SAV</td>
+              <td style="padding:5px 8px;color:#374151;">Suggère les étapes de création bon de retour, délais transporteur, conditions SAV selon le produit</td>
+            </tr>
+            <tr>
+              <td style="padding:5px 8px;font-weight:600;">Problème livraison</td>
+              <td style="padding:5px 8px;color:#8B5CF6;font-weight:700;">24 tickets/sem</td>
+              <td style="padding:5px 8px;">Logistique</td>
+              <td style="padding:5px 8px;color:#374151;">Suggère procédure colis perdu/retardé, coordonnées transporteur, déclenchement enquête transporteur si &gt;5j</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
