@@ -252,11 +252,24 @@
     </div>
 
     <div class="alert alert-red">
-      <div class="alert-title"><span class="badge badge-red">C2</span> Email personnel avec erreurs SPF + adresse non fonctionnelle</div>
+      <div class="alert-title"><span class="badge badge-red">C2</span> 5 adresses email en erreur ou avertissement sur 6 configurées</div>
       <div class="alert-body">
-        L'audit révèle <strong>des erreurs SPF et une erreur de transfert</strong> sur l'une des adresses email connectées. L'email default reste <code>support@pixmania.zendesk.com</code> (URL Zendesk exposée). Les clients qui écrivent à l'adresse défaillante ne reçoivent pas d'accusé de réception et leur demande peut ne jamais parvenir aux agents.
+        L'audit des canaux email révèle que <strong>seule l'adresse Zendesk par défaut est vérifiée</strong>. Les 5 autres adresses métier présentent des erreurs ou avertissements actifs. Sans l'app "Select an Address" (C1), toutes les réponses partent de <code>support@pixmania.zendesk.com</code> quelle que soit l'adresse d'entrée.
         <br><br>
-        <strong>Action :</strong> Vérifier SPF/DKIM/DMARC dans Admin Center &gt; Canaux &gt; Email. Corriger le forwarding de chaque adresse.
+        <table style="font-size:10px;">
+          <thead><tr><th>Adresse email</th><th>Type</th><th>Statut</th></tr></thead>
+          <tbody>
+            <tr><td><code>support@pixmania.zendesk.com</code></td><td>Système (par défaut)</td><td><span class="badge badge-green">Vérifié</span></td></tr>
+            <tr><td><code>service-client@pixmania.com</code></td><td>Transfer</td><td><span class="badge badge-yellow">⚠ Avertissement</span></td></tr>
+            <tr><td><code>service@pixmania.com</code></td><td>Connecteur Gmail</td><td><span class="badge badge-yellow">⚠ Avertissement</span></td></tr>
+            <tr><td><code>servicios-clientes@pixmania.com</code></td><td>Connecteur Gmail</td><td><span class="badge badge-yellow">⚠ Avertissement</span></td></tr>
+            <tr><td><code>servicioLcliente@pixmania.com</code></td><td>Connecteur Gmail</td><td><span class="badge badge-yellow">⚠ Avertissement</span></td></tr>
+            <tr><td><code>service-client@priceminister.live</code></td><td>Transfer</td><td><span class="badge badge-red">✗ Échec</span></td></tr>
+          </tbody>
+        </table>
+        <br>L'adresse PriceMinister est en <strong>échec complet</strong> : les clients qui écrivent à cette adresse ne sont jamais pris en charge. Un trigger (PriceMinister SC N2) est toujours basé sur cette adresse cassée. Les 4 adresses en "Avertissement" (Gmail Connector) indiquent des problèmes SPF/DKIM qui dégradent la délivrabilité et peuvent faire passer les réponses en spam.
+        <br><br>
+        <strong>Actions :</strong> Admin Center &gt; Canaux &gt; Email : corriger le forwarding Gmail, supprimer ou archiver l'adresse PriceMinister, désactiver le trigger associé.
       </div>
     </div>
 
@@ -323,6 +336,17 @@
         Seules 2 des 8 automations sont actives cette semaine. Les autres cumulent 0 exécution : CSAT désactivé, Bump Bump Solve inactif, TrustPilot cassé (condition sur un canal supprimé), et 2 automations qui devraient être des triggers. Ce volume d'inactivité indique une configuration qui ne correspond plus au workflow réel.
         <br><br>
         <strong>Action :</strong> Révision complète des 8 automations : supprimer les cassées, convertir en triggers les logiques création/tag, réactiver CSAT et Bump Bump Solve.
+      </div>
+    </div>
+
+    <div class="alert alert-yellow">
+      <div class="alert-title"><span class="badge badge-yellow">C5</span> "Demandes anonymes" activé — friction supplémentaire pour les clients</div>
+      <div class="alert-body">
+        L'option <strong>"Demandes anonymes" est activée</strong> dans les paramètres de sécurité Zendesk. Concrètement, lorsqu'un client tente de soumettre un formulaire de ticket (via le widget ou le Help Center), il doit d'abord <strong>valider son email via un lien de confirmation</strong> avant que sa demande soit enregistrée. Pour une marque e-commerce grand public comme Pixmania, cette étape supplémentaire crée de la friction et dissuade les clients de terminer leur démarche.
+        <br><br>
+        Cette configuration contribue probablement au constat : <strong>0 ticket créé via le widget Web</strong>, malgré son activation. Les clients abandonnent avant la validation.
+        <br><br>
+        <strong>Action :</strong> Admin Center &gt; Compte &gt; Sécurité &gt; Vérification des utilisateurs finaux — désactiver "Demandes anonymes" et permettre la soumission directe. Surveiller l'impact sur la qualité des demandes.
       </div>
     </div>
 
