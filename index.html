@@ -152,13 +152,13 @@
       </div>
       <div class="card stat">
         <div class="stat-num" style="color:#EF4444;">145</div>
-        <div class="stat-label">Macros — 0 usage</div>
+        <div class="stat-label">Macros - 0 usage</div>
         <div class="stat-sub">145 créées, aucune utilisée cette semaine</div>
       </div>
       <div class="card stat">
         <div class="stat-num" style="color:#EF4444;">Fermé</div>
         <div class="stat-label">Statut mal nommé</div>
-        <div class="stat-sub">"En attente" renommé "Fermé" — brise les rapports</div>
+        <div class="stat-sub">"En attente" renommé "Fermé" - brise les rapports</div>
       </div>
     </div>
     <div class="card" style="margin-bottom:14px;">
@@ -185,7 +185,6 @@
       <div class="card">
         <div class="section-label">✓ Points forts</div>
         <ul class="check-list">
-          <li>39 vues configurées avec structure de base solide et emojis (par statut, canal, priorité)</li>
           <li>Facebook Messenger actif : canal social configuré et opérationnel</li>
           <li>On-hold actif : statut "En pause" correctement utilisé pour les tickets en attente fournisseur</li>
         </ul>
@@ -194,8 +193,8 @@
         <div class="section-label">✗ Problèmes détectés</div>
         <ul class="check-list cross-list">
           <li><strong>Statut "Fermé" = Pending</strong> : 10 482 tickets bloqués, rapports et SLA entièrement faussés</li>
-          <li><strong>8+ triggers cassés sur 43</strong> (RVSFR ×2, Espagne SC, Italie ×3, Cas juridique, PriceMinister) — routage silencieusement défaillant</li>
-          <li><strong>99,8% des tickets sans priorité</strong> : 222 Urgent sur 106 545 — les SLA ne s'appliquent jamais</li>
+          <li><strong>8+ triggers cassés sur 43</strong> (RVSFR ×2, Espagne SC, Italie ×3, Cas juridique, PriceMinister) - routage silencieusement défaillant</li>
+          <li><strong>99,8% des tickets sans priorité</strong> : 222 Urgent sur 106 545 - les SLA ne s'appliquent jamais</li>
           <li><strong>Aucun contenu dynamique</strong> : 4 triggers de notification identiques par langue au lieu d'1 seul</li>
           <li><strong>Select an Address absent</strong> : toutes les réponses partent de support@pixmania.zendesk.com</li>
           <li><strong>145 macros à 0 usage</strong> : existent mais les agents ne les utilisent pas ou ne les connaissent pas</li>
@@ -203,7 +202,7 @@
           <li><strong>11/18 automations inactives</strong> : CSAT off, Bump Bump Solve off, TrustPilot cassée</li>
           <li><strong>Copilot désactivé</strong> malgré son inclusion dans le plan Zendesk actuel</li>
           <li><strong>Champ Catégories non structuré</strong> : sans sous-catégories ni connexion au routage/SLA/macros</li>
-          <li><strong>SLA mal configurés</strong> : valeurs présentes (Urgent 1h, Normal 24h) mais déclenchement incorrect — 99,8% des tickets sans priorité, les SLA ne s'appliquent donc jamais en pratique</li>
+          <li><strong>SLA mal configurés</strong> : valeurs présentes (Urgent 1h, Normal 24h) mais déclenchement incorrect - 99,8% des tickets sans priorité, les SLA ne s'appliquent donc jamais en pratique</li>
         </ul>
       </div>
     </div>
@@ -219,17 +218,17 @@
   <div class="slide-body">
 
     <div class="alert alert-red">
-      <div class="alert-title"><span class="badge badge-red">C1</span> Statut "En attente" renommé "Fermé" — brise l'ensemble du système</div>
+      <div class="alert-title"><span class="badge badge-red">C1</span> Statut "En attente" renommé "Fermé" - brise l'ensemble du système</div>
       <div class="alert-body">
         Un statut personnalisé "En attente" (Pending) a été renommé <strong>"Fermé"</strong>. Cette confusion entre deux états fondamentalement opposés a des conséquences directes sur :
         <br><br>
         <table>
           <thead><tr><th>Élément impacté</th><th>Conséquence</th></tr></thead>
           <tbody>
-            <tr><td>Rapports Explore</td><td><span class="badge badge-red">Données faussées</span> — les tickets "fermés" sont en réalité en attente</td></tr>
-            <tr><td>Automations de relance</td><td><span class="badge badge-red">Ne se déclenchent pas</span> — elles ciblent "En attente", pas "Fermé"</td></tr>
-            <tr><td>SLA</td><td><span class="badge badge-red">Métriques incorrectes</span> — le délai de résolution est mesuré sur un mauvais état</td></tr>
-            <tr><td>Vision agents</td><td><span class="badge badge-red">Confusion opérationnelle</span> — un ticket "fermé" apparaît dans les vues actives</td></tr>
+            <tr><td>Rapports Explore</td><td><span class="badge badge-red">Données faussées</span> - les tickets "fermés" sont en réalité en attente</td></tr>
+            <tr><td>Automations de relance</td><td><span class="badge badge-red">Ne se déclenchent pas</span> - elles ciblent "En attente", pas "Fermé"</td></tr>
+            <tr><td>SLA</td><td><span class="badge badge-red">Métriques incorrectes</span> - le délai de résolution est mesuré sur un mauvais état</td></tr>
+            <tr><td>Vision agents</td><td><span class="badge badge-red">Confusion opérationnelle</span> - un ticket "fermé" apparaît dans les vues actives</td></tr>
           </tbody>
         </table>
         <br><br>L'API confirme <strong>10 482 tickets actuellement en statut "pending"</strong> sur 106 545 total (9,8%). Ce volume anormalement élevé est probablement lié à ce statut mal nommé : les agents ferment des tickets avec "Fermé" (qui est en réalité pending), les faisant s'accumuler sans être vraiment résolus.
@@ -238,7 +237,7 @@
     </div>
 
     <div class="alert alert-red">
-      <div class="alert-title"><span class="badge badge-red">C1</span> App "Select an Address" absente — toutes les réponses viennent de support@pixmania.zendesk.com</div>
+      <div class="alert-title"><span class="badge badge-red">C1</span> App "Select an Address" absente - toutes les réponses viennent de support@pixmania.zendesk.com</div>
       <div class="alert-body">
         Pixmania utilise plusieurs adresses email (FR, ES, IT, etc.), mais sans l'app "Select an Address", <strong>chaque réponse agent part automatiquement de l'adresse par défaut</strong> : <code>support@pixmania.zendesk.com</code>. Les clients qui ont écrit à une adresse personnalisée (ex: support@pixmania.es) reçoivent une réponse depuis une adresse zendesk.com générique. Impact direct sur la confiance client et la cohérence de marque.
         <br><br>
@@ -278,7 +277,7 @@
     </div>
 
     <div class="alert alert-red">
-      <div class="alert-title"><span class="badge badge-red">C2</span> Aucun contenu dynamique — duplication massive de toute la configuration</div>
+      <div class="alert-title"><span class="badge badge-red">C2</span> Aucun contenu dynamique - duplication massive de toute la configuration</div>
       <div class="alert-body">
         Pixmania opère en <strong>plusieurs langues (FR, ES, IT au minimum)</strong>. Sans contenu dynamique (Dynamic Content), chaque notification, macro et trigger doit être dupliqué par langue. Résultat : 4 triggers de notification identiques au lieu d'un seul, risque de désynchronisation entre les versions, et maintenance impossible à l'échelle.
         <br><br>
@@ -287,7 +286,7 @@
     </div>
 
     <div class="alert alert-red">
-      <div class="alert-title"><span class="badge badge-red">C2</span> Champ Priorité absent du formulaire — SLA non applicable</div>
+      <div class="alert-title"><span class="badge badge-red">C2</span> Champ Priorité absent du formulaire - SLA non applicable</div>
       <div class="alert-body">
         Les politiques SLA de Pixmania sont configurées <strong>par priorité de ticket</strong> (Urgent : 1h, Normal : 24h). Or le formulaire de ticket ne contient pas de champ Priorité, et aucun trigger ne définit automatiquement la priorité à la création. Résultat : tous les tickets restent sans priorité, les SLA ne s'appliquent jamais, et les métriques de délai sont inutilisables.
         <br><br>
@@ -326,7 +325,7 @@
     </div>
 
     <div class="alert alert-orange">
-      <div class="alert-title"><span class="badge badge-orange">C4</span> Widget présent mais non configuré — 0 ticket créé via ce canal</div>
+      <div class="alert-title"><span class="badge badge-orange">C4</span> Widget présent mais non configuré - 0 ticket créé via ce canal</div>
       <div class="alert-body">
         Un widget Web est actif avec <strong>une réponse automatique basique et aucune personnalisation</strong>. L'audit indique 0 ticket créé via ce canal : le widget ne semble pas installé sur le site pixmania.com, ou son accès est bloqué. Sans IA Agent ou formulaire de contact dans le widget, ce canal ne contribue à aucune déflexion.
         <br><br>
@@ -344,18 +343,18 @@
     </div>
 
     <div class="alert alert-yellow">
-      <div class="alert-title"><span class="badge badge-yellow">C5</span> "Demandes anonymes" activé — friction supplémentaire pour les clients</div>
+      <div class="alert-title"><span class="badge badge-yellow">C5</span> "Demandes anonymes" activé - friction supplémentaire pour les clients</div>
       <div class="alert-body">
         L'option <strong>"Demandes anonymes" est activée</strong> dans les paramètres de sécurité Zendesk. Concrètement, lorsqu'un client tente de soumettre un formulaire de ticket (via le widget ou le Help Center), il doit d'abord <strong>valider son email via un lien de confirmation</strong> avant que sa demande soit enregistrée. Pour une marque e-commerce grand public comme Pixmania, cette étape supplémentaire crée de la friction et dissuade les clients de terminer leur démarche.
         <br><br>
         Cette configuration contribue probablement au constat : <strong>0 ticket créé via le widget Web</strong>, malgré son activation. Les clients abandonnent avant la validation.
         <br><br>
-        <strong>Action :</strong> Admin Center &gt; Compte &gt; Sécurité &gt; Vérification des utilisateurs finaux — désactiver "Demandes anonymes" et permettre la soumission directe. Surveiller l'impact sur la qualité des demandes.
+        <strong>Action :</strong> Admin Center &gt; Compte &gt; Sécurité &gt; Vérification des utilisateurs finaux - désactiver "Demandes anonymes" et permettre la soumission directe. Surveiller l'impact sur la qualité des demandes.
       </div>
     </div>
 
     <div class="alert alert-orange">
-      <div class="alert-title"><span class="badge badge-orange">C5</span> SLA basés sur des tags — approche non recommandée</div>
+      <div class="alert-title"><span class="badge badge-orange">C5</span> SLA basés sur des tags - approche non recommandée</div>
       <div class="alert-body">
         Les politiques SLA existantes sont déclenchées <strong>par des tags plutôt que par des champs de ticket</strong>. Cette approche est fragile : un tag manquant ou mal appliqué rend la politique SLA inopérante. De plus, plusieurs SLA ont les mêmes paramètres et pourraient être fusionnés. Sans trigger définissant automatiquement la priorité (voir C2), aucun SLA ne s'applique réellement.
         <br><br>
@@ -364,7 +363,7 @@
     </div>
 
     <div class="alert alert-orange">
-      <div class="alert-title"><span class="badge badge-orange">C5</span> 145 macros configurées — aucune utilisée cette semaine</div>
+      <div class="alert-title"><span class="badge badge-orange">C5</span> 145 macros configurées - aucune utilisée cette semaine</div>
       <div class="alert-body">
         Le compte contient <strong>145 macros configurées</strong>, mais l'API confirme <strong>0 utilisation sur les 7 derniers jours</strong>. Deux explications possibles : les macros ne correspondent plus aux besoins réels (nommage obsolète, contenu dépassé), ou les agents ne les connaissent pas / ne savent pas les utiliser. Dans les deux cas, la productivité agents est impactée : les réponses sont rédigées manuellement sur chaque ticket.
         <br><br>
@@ -439,23 +438,23 @@
           <tr><td>Mise à jour ticket en pause</td><td>Action : assigner au "current user" sans condition pertinente. Objectif incompréhensible. À revoir.</td><td><span class="badge badge-red">Critique</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/47506474776337" target="_blank" class="zd-link">↗</a></td></tr>
           <tr><td>RVSFR</td><td>Trigger cassé (broken)</td><td><span class="badge badge-red">Critique</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/15503908183313" target="_blank" class="zd-link">↗</a></td></tr>
           <tr><td>RVSFR o</td><td>Trigger cassé (broken)</td><td><span class="badge badge-red">Critique</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/15511180641937" target="_blank" class="zd-link">↗</a></td></tr>
-          <tr><td>Espagne MAIL SC</td><td>Format incorrect : seule condition dans "ANY" et aucune dans "ALL" — logique non fonctionnelle</td><td><span class="badge badge-red">Critique</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/21242996269073" target="_blank" class="zd-link">↗</a></td></tr>
-          <tr><td>Italie SC / Italie MAIL SC / Espagne SC</td><td>Condition "ticket créé" manquante — peut se déclencher sur des mises à jour non souhaitées</td><td><span class="badge badge-red">Critique</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/30681296967697" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/30681459293969" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/18950467157649" target="_blank" class="zd-link">↗</a></td></tr>
-          <tr><td>Cas juridique</td><td>Deux conditions incompatibles dans "ALL" — trigger jamais exécuté</td><td><span class="badge badge-red">Critique</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/48388501864337" target="_blank" class="zd-link">↗</a></td></tr>
+          <tr><td>Espagne MAIL SC</td><td>Format incorrect : seule condition dans "ANY" et aucune dans "ALL" - logique non fonctionnelle</td><td><span class="badge badge-red">Critique</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/21242996269073" target="_blank" class="zd-link">↗</a></td></tr>
+          <tr><td>Italie SC / Italie MAIL SC / Espagne SC</td><td>Condition "ticket créé" manquante - peut se déclencher sur des mises à jour non souhaitées</td><td><span class="badge badge-red">Critique</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/30681296967697" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/30681459293969" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/18950467157649" target="_blank" class="zd-link">↗</a></td></tr>
+          <tr><td>Cas juridique</td><td>Deux conditions incompatibles dans "ALL" - trigger jamais exécuté</td><td><span class="badge badge-red">Critique</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/48388501864337" target="_blank" class="zd-link">↗</a></td></tr>
           <tr><td>PriceMinister SC N2</td><td>Basé sur un email non connecté/non fonctionnel</td><td><span class="badge badge-red">Critique</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/51762443684241" target="_blank" class="zd-link">↗</a></td></tr>
-          <tr><td>France MAIL SC</td><td>Seule condition dans "ANY" — usage de ANY avec 1 seule valeur est logiquement incorrect</td><td><span class="badge badge-orange">Important</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/10370723752465" target="_blank" class="zd-link">↗</a></td></tr>
-          <tr><td>Transfert SC N2</td><td>Condition de mise à jour manquante — risque de boucle. Objectif à clarifier.</td><td><span class="badge badge-orange">Important</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/51100707555857" target="_blank" class="zd-link">↗</a></td></tr>
+          <tr><td>France MAIL SC</td><td>Seule condition dans "ANY" - usage de ANY avec 1 seule valeur est logiquement incorrect</td><td><span class="badge badge-orange">Important</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/10370723752465" target="_blank" class="zd-link">↗</a></td></tr>
+          <tr><td>Transfert SC N2</td><td>Condition de mise à jour manquante - risque de boucle. Objectif à clarifier.</td><td><span class="badge badge-orange">Important</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/51100707555857" target="_blank" class="zd-link">↗</a></td></tr>
           <tr><td>4 triggers notifications langue (FR/ES/IT/...)</td><td>Devraient être 1 seul trigger avec contenu dynamique</td><td><span class="badge badge-orange">Important</span></td><td></td></tr>
-          <tr><td>IA flux N8N / Appels entrants / IA engagement</td><td>0 utilisation cette semaine — vérifier si actifs et pertinents. Pour N8N : le flux IA est-il fonctionnel ? Pour Appels entrants : condition basée sur le groupe "Team Pix" avant assignation, ce qui peut expliquer le 0 déclenchement. Pour IA engagement : nécessite contexte pour évaluer l'utilité des tags ia_action_requise / retour_conseillers.</td><td><span class="badge badge-orange">Important</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52064204512657" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52714477588753" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52714368878097" target="_blank" class="zd-link">↗</a></td></tr>
-          <tr><td>Affecter automatiquement au premier agent répondant par e-mail</td><td>Trigger inactif — logique de round-robin par email non active.</td><td><span class="badge badge-orange">Inactif</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/51762443684241" target="_blank" class="zd-link">↗</a></td></tr>
-          <tr><td>Priority normal when ticket created</td><td>Trigger inactif — ce trigger devrait pourtant être actif pour que les SLA se déclenchent (99,8% des tickets n'ont pas de priorité).</td><td><span class="badge badge-red">Critique (inactif)</span></td><td></td></tr>
+          <tr><td>IA flux N8N / Appels entrants / IA engagement</td><td>0 utilisation cette semaine - vérifier si actifs et pertinents. Pour N8N : le flux IA est-il fonctionnel ? Pour Appels entrants : condition basée sur le groupe "Team Pix" avant assignation, ce qui peut expliquer le 0 déclenchement. Pour IA engagement : nécessite contexte pour évaluer l'utilité des tags ia_action_requise / retour_conseillers.</td><td><span class="badge badge-orange">Important</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52064204512657" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52714477588753" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52714368878097" target="_blank" class="zd-link">↗</a></td></tr>
+          <tr><td>Affecter automatiquement au premier agent répondant par e-mail</td><td>Trigger inactif - logique de round-robin par email non active.</td><td><span class="badge badge-orange">Inactif</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/51762443684241" target="_blank" class="zd-link">↗</a></td></tr>
+          <tr><td>Priority normal when ticket created</td><td>Trigger inactif - ce trigger devrait pourtant être actif pour que les SLA se déclenchent (99,8% des tickets n'ont pas de priorité).</td><td><span class="badge badge-red">Critique (inactif)</span></td><td></td></tr>
           <tr><td>France SC Pixmania</td><td>Bon exemple à prendre comme modèle pour les autres : conditions ALL (ticket créé + canal email) bien structurées.</td><td><span class="badge badge-green">OK</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/10251311724817" target="_blank" class="zd-link">↗</a></td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="card" style="margin-bottom:14px;">
-      <div class="section-label">Macros : 145 créées — 0 utilisées cette semaine (données API)</div>
+      <div class="section-label">Macros : 145 créées - 0 utilisées cette semaine (données API)</div>
       <div style="display:flex;align-items:center;gap:16px;margin-top:8px;">
         <div style="flex:1;">
           <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;"><span>Macros utilisées (7 derniers jours)</span><span style="font-weight:700;color:#991B1B;">0 / 145</span></div>
@@ -472,8 +471,8 @@
         <tbody>
           <tr><td>TrustPilot</td><td>Cassée : condition basée sur un canal qui n'existe plus dans le compte</td><td><span class="badge badge-red">Critique</span></td></tr>
           <tr><td>Tâche de rappel réouverture / Tickets en pause réouvert</td><td>Doublon apparent, logique de trigger plutôt que d'automation, objectif à clarifier</td><td><span class="badge badge-red">Critique</span></td></tr>
-          <tr><td>Bump Bump Solve</td><td>Inactive — relance clients absente</td><td><span class="badge badge-orange">Important</span></td></tr>
-          <tr><td>CSAT</td><td>Inactive — enquêtes de satisfaction non envoyées</td><td><span class="badge badge-orange">Important</span></td></tr>
+          <tr><td>Bump Bump Solve</td><td>Inactive - relance clients absente</td><td><span class="badge badge-orange">Important</span></td></tr>
+          <tr><td>CSAT</td><td>Inactive - enquêtes de satisfaction non envoyées</td><td><span class="badge badge-orange">Important</span></td></tr>
           <tr><td>Inbound Calls / Outbound Calls / RSFR</td><td>Actions de création et tags : devraient être des triggers, pas des automations</td><td><span class="badge badge-orange">Important</span></td></tr>
         </tbody>
       </table>
@@ -503,7 +502,7 @@
       <div class="card stat">
         <div class="stat-num" style="color:#22C55E;">1h</div>
         <div class="stat-label">SLA Urgent (configuré)</div>
-        <div class="stat-sub">24h pour Normal — mais non déclenché</div>
+        <div class="stat-sub">24h pour Normal - mais non déclenché</div>
       </div>
     </div>
 
@@ -530,10 +529,10 @@
     <div class="card">
       <div class="section-label">Plan de reconstruction SLA recommandé</div>
       <div style="font-size:11px;color:var(--text-mid);line-height:1.8;">
-        <strong>Étape 1</strong> : Créer un schedule "Heures ouvrées FR" (Lun–Sam 8h–20h, Europe/Paris) — prérequis de tout SLA<br>
+        <strong>Étape 1</strong> : Créer un schedule "Heures ouvrées FR" (Lun–Sam 8h–20h, Europe/Paris) - prérequis de tout SLA<br>
         <strong>Étape 2</strong> : Créer un trigger "Priorité par défaut : Normale" sur tout ticket créé sans priorité assignée<br>
-        <strong>Étape 3</strong> : Reconstruire les SLA basés sur <strong>champ Priorité + champ Catégorie</strong> (non sur des tags) — ex: Remboursement = Haute priorité = 4h réponse<br>
-        <strong>Étape 4</strong> : Activer les métriques SLA en "heures ouvrées" (business hours) — pas en temps continu 24/7<br>
+        <strong>Étape 3</strong> : Reconstruire les SLA basés sur <strong>champ Priorité + champ Catégorie</strong> (non sur des tags) - ex: Remboursement = Haute priorité = 4h réponse<br>
+        <strong>Étape 4</strong> : Activer les métriques SLA en "heures ouvrées" (business hours) - pas en temps continu 24/7<br>
         <strong>Étape 5</strong> : Activer l'automation Bump Bump Solve (relance 24h + 5 jours si ticket toujours en attente)<br>
         <strong>Étape 6</strong> : Activer l'automation CSAT (enquête satisfaction 24h après résolution)<br><br>
         <strong style="font-size:11px;">SLA recommandés par catégorie :</strong>
@@ -599,7 +598,7 @@
             <li>Vue par langue (FR / ES / IT) pour les équipes par marché</li>
             <li>Vue par groupe / équipe pour les superviseurs</li>
             <li>Vue "Tickets escaladés SC N2" pour le suivi des escalades</li>
-            <li>Vue "Nouveaux tickets" (status = New, non assignés) — vue critique manquante</li>
+            <li>Vue "Nouveaux tickets" (status = New, non assignés) - vue critique manquante</li>
           </ul>
         </div>
       </div>
@@ -615,8 +614,8 @@
   </div>
   <div class="slide-body">
     <div class="alert alert-orange" style="margin-bottom:14px;">
-      <div class="alert-title"><span class="badge badge-orange">C3</span> Champ "Catégories" bien conçu mais non connecté — fondation solide sous-exploitée</div>
-      <div class="alert-body">Le champ <strong>Catégories</strong> contient déjà <strong>10 valeurs N1</strong> couvrant tout le parcours e-commerce Pixmania. Mais il n'est ni connecté aux triggers de routage, ni aux SLA, ni aux macros. Les agents sélectionnent la catégorie — rien ne se déclenche automatiquement derrière. L'IA génère déjà le tag <code>ia_cat_commande</code> (20 tickets cette semaine) : aligner le champ sur ces tags permettrait une auto-complétion via trigger.</div>
+      <div class="alert-title"><span class="badge badge-orange">C3</span> Champ "Catégories" bien conçu mais non connecté - fondation solide sous-exploitée</div>
+      <div class="alert-body">Le champ <strong>Catégories</strong> contient déjà <strong>10 valeurs N1</strong> couvrant tout le parcours e-commerce Pixmania. Mais il n'est ni connecté aux triggers de routage, ni aux SLA, ni aux macros. Les agents sélectionnent la catégorie - rien ne se déclenche automatiquement derrière. L'IA génère déjà le tag <code>ia_cat_commande</code> (20 tickets cette semaine) : aligner le champ sur ces tags permettrait une auto-complétion via trigger.</div>
     </div>
     <div class="grid grid-2">
       <div class="card">
@@ -644,9 +643,9 @@
         <div class="card" style="margin-bottom:12px;">
           <div class="section-label">Ce que le champ Catégories débloque si connecté</div>
           <ul class="check-list" style="margin-top:8px;">
-            <li><strong>Routage automatique par groupe</strong> : Retour/SAV → RVR/SAV · Remboursement → Finance · Livraison → Logistique — aujourd'hui ces assignments sont manuels ou inexistants</li>
-            <li><strong>SLA différenciés par catégorie</strong> : Remboursement = 4h · Livraison perdue = 4h · Commande = 8h · SAV = 24h — aujourd'hui les SLA ne se déclenchent jamais (99,8% sans priorité)</li>
-            <li><strong>Macros organisées en dossiers</strong> : réorganiser les 145 macros par catégorie (Commande:: · Retour:: · SAV::) — aujourd'hui 0 utilisation cette semaine</li>
+            <li><strong>Routage automatique par groupe</strong> : Retour/SAV → RVR/SAV · Remboursement → Finance · Livraison → Logistique - aujourd'hui ces assignments sont manuels ou inexistants</li>
+            <li><strong>SLA différenciés par catégorie</strong> : Remboursement = 4h · Livraison perdue = 4h · Commande = 8h · SAV = 24h - aujourd'hui les SLA ne se déclenchent jamais (99,8% sans priorité)</li>
+            <li><strong>Macros organisées en dossiers</strong> : réorganiser les 145 macros par catégorie (Commande:: · Retour:: · SAV::) - aujourd'hui 0 utilisation cette semaine</li>
             <li><strong>Copilot AI ciblé</strong> : procédures et articles HC taggués par catégorie → suggestions précises en temps réel aux agents</li>
             <li><strong>Reporting Explore par catégorie</strong> : identifier les pics de volume (ex: Remboursement explose en décembre, SAV en janvier après Noël)</li>
             <li><strong>Champs conditionnels</strong> : si Retour → afficher "N° commande requis" · si SAV → afficher "N° série produit"</li>
@@ -655,7 +654,7 @@
         <div class="card" style="background:#FFF7ED;border:1px solid #F97316;">
           <div class="section-label" style="color:#9A3412;">Plan d'action Catégories (5 étapes)</div>
           <div style="font-size:11px;color:#374151;line-height:1.9;">
-            <strong>Étape 1</strong> : Auditer les 10 valeurs N1 — fusionner Remboursement → Retour et Produit reçu → SAV pour obtenir 8 catégories propres<br>
+            <strong>Étape 1</strong> : Auditer les 10 valeurs N1 - fusionner Remboursement → Retour et Produit reçu → SAV pour obtenir 8 catégories propres<br>
             <strong>Étape 2</strong> : Créer les sous-catégories N2 par champ conditionnel (Admin Center &gt; Objets &gt; Tickets &gt; Champs)<br>
             <strong>Étape 3</strong> : Créer triggers de routage par catégorie : Retour/SAV → groupe RVR/SAV · Financement → Finance · Logistique → Logistique<br>
             <strong>Étape 4</strong> : Reconstruire les politiques SLA sur le champ Catégorie + Priorité (supprimer les SLA tags-based)<br>
@@ -679,7 +678,7 @@
         <div class="section-label">Formulaires &amp; champs de ticket</div>
         <div class="alert alert-yellow" style="margin-bottom:8px;">
           <div class="alert-title" style="font-size:11px;">1 seul formulaire de ticket</div>
-          <div class="alert-body">Pas de formulaire par type de demande. Les champs conditionnels pour les sous-catégories sont absents. <strong>Le champ Priorité est manquant</strong> — bloque tous les SLA.</div>
+          <div class="alert-body">Pas de formulaire par type de demande. Les champs conditionnels pour les sous-catégories sont absents. <strong>Le champ Priorité est manquant</strong> - bloque tous les SLA.</div>
         </div>
         <table style="font-size:10px;margin-bottom:6px;">
           <thead><tr><th>Champ</th><th>Statut</th></tr></thead>
@@ -689,7 +688,7 @@
             <tr><td>Résumé</td><td><span class="badge badge-yellow">Rempli manuellement</span></td></tr>
             <tr><td>Transfert SC N2 demandé</td><td><span class="badge badge-yellow">À connecter aux triggers</span></td></tr>
             <tr><td>Info Call</td><td><span class="badge badge-yellow">Usage à vérifier</span></td></tr>
-            <tr><td>Priorité</td><td><span class="badge badge-red">ABSENT — bloque les SLA</span></td></tr>
+            <tr><td>Priorité</td><td><span class="badge badge-red">ABSENT - bloque les SLA</span></td></tr>
           </tbody>
         </table>
         <div class="section-label" style="margin-top:10px;">Champs utilisateur</div>
@@ -701,7 +700,7 @@
       <div class="card" style="grid-column: span 2;">
         <div class="section-label">Apps installées (confirmées)</div>
         <div class="alert alert-indigo" style="margin-bottom:8px;">
-          <div class="alert-body" style="font-size:10px;">Sources : API Zendesk (4 apps) + document de travail Pixmania. D'autres apps peuvent exister — vérifier dans Admin Center &gt; Apps et intégrations &gt; Applications installées.</div>
+          <div class="alert-body" style="font-size:10px;">Sources : API Zendesk (4 apps) + document de travail Pixmania. D'autres apps peuvent exister - vérifier dans Admin Center &gt; Apps et intégrations &gt; Applications installées.</div>
         </div>
         <table>
           <thead><tr><th>App</th><th>Utilité</th><th>Source</th><th>Statut</th></tr></thead>
@@ -793,7 +792,7 @@
           <div class="alert-body">Le site pixmania.com contient une FAQ. Ce contenu n'est pas importé dans le Help Center Zendesk : les agents n'y ont pas accès depuis l'interface de ticket, et l'IA Copilot ne peut pas s'en servir pour les suggestions de réponse.</div>
         </div>
         <div class="alert alert-orange">
-          <div class="alert-title">🟠 Copilot désactivé — valeur immédiate disponible</div>
+          <div class="alert-title">🟠 Copilot désactivé - valeur immédiate disponible</div>
           <div class="alert-body">L'Auto Assist Copilot est inclus dans le plan actuel mais entièrement désactivé. Une fois activé et alimenté par des procédures (commandes, retours, réclamations), les agents reçoivent des suggestions de réponse en temps réel, réduisant le temps de traitement moyen de 20-30%.</div>
         </div>
       </div>
@@ -802,7 +801,7 @@
         <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px;">
           <div style="display:flex;gap:10px;align-items:flex-start;">
             <div style="width:24px;height:24px;border-radius:50%;background:#EF4444;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
-            <div style="font-size:11px;color:var(--text-mid);"><strong>Semaine 1 :</strong> Désactiver l'accès public au HC. Rédiger les 10 articles prioritaires alignés sur les top tags API : remboursement, commande, livraison, retour, SAV — 2 articles par catégorie N1</div>
+            <div style="font-size:11px;color:var(--text-mid);"><strong>Semaine 1 :</strong> Désactiver l'accès public au HC. Rédiger les 10 articles prioritaires alignés sur les top tags API : remboursement, commande, livraison, retour, SAV - 2 articles par catégorie N1</div>
           </div>
           <div style="display:flex;gap:10px;align-items:flex-start;">
             <div style="width:24px;height:24px;border-radius:50%;background:#F97316;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
@@ -810,7 +809,7 @@
           </div>
           <div style="display:flex;gap:10px;align-items:flex-start;">
             <div style="width:24px;height:24px;border-radius:50%;background:#EAB308;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
-            <div style="font-size:11px;color:var(--text-mid);"><strong>Mois 1 :</strong> Activer la recherche générative dans le HC. Configurer AI Agent sur le widget pour les questions "Où est ma commande ?" et "Comment retourner ?" — les deux catégories les plus fréquentes</div>
+            <div style="font-size:11px;color:var(--text-mid);"><strong>Mois 1 :</strong> Activer la recherche générative dans le HC. Configurer AI Agent sur le widget pour les questions "Où est ma commande ?" et "Comment retourner ?" - les deux catégories les plus fréquentes</div>
           </div>
           <div style="display:flex;gap:10px;align-items:flex-start;">
             <div style="width:24px;height:24px;border-radius:50%;background:#22C55E;color:white;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;">4</div>
@@ -839,15 +838,15 @@
         <table style="width:100%;border-collapse:collapse;font-size:10px;">
           <thead><tr style="background:#F3F4F6;"><th style="text-align:left;padding:4px 6px;font-weight:600;color:#374151;">Observation</th><th style="padding:4px 6px;white-space:nowrap;">Priorité</th></tr></thead>
           <tbody>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Statut "En attente" renommé "Fermé"</strong> — brise les rapports, automations et SLA</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Select an Address absent</strong> — toutes réponses depuis support@pixmania.zendesk.com</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Champ Priorité manquant</strong> dans le formulaire — SLA non applicable</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Statut "En attente" renommé "Fermé"</strong> - brise les rapports, automations et SLA</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Select an Address absent</strong> - toutes réponses depuis support@pixmania.zendesk.com</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Champ Priorité manquant</strong> dans le formulaire - SLA non applicable</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">SPF errors + email non fonctionnel sur une adresse email configurée</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Branding : 0 logo, 0 couleurs, URL zendesk.com exposée, watermark email</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Champ Catégories non structuré</strong> : sans sous-catégories, non connecté au routage ni aux SLA</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">1 seul formulaire, sans champs conditionnels — les sous-catégories s'affichent selon la catégorie choisie</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">1 seul formulaire, sans champs conditionnels - les sous-catégories s'affichent selon la catégorie choisie</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Vues : pas de dossiers, vue SLA en danger inutilisable</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">145 macros configurées mais 0 utilisées cette semaine — à auditer et réorganiser</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">145 macros configurées mais 0 utilisées cette semaine - à auditer et réorganiser</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Groupes : distribution à valider, pas de signatures agents personnalisées</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
             <tr><td style="padding:5px 6px;color:#166534;">13 vues configurées avec structure de base solide et emojis</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
           </tbody>
@@ -863,13 +862,13 @@
           <thead><tr style="background:#F3F4F6;"><th style="text-align:left;padding:4px 6px;font-weight:600;color:#374151;">Observation</th><th style="padding:4px 6px;white-space:nowrap;">Priorité</th></tr></thead>
           <tbody>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>8+ triggers cassés sur 43</strong> (19 inactifs) : RVSFR ×2, Espagne MAIL SC, Italie/Espagne SC ×3, Cas juridique, PriceMinister</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Aucun contenu dynamique</strong> — 4 triggers langue dupliqués (devraient être 1 seul)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Ordre des triggers désorganisé — l'ordre impacte directement le comportement</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">TrustPilot automation cassée — condition sur canal supprimé</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Aucun contenu dynamique</strong> - 4 triggers langue dupliqués (devraient être 1 seul)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Ordre des triggers désorganisé - l'ordre impacte directement le comportement</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">TrustPilot automation cassée - condition sur canal supprimé</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Mise à jour ticket en pause : logique incompréhensible, à revoir</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">11/18 automations inactives · 145 macros à 0 usage cette semaine</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">CSAT inactif — enquêtes de satisfaction non envoyées</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Bump Bump Solve inactif — relances clients absentes</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">CSAT inactif - enquêtes de satisfaction non envoyées</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Bump Bump Solve inactif - relances clients absentes</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">SLA basés sur tags (non recommandé), aucun trigger de priorité par défaut</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Flux N8N, Appels entrants, IA engagement : 0 usage cette semaine</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr><td style="padding:5px 6px;color:#166534;">France SC Pixmania : bon trigger de référence pour les autres</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
@@ -885,14 +884,14 @@
         <table style="width:100%;border-collapse:collapse;font-size:10px;">
           <thead><tr style="background:#F3F4F6;"><th style="text-align:left;padding:4px 6px;font-weight:600;color:#374151;">Observation</th><th style="padding:4px 6px;white-space:nowrap;">Priorité</th></tr></thead>
           <tbody>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Help Center vide</strong> exposé publiquement — image de marque et déflexion nulles</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Help Center vide</strong> exposé publiquement - image de marque et déflexion nulles</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Copilot désactivé</strong> malgré son inclusion dans le plan Zendesk</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun AI Agent Chat — pas de résolution autonome des demandes simples</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Widget Web présent mais 0 ticket créé — probablement non installé sur le site</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun AI Agent Chat - pas de résolution autonome des demandes simples</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Widget Web présent mais 0 ticket créé - probablement non installé sur le site</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Facebook connecté : vérifier si canal est à jour et correctement configuré</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Formulaire de contact client : connexion directe Zendesk non visible / non vérifiée</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun dashboard Explore personnalisé — reporting limité aux vues par défaut</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">FAQ du site non intégrée — agents n'y ont pas accès depuis l'interface</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun dashboard Explore personnalisé - reporting limité aux vues par défaut</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">FAQ du site non intégrée - agents n'y ont pas accès depuis l'interface</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun rapport Explore basé sur les champs personnalisés (catégorie, statut personnalisé)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr><td style="padding:5px 6px;color:#166534;">On-hold actif : statut "En pause" correctement utilisé</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
           </tbody>
@@ -975,7 +974,7 @@
       <div class="card">
         <div style="font-size:22px;margin-bottom:6px;">🤖</div>
         <div class="section-label">AI Agent pour déflexion e-commerce</div>
-        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Un AI Agent Chat peut répondre automatiquement aux questions récurrentes de type "Où est ma commande ?", "Comment retourner ?", "Paiement confirmé ?" — les premiers sujets de contact selon les tags API. <strong>Estimation : 20-35% des tickets résolus sans agent.</strong></p>
+        <p style="font-size:11px;color:var(--text-mid);margin-bottom:8px;">Un AI Agent Chat peut répondre automatiquement aux questions récurrentes de type "Où est ma commande ?", "Comment retourner ?", "Paiement confirmé ?" - les premiers sujets de contact selon les tags API. <strong>Estimation : 20-35% des tickets résolus sans agent.</strong></p>
         <span class="badge badge-orange">Impact : Élevé</span>
       </div>
       <div class="card">
@@ -1011,7 +1010,7 @@
       <div class="card stat"><div class="stat-num">106 545</div><div class="stat-label">Tickets total (API)</div><div class="stat-sub">200 new · 2 104 open · 10 482 pending · 493 solved</div></div>
       <div class="card stat"><div class="stat-num" style="color:#F97316;">59%</div><div class="stat-label">Score CSAT (API)</div><div class="stat-sub">24 bons · 17 mauvais · 41 notes au total</div></div>
       <div class="card stat"><div class="stat-num">24</div><div class="stat-label">Agents actifs (API)</div><div class="stat-sub">5 admins · 14 agents · 14 groupes</div></div>
-      <div class="card stat"><div class="stat-num" style="color:#EF4444;">145</div><div class="stat-label">Macros — 0 usage</div><div class="stat-sub">Aucune macro utilisée cette semaine</div></div>
+      <div class="card stat"><div class="stat-num" style="color:#EF4444;">145</div><div class="stat-label">Macros - 0 usage</div><div class="stat-sub">Aucune macro utilisée cette semaine</div></div>
     </div>
 
     <div class="grid" style="gap:14px;margin-bottom:14px;">
@@ -1076,10 +1075,10 @@
     <div class="card" style="margin-top:14px;margin-bottom:14px;">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:4px;">
         <div class="section-label">Top tags actifs · Données API /tags (7 derniers jours)</div>
-        <span style="font-size:10px;color:#9CA3AF;font-style:italic;">⚠️ Source : tags généraux — pas le champ Catégories</span>
+        <span style="font-size:10px;color:#9CA3AF;font-style:italic;">⚠️ Source : tags généraux - pas le champ Catégories</span>
       </div>
       <div class="alert alert-red" style="margin-bottom:12px;padding:7px 10px;">
-        <div class="alert-body" style="font-size:10px;"><strong>Champ Catégories (#48221916978833) : 0 tickets renseignés</strong> — Les agents ne complètent pas ce champ. Les données ci-dessous proviennent des <em>tags libres</em> du compte, non du champ personnalisé. L'analyse par catégorie réelle est impossible en l'état.</div>
+        <div class="alert-body" style="font-size:10px;"><strong>Champ Catégories (#48221916978833) : 0 tickets renseignés</strong> - Les agents ne complètent pas ce champ. Les données ci-dessous proviennent des <em>tags libres</em> du compte, non du champ personnalisé. L'analyse par catégorie réelle est impossible en l'état.</div>
       </div>
       <div style="display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:24px;align-items:start;">
         <div style="max-width:520px;">
@@ -1135,14 +1134,14 @@
         <div>
           <div style="font-size:10px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">D'où viennent ces chiffres ?</div>
           <div style="font-size:10px;color:#374151;line-height:1.7;margin-bottom:10px;">
-            Ces données proviennent de l'endpoint <code style="background:#F3F4F6;padding:1px 4px;border-radius:3px;">GET /api/v2/tags</code> de Zendesk, qui retourne les tags les plus utilisés sur les tickets des 7 derniers jours. Les tags <strong>remboursement</strong>, <strong>commande</strong>, <strong>sav</strong>, etc. sont ajoutés manuellement par les agents ou automatiquement par des triggers — ils reflètent les sujets réels traités.
+            Ces données proviennent de l'endpoint <code style="background:#F3F4F6;padding:1px 4px;border-radius:3px;">GET /api/v2/tags</code> de Zendesk, qui retourne les tags les plus utilisés sur les tickets des 7 derniers jours. Les tags <strong>remboursement</strong>, <strong>commande</strong>, <strong>sav</strong>, etc. sont ajoutés manuellement par les agents ou automatiquement par des triggers - ils reflètent les sujets réels traités.
           </div>
           <div style="font-size:10px;font-weight:700;color:#F97316;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;">Tags IA (lignes grises)</div>
           <div style="font-size:10px;color:#374151;line-height:1.7;margin-bottom:10px;">
-            <code style="background:#F3F4F6;padding:1px 4px;border-radius:3px;">ia_escalade</code> et <code style="background:#F3F4F6;padding:1px 4px;border-radius:3px;">ia_cat_commande</code> sont apposés <em>automatiquement</em> par l'IA Zendesk — pas par les agents. Ils prouvent que l'IA tente de traiter et catégoriser les tickets, mais sans base de connaissances (HC vide), elle escalade systématiquement.
+            <code style="background:#F3F4F6;padding:1px 4px;border-radius:3px;">ia_escalade</code> et <code style="background:#F3F4F6;padding:1px 4px;border-radius:3px;">ia_cat_commande</code> sont apposés <em>automatiquement</em> par l'IA Zendesk - pas par les agents. Ils prouvent que l'IA tente de traiter et catégoriser les tickets, mais sans base de connaissances (HC vide), elle escalade systématiquement.
           </div>
           <div class="alert alert-red" style="padding:8px 10px;">
-            <div class="alert-body" style="font-size:10px;line-height:1.6;"><strong>Problème clé : le champ Catégories existe mais n'est pas utilisé.</strong><br>Pixmania a créé un champ structuré (11 valeurs N1) mais les agents ne le renseignent pas — 0 ticket catégorisé via ce champ. Ce graphique repose donc sur des tags libres, non sur une donnée fiable. <strong>Ce champ devrait être obligatoire</strong> : il est la seule source d'information structurée sur le type de demande, indispensable pour le routage, les SLA et le reporting Explore.</div>
+            <div class="alert-body" style="font-size:10px;line-height:1.6;"><strong>Problème clé : le champ Catégories existe mais n'est pas utilisé.</strong><br>Pixmania a créé un champ structuré (11 valeurs N1) mais les agents ne le renseignent pas - 0 ticket catégorisé via ce champ. Ce graphique repose donc sur des tags libres, non sur une donnée fiable. <strong>Ce champ devrait être obligatoire</strong> : il est la seule source d'information structurée sur le type de demande, indispensable pour le routage, les SLA et le reporting Explore.</div>
           </div>
           <div style="margin-top:8px;font-size:10px;color:#6B7280;line-height:1.6;border-top:1px solid #E5E7EB;padding-top:8px;">
             <span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:#EF4444;margin-right:4px;vertical-align:middle;"></span>Critique (&gt;80) &nbsp;
@@ -1157,8 +1156,8 @@
       <div class="section-label" style="margin-bottom:8px;">Analyse des données API · Ce que les chiffres révèlent</div>
       <div class="grid grid-4" style="margin-bottom:10px;">
         <div class="card" style="border-top:3px solid #F97316;">
-          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">59% CSAT — Très faible</div>
-          <div style="font-size:10px;color:#6B7280;line-height:1.6;">Benchmark e-commerce : 80%+. Seulement 41 notes sur 106K tickets (0,04% de taux de réponse). L'automation CSAT est inactive — les enquêtes ne sont pas envoyées après résolution.</div>
+          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">59% CSAT - Très faible</div>
+          <div style="font-size:10px;color:#6B7280;line-height:1.6;">Benchmark e-commerce : 80%+. Seulement 41 notes sur 106K tickets (0,04% de taux de réponse). L'automation CSAT est inactive - les enquêtes ne sont pas envoyées après résolution.</div>
           <div style="margin-top:7px;font-size:10px;font-weight:700;color:#9A3412;">→ Activer automation CSAT (24h après résolution)</div>
         </div>
         <div class="card" style="border-top:3px solid #EF4444;">
@@ -1179,18 +1178,18 @@
       </div>
       <div class="grid grid-3">
         <div class="card" style="border-left:4px solid #EF4444;">
-          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">Help Center &amp; IA : 5% — Score le plus bas</div>
-          <div style="font-size:10px;color:#6B7280;line-height:1.6;">0 article publié, Copilot inactif, 0 AI Agent, HC public vide. Pourtant les tags <code>ia_*</code> prouvent que Zendesk essaie d'utiliser l'IA — sans contenu pour alimenter les réponses. Le potentiel de gain est le plus élevé du compte.</div>
+          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">Help Center &amp; IA : 5% - Score le plus bas</div>
+          <div style="font-size:10px;color:#6B7280;line-height:1.6;">0 article publié, Copilot inactif, 0 AI Agent, HC public vide. Pourtant les tags <code>ia_*</code> prouvent que Zendesk essaie d'utiliser l'IA - sans contenu pour alimenter les réponses. Le potentiel de gain est le plus élevé du compte.</div>
           <div style="margin-top:7px;"><span class="badge badge-red">Priorité absolue</span></div>
         </div>
         <div class="card" style="border-left:4px solid #EF4444;">
           <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">Triggers &amp; Automations : 15%</div>
-          <div style="font-size:10px;color:#6B7280;line-height:1.6;">8+ triggers cassés sur 43. Ordre d'exécution désorganisé — impact direct sur le routage et les notifications. 10/18 automations à 0 utilisation cette semaine. TrustPilot cassé, CSAT inactif, Bump Bump Solve inactif.</div>
+          <div style="font-size:10px;color:#6B7280;line-height:1.6;">8+ triggers cassés sur 43. Ordre d'exécution désorganisé - impact direct sur le routage et les notifications. 10/18 automations à 0 utilisation cette semaine. TrustPilot cassé, CSAT inactif, Bump Bump Solve inactif.</div>
           <div style="margin-top:7px;font-size:10px;font-weight:700;color:#9A3412;">Refactorisation complète : 43 → 10-12 triggers clairs</div>
         </div>
         <div class="card" style="border-left:4px solid #F97316;">
           <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">145 macros · 0 utilisées · Score global 26%</div>
-          <div style="font-size:10px;color:#6B7280;line-height:1.6;">145 réponses prédéfinies créées, aucune utilisée. Chaque agent rédige chaque réponse manuellement. Le score global de 26% reflète un compte configuré de base mais jamais optimisé. L'infrastructure existe — l'enjeu est de l'activer.</div>
+          <div style="font-size:10px;color:#6B7280;line-height:1.6;">145 réponses prédéfinies créées, aucune utilisée. Chaque agent rédige chaque réponse manuellement. Le score global de 26% reflète un compte configuré de base mais jamais optimisé. L'infrastructure existe - l'enjeu est de l'activer.</div>
           <div style="margin-top:7px;"><span class="badge badge-orange">Fort potentiel de gain rapide</span></div>
         </div>
       </div>
