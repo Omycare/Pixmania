@@ -1118,6 +1118,49 @@
         </div>
       </div>
     </div>
+
+    <div style="margin-top:14px;">
+      <div class="section-label" style="margin-bottom:8px;">Analyse des données API · Ce que les chiffres révèlent</div>
+      <div class="grid grid-4" style="margin-bottom:10px;">
+        <div class="card" style="border-top:3px solid #F97316;">
+          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">59% CSAT — Très faible</div>
+          <div style="font-size:10px;color:#6B7280;line-height:1.6;">Benchmark e-commerce : 80%+. Seulement 41 notes sur 106K tickets (0,04% de taux de réponse). L'automation CSAT est inactive — les enquêtes ne sont pas envoyées après résolution.</div>
+          <div style="margin-top:7px;font-size:10px;font-weight:700;color:#9A3412;">→ Activer automation CSAT (24h après résolution)</div>
+        </div>
+        <div class="card" style="border-top:3px solid #EF4444;">
+          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">10 482 tickets "pending" bloqués</div>
+          <div style="font-size:10px;color:#6B7280;line-height:1.6;">9,8% du volume total bloqué dans le statut "Fermé" (pending). Bump Bump Solve inactif → aucune relance automatique. Ces tickets ne sont ni traités ni clôturés réellement.</div>
+          <div style="margin-top:7px;font-size:10px;font-weight:700;color:#9A3412;">→ Renommer statut + activer Bump Bump Solve</div>
+        </div>
+        <div class="card" style="border-top:3px solid #8B5CF6;">
+          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">Tag "remboursement" #1 cette semaine</div>
+          <div style="font-size:10px;color:#6B7280;line-height:1.6;">108 occurrences = sujet le plus fréquent, sans SLA spécifique (&lt;4h recommandé), sans macro dédiée (0 usage), sans routage automatique vers le groupe Finance.</div>
+          <div style="margin-top:7px;font-size:10px;font-weight:700;color:#9A3412;">→ Macro Remboursement + SLA 4h + trigger Finance</div>
+        </div>
+        <div class="card" style="border-top:3px solid #F97316;">
+          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">61 escalades IA cette semaine</div>
+          <div style="font-size:10px;color:#6B7280;line-height:1.6;">Le tag <code>ia_escalade</code> (61 occurrences) = autant que les demandes commande. L'IA tente de traiter mais escalade faute de base de connaissances. Copilot inactif, HC vide.</div>
+          <div style="margin-top:7px;font-size:10px;font-weight:700;color:#9A3412;">→ Alimenter HC + activer Copilot AI</div>
+        </div>
+      </div>
+      <div class="grid grid-3">
+        <div class="card" style="border-left:4px solid #EF4444;">
+          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">Help Center &amp; IA : 5% — Score le plus bas</div>
+          <div style="font-size:10px;color:#6B7280;line-height:1.6;">0 article publié, Copilot inactif, 0 AI Agent, HC public vide. Pourtant les tags <code>ia_*</code> prouvent que Zendesk essaie d'utiliser l'IA — sans contenu pour alimenter les réponses. Le potentiel de gain est le plus élevé du compte.</div>
+          <div style="margin-top:7px;"><span class="badge badge-red">Priorité absolue</span></div>
+        </div>
+        <div class="card" style="border-left:4px solid #EF4444;">
+          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">Triggers &amp; Automations : 15%</div>
+          <div style="font-size:10px;color:#6B7280;line-height:1.6;">8+ triggers cassés sur 43. Ordre d'exécution désorganisé — impact direct sur le routage et les notifications. 10/18 automations à 0 utilisation cette semaine. TrustPilot cassé, CSAT inactif, Bump Bump Solve inactif.</div>
+          <div style="margin-top:7px;font-size:10px;font-weight:700;color:#9A3412;">Refactorisation complète : 43 → 10-12 triggers clairs</div>
+        </div>
+        <div class="card" style="border-left:4px solid #F97316;">
+          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">145 macros · 0 utilisées · Score global 26%</div>
+          <div style="font-size:10px;color:#6B7280;line-height:1.6;">145 réponses prédéfinies créées, aucune utilisée. Chaque agent rédige chaque réponse manuellement. Le score global de 26% reflète un compte configuré de base mais jamais optimisé. L'infrastructure existe — l'enjeu est de l'activer.</div>
+          <div style="margin-top:7px;"><span class="badge badge-orange">Fort potentiel de gain rapide</span></div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
