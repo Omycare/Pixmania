@@ -869,72 +869,111 @@
   <div class="slide-body" style="padding:10px 16px 72px;">
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px;">
 
-      <!-- COL 1 : Structure & Configuration -->
+      <!-- COL 1 : Structure et sécurité -->
       <div>
         <div style="background:linear-gradient(135deg,#7C3AED,#A855F7);border-radius:10px;padding:8px 12px;margin-bottom:8px;">
-          <span style="font-size:11px;font-weight:700;color:#fff;letter-spacing:.5px;">Structure &amp; Configuration</span>
+          <span style="font-size:11px;font-weight:700;color:#fff;letter-spacing:.5px;">Structure &amp; Sécurité</span>
         </div>
-        <table style="width:100%;border-collapse:collapse;font-size:10px;">
-          <thead><tr style="background:#F3F4F6;"><th style="text-align:left;padding:4px 6px;font-weight:600;color:#374151;">Observation</th><th style="padding:4px 6px;white-space:nowrap;">Priorité</th></tr></thead>
-          <tbody>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Statut "En attente" renommé "Fermé"</strong> - brise les rapports, automations et SLA</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Select an Address absent</strong> - toutes réponses depuis support@pixmania.zendesk.com</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Champ Priorité manquant</strong> dans le formulaire - SLA non applicable</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">SPF errors + email non fonctionnel sur une adresse email configurée</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Branding : 0 logo, 0 couleurs, URL zendesk.com exposée, watermark email</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Champ Catégories non structuré</strong> : sans sous-catégories, non connecté au routage ni aux SLA</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">1 seul formulaire, sans champs conditionnels - les sous-catégories s'affichent selon la catégorie choisie</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Vues : 5 vues personnelles agents, doublon Marché FR, pas de dossiers - vue "SLA en danger" absente (à créer)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">145 macros dont 2 très utilisées (ANNULATION AVANT VALIDATION 1 : 217, ANCIENS CLIENT PIX &lt;2022 : 195) - 143 autres à 0, organisation en dossiers "::" absente</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Groupes : distribution à valider, pas de signatures agents personnalisées</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
-            <tr><td style="padding:5px 6px;color:#166534;">13 vues configurées avec structure de base solide et emojis</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
-          </tbody>
-        </table>
+        <div style="font-size:9.5px;color:#374151;line-height:1.55;">
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:4px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Adresses e-mail personnalisées</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Connectées mais avec erreurs : erreurs SPF présentes + erreur de transfert sur une des adresses.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Adresse par défaut : <code style="font-size:8px;">support@pixmania.zendesk.com</code> — les réponses sont envoyées depuis cette adresse car Select an Address n'est pas installé.</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Compte</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Aucune personnalisation de la marque : ni logo ni couleurs.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Domaine non mappé. Préférer <code style="font-size:8px;">support.pixmania.com</code> à une URL Zendesk.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Copilot désactivé, y compris les fonctionnalités déjà incluses dans le plan.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Demandes anonymes activées : les utilisateurs doivent valider leur adresse e-mail via un lien avant de soumettre une demande.</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Modèle d'e-mail</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Pied de page affiche toujours la mention Zendesk. Aucune personnalisation de la marque (logo, couleurs).</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Groupes</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Vérifier si la répartition est adaptée et comprendre comment les escalades sont gérées.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Aucune signature personnalisée pour les agents.</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Vues</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Créer des dossiers pour organiser les vues par groupes.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Ajouter des émojis pour identifier rapidement chaque vue.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Vues importantes manquantes (ex : tickets non affectés). Organisation peu claire.</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Canaux</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Aucun agent IA ni chat.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Widget actif avec réponse basique et sans personnalisation. 0 ticket créé via ce canal - probablement non installé sur le site.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Facebook connecté pour messages privés via l'ancien système.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Formulaire client : connexion à Zendesk non vérifiable (login requis pour accéder au site).</div>
+          <div style="padding:2px 0 3px;">🟡 Aucune conversation annexe active.</div>
+        </div>
       </div>
 
-      <!-- COL 2 : Automatisation & Routage -->
+      <!-- COL 2 : Processus et automatisation -->
       <div>
         <div style="background:linear-gradient(135deg,#DB2777,#F97316);border-radius:10px;padding:8px 12px;margin-bottom:8px;">
-          <span style="font-size:11px;font-weight:700;color:#fff;letter-spacing:.5px;">Automatisation &amp; Routage</span>
+          <span style="font-size:11px;font-weight:700;color:#fff;letter-spacing:.5px;">Processus &amp; Automatisation</span>
         </div>
-        <table style="width:100%;border-collapse:collapse;font-size:10px;">
-          <thead><tr style="background:#F3F4F6;"><th style="text-align:left;padding:4px 6px;font-weight:600;color:#374151;">Observation</th><th style="padding:4px 6px;white-space:nowrap;">Priorité</th></tr></thead>
-          <tbody>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>8+ triggers cassés sur 43</strong> (19 inactifs) : RVSFR ×2, Espagne MAIL SC, Italie/Espagne SC ×3, Cas juridique, PriceMinister</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Aucun contenu dynamique</strong> - 4 triggers langue dupliqués (devraient être 1 seul)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Ordre des triggers désorganisé - l'ordre impacte directement le comportement</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">TrustPilot automation cassée - condition sur canal supprimé</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Mise à jour ticket en pause : logique incompréhensible, à revoir</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">11/18 automations inactives · 145 macros dont 143 à 0 usage (2 concentrent 412 utilisations/sem)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">CSAT inactif - enquêtes de satisfaction non envoyées</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Bump Bump Solve inactif - relances clients absentes</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">SLA basés sur tags (non recommandé), aucun trigger de priorité par défaut</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Flux N8N, Appels entrants, IA engagement : 0 usage cette semaine</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr><td style="padding:5px 6px;color:#166534;">France SC Pixmania : bon trigger de référence pour les autres</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
-          </tbody>
-        </table>
+        <div style="font-size:9.5px;color:#374151;line-height:1.55;">
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:4px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Déclencheurs</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Désorganisés, catégories mal exploitées.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Conditions basées sur le groupe sélectionné - très risqué si l'affectation n'est pas automatique. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/360136841118" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a> <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52069203826961" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 4 triggers de mise à jour basés sur la langue dupliqués - le contenu dynamique permettrait de n'en avoir qu'un seul.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Mise à jour ticket en pause → logique incompréhensible, conditions insuffisantes. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/47506474776337" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Ordre des triggers désorganisé - l'ordre impacte directement le comportement.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 France MAIL SC : seule condition dans "Au moins une" - logiquement incorrect. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/10370723752465" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 RVSFR → Défectueux. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/15503908183313" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Espagne MAIL SC → Configuration incorrecte : seule condition dans "Au moins une", aucune dans "Toutes". <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/21242996269073" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟢 France SC Pixmania → Bon exemple de configuration à reproduire. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/10251311724817" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Italie SC / Italie MAIL SC / Espagne SC → Condition de création du ticket manquante. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/30681296967697" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a> <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/30681459293969" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 RVSFR o → Défectueux. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/15511180641937" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Cas juridique → Deux conditions incompatibles dans "Toutes" - défectueux. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/48388501864337" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Transfert SC N2 → Condition de mise à jour manquante - risque de boucles. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/51100707555857" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Flux IA n8n : non utilisé cette semaine.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Appels entrants → Non utilisé, condition groupe problématique à l'entrée. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52064204512657" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 IA engagement / réponse → Non utilisés cette semaine. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52714477588753" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a> <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52714368878097" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 PriceMinister → Basé sur une adresse e-mail non fonctionnelle. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/51762443684241" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Affecter automatiquement au premier agent répondant → Inactif.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Priorité normale à la création du ticket → Inactif.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;font-style:italic;color:#6B7280;">⚠️ Conclusion : logique globalement incorrecte. 8 triggers devraient être réduits à 2 par contenu dynamique. Notifications et affectations aux groupes doivent être des règles distinctes.</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Automatismes</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Bump Bump Solve → Inactif.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 CSAT → Inactif.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 6 sur 8 non utilisés cette semaine.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 TrustPilot → Défectueux, canal supprimé dans les conditions. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/automations/7199095887249?location=admin_center&amp;route=automations" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Appels entrants / Appels sortants → Ressemblent davantage à des triggers. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/automations/7199327851793?location=admin_center&amp;route=automations" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a> <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/automations/7199386762001?location=admin_center&amp;route=automations" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 RSFR → Ressemble davantage à un trigger. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/automations/15503815963409?location=admin_center&amp;route=automations" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Tâche de rappel réouverture → Doublon avec l'automation en dessous. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/automations/47871301109521?location=admin_center&amp;route=automations" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Tickets en pause réouvert <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/automations/48476382014865?location=admin_center&amp;route=automations" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">SLA</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Nombreuses politiques mais aucune générale. Sans priorité par défaut, aucune ne se déclenche. Basées sur tags (non recommandé). <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/slas" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Macros</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Aucune réponse ni action prédéfinie. Utile à mettre en place, avec contenu dynamique.</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Contenu dynamique</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Aucun contenu dynamique - duplication des triggers, macros et de toute fonctionnalité multilingue.</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Formulaires</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Un seul formulaire.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Aucun champ conditionnel pour les sous-catégories.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Organisation à améliorer.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Champ priorité absent - bloque les SLA.</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Champs ticket / utilisateur</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Catégories présentes mais sans sous-catégories.</div>
+          <div style="padding:2px 0 3px;">🟡 Aucun champ utilisateur personnalisé.</div>
+        </div>
       </div>
 
-      <!-- COL 3 : Canaux & Qualité -->
+      <!-- COL 3 : Gestion et qualité -->
       <div>
         <div style="background:linear-gradient(135deg,#D97706,#F59E0B);border-radius:10px;padding:8px 12px;margin-bottom:8px;">
-          <span style="font-size:11px;font-weight:700;color:#fff;letter-spacing:.5px;">Canaux &amp; Qualité</span>
+          <span style="font-size:11px;font-weight:700;color:#fff;letter-spacing:.5px;">Gestion &amp; Qualité</span>
         </div>
-        <table style="width:100%;border-collapse:collapse;font-size:10px;">
-          <thead><tr style="background:#F3F4F6;"><th style="text-align:left;padding:4px 6px;font-weight:600;color:#374151;">Observation</th><th style="padding:4px 6px;white-space:nowrap;">Priorité</th></tr></thead>
-          <tbody>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Help Center vide</strong> exposé publiquement - image de marque et déflexion nulles</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Copilot Essential désactivé</strong> malgré son inclusion dans le plan Zendesk</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun AI Agent Chat - pas de résolution autonome des demandes simples</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Widget Web présent mais 0 ticket créé - probablement non installé sur le site</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Facebook connecté : vérifier si canal est à jour et correctement configuré</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Formulaire de contact client : connexion directe Zendesk non visible / non vérifiée</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun dashboard Explore personnalisé - reporting limité aux vues par défaut</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">FAQ du site non intégrée - agents n'y ont pas accès depuis l'interface</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Aucun rapport Explore basé sur les champs personnalisés (catégorie, statut personnalisé)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr><td style="padding:5px 6px;color:#166534;">On-hold actif : statut "En pause" correctement utilisé</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
-          </tbody>
-        </table>
+        <div style="font-size:9.5px;color:#374151;line-height:1.55;">
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:4px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Explore</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Aucun tableau de bord personnalisé.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Aucun rapport basé sur les champs personnalisés (catégorie, statut).</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Base de connaissances</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Accessible au public mais vide.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 FAQ du site non intégrée à Zendesk - agents sans accès depuis l'interface. Le contenu pourrait être ajouté pour aider les agents à formuler leurs réponses.</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Applications</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Select an Address non installé - réponses depuis <code style="font-size:8px;">support@pixmania.zendesk.com</code> quelle que soit l'adresse d'entrée (ES, IT, FR).</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Recommandation : Attachment Plus.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Recommandation : Advanced Search.</div>
+          <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Statuts</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Statut "En attente" renommé "Fermé" - fausse le fonctionnement du système et les rapports.</div>
+          <div style="padding:2px 0 3px;">🟢 Statut "En pause" activé et correctement utilisé.</div>
+        </div>
       </div>
 
     </div>
