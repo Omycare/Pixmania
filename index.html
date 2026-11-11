@@ -649,7 +649,10 @@
   <div class="slide-body">
     <div class="alert alert-orange" style="margin-bottom:14px;">
       <div class="alert-title"><span class="badge badge-orange">C3</span> Champ "Catégories" bien conçu mais non connecté - fondation solide sous-exploitée</div>
-      <div class="alert-body">Le champ <strong>Catégories</strong> contient déjà <strong>10 valeurs N1</strong> couvrant tout le parcours e-commerce Pixmania. Mais il n'est ni connecté aux triggers de routage, ni aux SLA, ni aux macros. Les agents sélectionnent la catégorie - rien ne se déclenche automatiquement derrière. L'IA génère déjà le tag <code>ia_cat_commande</code> (20 tickets cette semaine) : aligner le champ sur ces tags permettrait une auto-complétion via trigger.</div>
+      <div class="alert-body">Le champ <strong>Catégories</strong> contient déjà <strong>10 valeurs N1</strong> couvrant tout le parcours e-commerce Pixmania. Mais il n'est ni connecté aux triggers de routage, ni aux SLA, ni aux macros. Les agents sélectionnent la catégorie - rien ne se déclenche automatiquement derrière. L'IA génère déjà le tag <code>ia_cat_commande</code> (20 tickets cette semaine) : aligner le champ sur ces tags permettrait une auto-complétion via trigger.
+        <br><br>
+        <strong>⚠️ Champ non obligatoire : les agents ne le remplissent pas.</strong> C'est une information très précieuse qui manque dans les rapports - sans catégorie renseignée, il est impossible de mesurer les volumes par type de demande, d'identifier les tendances ou de piloter le service client. De plus, les actions (routage, SLA, macros) doivent être déclenchées par des <strong>champs</strong>, pas par des tags : les tags sont fragiles, non structurés et difficiles à maintenir. Rendre le champ Catégories obligatoire est une priorité pour fiabiliser les données et automatiser les processus.
+      </div>
     </div>
     <div class="grid grid-2">
       <div class="card">
