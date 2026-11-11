@@ -606,7 +606,7 @@
     <div class="card">
       <div class="section-label">Plan de reconstruction SLA recommandé</div>
       <div style="font-size:11px;color:var(--text-mid);line-height:1.8;">
-        <strong>Étape 1</strong> : Créer un schedule "Heures ouvrées FR" (Lun–Sam 8h–20h, Europe/Paris) - prérequis de tout SLA<br>
+        <strong>Étape 1</strong> : Vérifier le schedule existant (Lun–Sam 8h–20h, Europe/Paris) et s'assurer qu'il est bien associé aux politiques SLA<br>
         <strong>Étape 2</strong> : Créer un trigger "Priorité par défaut : Normale" sur tout ticket créé sans priorité assignée<br>
         <strong>Étape 3</strong> : Reconstruire les SLA basés sur <strong>champ Priorité + champ Catégorie</strong> (non sur des tags) - ex: Remboursement = Haute priorité = 4h réponse<br>
         <strong>Étape 4</strong> : Activer les métriques SLA en "heures ouvrées" (business hours) - pas en temps continu 24/7<br>
@@ -999,7 +999,7 @@
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C3]</strong> Supprimer le watermark Zendesk du template email</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C3]</strong> Activer Copilot Auto Assist (Admin Center &gt; IA &gt; Agent Copilot)</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C4]</strong> Réactiver CSAT et Bump Bump Solve dans les automations</span></div>
-          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C4]</strong> Créer schedule "Heures ouvrées FR" + reconstruire SLA basés sur Priorité + Catégorie (non tags) : Remboursement/Livraison = 4h, Commande = 8h</span></div>
+          <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C4]</strong> Vérifier le schedule existant + reconstruire SLA basés sur Priorité + Catégorie (non tags) : Remboursement/Livraison = 4h, Commande = 8h</span></div>
           <div class="check-row"><input type="checkbox" class="task-cb"><span class="cb-text"><strong>[C4]</strong> Réorganiser l'ordre des triggers (recréation > notification > routage > assignation)</span></div>
         </div>
       </div>
