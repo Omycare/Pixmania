@@ -438,11 +438,11 @@
     </div>
 
     <div class="alert alert-orange">
-      <div class="alert-title"><span class="badge badge-orange">C5</span> 145 macros configurées - aucune utilisée cette semaine</div>
+      <div class="alert-title"><span class="badge badge-orange">C5</span> 145 macros - usage concentré sur 2, les 143 autres à 0</div>
       <div class="alert-body">
-        Le compte contient <strong>145 macros configurées</strong>, mais l'API confirme <strong>0 utilisation sur les 7 derniers jours</strong>. Deux explications possibles : les macros ne correspondent plus aux besoins réels (nommage obsolète, contenu dépassé), ou les agents ne les connaissent pas / ne savent pas les utiliser. Dans les deux cas, la productivité agents est impactée : les réponses sont rédigées manuellement sur chaque ticket.
+        Sur 145 macros configurées, <strong>seules 2 sont réellement utilisées</strong> cette semaine : <strong>ANNULATION AVANT VALIDATION 1</strong> (217 utilisations) et <strong>ANCIENS CLIENT PIX &lt;2022 - DEMANDE FACTURE 1</strong> (195 utilisations), toutes deux réservées au groupe Service Client FR. Les 143 autres affichent 0 utilisation. Le fort volume de ces 2 macros montre que les agents en ont besoin - mais l'absence d'organisation en dossiers "::" rend le reste invisible et inaccessible. Par ailleurs, certaines actions post-message passent le ticket en "open" au lieu de "pending/hold", ce qui perturbe les files de travail.
         <br><br>
-        <strong>Action :</strong> Auditer les 145 macros : supprimer les obsolètes, renommer clairement les utiles, créer des dossiers thématiques (Commandes, Retours, Livraisons, Paiements), et former les agents à leur usage.
+        <strong>Action :</strong> Réorganiser les 145 macros en dossiers thématiques (Commande:: · Retour:: · SAV:: · Facturation::), corriger les actions de statut, et étendre les macros les plus utilisées aux groupes ES et IT.
       </div>
     </div>
 
@@ -535,7 +535,7 @@
           <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;"><span>Macros utilisées (7 derniers jours)</span><span style="font-weight:700;color:#991B1B;">0 / 145</span></div>
           <div class="progress-bar" style="height:10px;"><div class="progress-fill" style="width:0%;background:#EF4444;"></div></div>
         </div>
-        <div style="font-size:10px;color:var(--text-mid);max-width:300px;line-height:1.5;">145 macros existent mais aucune n'a été utilisée. Soit les agents ne les connaissent pas, soit elles ne correspondent plus aux besoins réels. À auditer et nettoyer en priorité.</div>
+        <div style="font-size:10px;color:var(--text-mid);max-width:300px;line-height:1.5;">145 macros dont 2 très utilisées (217 + 195 fois/sem), 143 à 0. Usage concentré sur Service Client FR uniquement - pas d'organisation en dossiers, les autres macros restent invisibles.</div>
       </div>
     </div>
 
@@ -720,7 +720,7 @@
           <ul class="check-list" style="margin-top:8px;">
             <li><strong>Routage automatique par groupe</strong> : Retour/SAV → RVR/SAV · Remboursement → Finance · Livraison → Logistique - aujourd'hui ces assignments sont manuels ou inexistants</li>
             <li><strong>SLA différenciés par catégorie</strong> : Remboursement = 4h · Livraison perdue = 4h · Commande = 8h · SAV = 24h - aujourd'hui les SLA ne se déclenchent jamais (99,8% sans priorité)</li>
-            <li><strong>Macros organisées en dossiers</strong> : réorganiser les 145 macros par catégorie (Commande:: · Retour:: · SAV::) - aujourd'hui 0 utilisation cette semaine</li>
+            <li><strong>Macros organisées en dossiers</strong> : réorganiser les 145 macros par catégorie (Commande:: · Retour:: · SAV:: · Facturation::) - aujourd'hui 2 macros concentrent tout l'usage (412 utilisations/sem), les 143 autres restent invisibles</li>
             <li><strong>Copilot AI ciblé</strong> : procédures et articles HC taggués par catégorie → suggestions précises en temps réel aux agents</li>
             <li><strong>Reporting Explore par catégorie</strong> : identifier les pics de volume (ex: Remboursement explose en décembre, SAV en janvier après Noël)</li>
             <li><strong>Champs conditionnels</strong> : si Retour → afficher "N° commande requis" · si SAV → afficher "N° série produit"</li>
@@ -921,7 +921,7 @@
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Champ Catégories non structuré</strong> : sans sous-catégories, non connecté au routage ni aux SLA</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">1 seul formulaire, sans champs conditionnels - les sous-catégories s'affichent selon la catégorie choisie</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Vues : pas de dossiers, vue SLA en danger inutilisable</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">145 macros, 0 utilisées cette semaine - actions post-message passent en "open" au lieu de "pending/hold" ; organisation en dossiers "::" absente</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">145 macros dont 2 très utilisées (ANNULATION AVANT VALIDATION 1 : 217, ANCIENS CLIENT PIX &lt;2022 : 195) - 143 autres à 0, organisation en dossiers "::" absente</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Groupes : distribution à valider, pas de signatures agents personnalisées</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
             <tr><td style="padding:5px 6px;color:#166534;">13 vues configurées avec structure de base solide et emojis</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
           </tbody>
@@ -941,7 +941,7 @@
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Ordre des triggers désorganisé - l'ordre impacte directement le comportement</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">TrustPilot automation cassée - condition sur canal supprimé</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Mise à jour ticket en pause : logique incompréhensible, à revoir</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">11/18 automations inactives · 145 macros à 0 usage cette semaine</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">11/18 automations inactives · 145 macros dont 143 à 0 usage (2 concentrent 412 utilisations/sem)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">CSAT inactif - enquêtes de satisfaction non envoyées</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Bump Bump Solve inactif - relances clients absentes</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">SLA basés sur tags (non recommandé), aucun trigger de priorité par défaut</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
@@ -1085,7 +1085,7 @@
       <div class="card stat"><div class="stat-num">106 545</div><div class="stat-label">Tickets total (API)</div><div class="stat-sub">200 new · 2 104 open · 10 482 pending · 493 solved</div></div>
       <div class="card stat"><div class="stat-num" style="color:#F97316;">59%</div><div class="stat-label">Score CSAT (API)</div><div class="stat-sub">24 bons · 17 mauvais · 41 notes au total</div></div>
       <div class="card stat"><div class="stat-num">24</div><div class="stat-label">Agents actifs (API)</div><div class="stat-sub">5 admins · 14 agents · 14 groupes</div></div>
-      <div class="card stat"><div class="stat-num" style="color:#EF4444;">145</div><div class="stat-label">Macros - 0 usage</div><div class="stat-sub">Aucune macro utilisée cette semaine</div></div>
+      <div class="card stat"><div class="stat-num" style="color:#F97316;">145</div><div class="stat-label">Macros configurées</div><div class="stat-sub">2 très utilisées · 143 à 0 · pas de dossiers</div></div>
     </div>
 
     <div class="grid" style="gap:14px;margin-bottom:14px;">
@@ -1263,7 +1263,7 @@
           <div style="margin-top:7px;font-size:10px;font-weight:700;color:#9A3412;">Refactorisation complète : 43 → 10-12 triggers clairs</div>
         </div>
         <div class="card" style="border-left:4px solid #F97316;">
-          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">145 macros · 0 utilisées · Score global 26%</div>
+          <div style="font-size:11px;font-weight:700;color:#374151;margin-bottom:4px;">145 macros · 2 actives (412 uses/sem) · 143 à 0 · Score global 26%</div>
           <div style="font-size:10px;color:#6B7280;line-height:1.6;">145 réponses prédéfinies créées, aucune utilisée. Chaque agent rédige chaque réponse manuellement. Le score global de 26% reflète un compte configuré de base mais jamais optimisé. L'infrastructure existe - l'enjeu est de l'activer.</div>
           <div style="margin-top:7px;"><span class="badge badge-orange">Fort potentiel de gain rapide</span></div>
         </div>
