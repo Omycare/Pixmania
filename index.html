@@ -635,47 +635,56 @@
 <div class="slide" id="slide-7">
   <div class="slide-header">
     <h2>👁 Vues &amp; Organisation des tickets</h2>
-    <span class="sh-badge">39 VUES TOTAL · 13 REVUES EN DÉTAIL · AMÉLIORATIONS POSSIBLES</span>
+    <span class="sh-badge">39 VUES TOTAL · 18 ACTIVES · 21 INACTIVES · DONNÉES API RÉELLES</span>
   </div>
   <div class="slide-body">
     <div class="grid grid-2" style="margin-bottom:14px;">
       <div class="card">
-        <div class="section-label">Vues actuelles configurées</div>
-        <table>
-          <thead><tr><th>Vue</th><th>Statut</th></tr></thead>
+        <div class="section-label">Vues actives (18) · Source API</div>
+        <table style="font-size:10px;">
+          <thead><tr><th>Vue</th><th>Type</th><th>Statut</th></tr></thead>
           <tbody>
-            <tr><td>📬 Mes tickets exploitables</td><td><span class="badge badge-green">OK</span></td></tr>
-            <tr><td>🕐 Mes tickets en attente</td><td><span class="badge badge-green">OK</span></td></tr>
-            <tr><td>✅ Tickets attribués</td><td><span class="badge badge-green">OK</span></td></tr>
-            <tr><td>⭕️ Tickets non attribués</td><td><span class="badge badge-green">OK</span></td></tr>
-            <tr><td>😊 Rated Tickets</td><td><span class="badge badge-green">OK</span></td></tr>
-            <tr><td>🌎 Tous les tickets</td><td><span class="badge badge-green">OK</span></td></tr>
-            <tr><td>⚡️ Priorité urgente</td><td><span class="badge badge-green">OK</span></td></tr>
-            <tr><td>💌 Email</td><td><span class="badge badge-green">OK</span></td></tr>
-            <tr><td>💬 Réseaux sociaux</td><td><span class="badge badge-green">OK</span></td></tr>
-            <tr><td>Tickets récemment mis à jour</td><td><span class="badge badge-yellow">Moyen</span></td></tr>
-            <tr><td>Tickets récemment résolus</td><td><span class="badge badge-yellow">Moyen</span></td></tr>
-            <tr><td>🛑 SLA en danger</td><td><span class="badge badge-orange">Inactif (SLA non configuré)</span></td></tr>
-            <tr><td>👁️‍🗨️ En pause</td><td><span class="badge badge-green">OK</span></td></tr>
+            <tr><td>Tickets nouveaux - ALL marchés</td><td style="color:#6B7280;">Équipe</td><td><span class="badge badge-green">OK</span></td></tr>
+            <tr><td>Tickets ouverts - ALL marchés</td><td style="color:#6B7280;">Équipe</td><td><span class="badge badge-green">OK</span></td></tr>
+            <tr><td>Tickets ouverts - Marché FR</td><td style="color:#6B7280;">Marché</td><td><span class="badge badge-green">OK</span></td></tr>
+            <tr><td>Tickets ouverts - Marché ES</td><td style="color:#6B7280;">Marché</td><td><span class="badge badge-green">OK</span></td></tr>
+            <tr><td>Tickets ouverts - Marché IT</td><td style="color:#6B7280;">Marché</td><td><span class="badge badge-green">OK</span></td></tr>
+            <tr><td>NEW FR / NEW ES / NEW IT</td><td style="color:#6B7280;">Marché</td><td><span class="badge badge-green">OK</span></td></tr>
+            <tr><td>Vue SC N2</td><td style="color:#6B7280;">Équipe</td><td><span class="badge badge-green">OK</span></td></tr>
+            <tr><td>Ticket en PAUSE</td><td style="color:#6B7280;">Statut</td><td><span class="badge badge-green">OK</span></td></tr>
+            <tr><td>Tickets répondus par IA</td><td style="color:#6B7280;">IA</td><td><span class="badge badge-green">OK</span></td></tr>
+            <tr><td>PriceMinister – N2</td><td style="color:#6B7280;">Équipe</td><td><span class="badge badge-yellow">Obsolète ?</span></td></tr>
+            <tr><td>TL</td><td style="color:#6B7280;">Équipe</td><td><span class="badge badge-yellow">Non documentée</span></td></tr>
+            <tr style="background:#FEF9C3;"><td>DARI Imane</td><td style="color:#6B7280;">Personnelle</td><td><span class="badge badge-yellow">Vue agent</span></td></tr>
+            <tr style="background:#FEF9C3;"><td>JOUTEY Mohamed Ali Tahri</td><td style="color:#6B7280;">Personnelle</td><td><span class="badge badge-yellow">Vue agent</span></td></tr>
+            <tr style="background:#FEF9C3;"><td>SAHIL ABDELAZIZ</td><td style="color:#6B7280;">Personnelle</td><td><span class="badge badge-yellow">Vue agent</span></td></tr>
+            <tr style="background:#FEF9C3;"><td>TSOULI Nabil</td><td style="color:#6B7280;">Personnelle</td><td><span class="badge badge-yellow">Vue agent</span></td></tr>
+            <tr style="background:#FEF9C3;"><td>Tickets Eléonore</td><td style="color:#6B7280;">Personnelle</td><td><span class="badge badge-yellow">Vue agent</span></td></tr>
           </tbody>
         </table>
+        <div style="font-size:9.5px;color:#9CA3AF;margin-top:6px;">21 vues inactives non affichées (Zendesk par défaut + doublons)</div>
       </div>
       <div>
         <div class="alert alert-orange" style="margin-bottom:10px;">
-          <div class="alert-title"><span class="badge badge-orange">C4</span> Organisation des vues : pas de dossiers</div>
-          <div class="alert-body">Le compte contient <strong>39 vues au total</strong> (13 analysées en détail ici). Sans organisation en dossiers, les agents voient une liste plate difficile à parcourir. Pour une équipe multilingue multi-canal, il est recommandé de créer des dossiers par type (Mes tickets, Équipe, Par canal, Par priorité). Les emojis ajoutent déjà une bonne lisibilité visuelle.</div>
+          <div class="alert-title"><span class="badge badge-orange">C4</span> Organisation : pas de dossiers, pas d'emojis, 5 vues personnelles d'agents</div>
+          <div class="alert-body">39 vues sans structure : liste plate difficile à parcourir. <strong>5 vues sont des vues personnelles d'agents</strong> (par nom) - pratique déconseillée car elles encombrent la liste partagée et ne disparaissent pas si l'agent quitte l'équipe. "Tickets ouverts - Marché FR" est en <strong>doublon</strong> (une active, une inactive). Aucun emoji ni dossier pour organiser visuellement.</div>
         </div>
-        <div class="alert alert-red" style="margin-bottom:10px;">
-          <div class="alert-title"><span class="badge badge-red">C2</span> Vue "SLA en danger" inutilisable</div>
-          <div class="alert-body">La vue SLA en danger existe mais ne peut pas fonctionner tant que les SLA ne sont pas correctement configurés (voir slide SLA). Une fois les SLA actifs, cette vue deviendra critique pour la gestion quotidienne.</div>
+        <div class="card" style="margin-bottom:10px;">
+          <div class="section-label">Points positifs</div>
+          <ul class="check-list" style="font-size:10px;margin-top:4px;">
+            <li>Organisation par marché déjà en place (FR/ES/IT)</li>
+            <li>Vue "Tickets répondus par IA" : suivi des tickets traités par l'IA</li>
+            <li>Vue SC N2 : escalades visibles pour l'équipe N2</li>
+            <li>Vue "Ticket en PAUSE" : on-hold bien tracké</li>
+          </ul>
         </div>
         <div class="card">
-          <div class="section-label">Vues à ajouter</div>
-          <ul class="check-list warn-list">
-            <li>Vue par langue (FR / ES / IT) pour les équipes par marché</li>
-            <li>Vue par groupe / équipe pour les superviseurs</li>
-            <li>Vue "Tickets escaladés SC N2" pour le suivi des escalades</li>
-            <li>Vue "Nouveaux tickets" (status = New, non assignés) - vue critique manquante</li>
+          <div class="section-label">Vues à créer / corriger</div>
+          <ul class="check-list warn-list" style="font-size:10px;margin-top:4px;">
+            <li>Vue "SLA en danger" : absente - à créer une fois les SLA configurés</li>
+            <li>Supprimer le doublon "Tickets ouverts - Marché FR" (inactif)</li>
+            <li>Convertir les 5 vues personnelles en vues partagées par groupe</li>
+            <li>Ajouter organisation en dossiers (Nouveaux · Ouverts · Marché · IA)</li>
           </ul>
         </div>
       </div>
@@ -922,7 +931,7 @@
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Branding : 0 logo, 0 couleurs, URL zendesk.com exposée, watermark email</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;"><strong>Champ Catégories non structuré</strong> : sans sous-catégories, non connecté au routage ni aux SLA</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-red">Critique</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">1 seul formulaire, sans champs conditionnels - les sous-catégories s'affichent selon la catégorie choisie</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
-            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Vues : pas de dossiers, vue SLA en danger inutilisable</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
+            <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Vues : 5 vues personnelles agents, doublon Marché FR, pas de dossiers - vue "SLA en danger" absente (à créer)</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">145 macros dont 2 très utilisées (ANNULATION AVANT VALIDATION 1 : 217, ANCIENS CLIENT PIX &lt;2022 : 195) - 143 autres à 0, organisation en dossiers "::" absente</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-orange">Important</span></td></tr>
             <tr style="border-bottom:1px solid #F3F4F6;"><td style="padding:5px 6px;color:#374151;">Groupes : distribution à valider, pas de signatures agents personnalisées</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-yellow">Moyen</span></td></tr>
             <tr><td style="padding:5px 6px;color:#166534;">13 vues configurées avec structure de base solide et emojis</td><td style="padding:5px 6px;text-align:center;"><span class="badge badge-green">OK</span></td></tr>
