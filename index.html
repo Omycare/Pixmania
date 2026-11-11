@@ -529,11 +529,11 @@
     </div>
 
     <div class="card" style="margin-bottom:14px;">
-      <div class="section-label">Macros : 145 créées - 0 utilisées cette semaine (données API)</div>
+      <div class="section-label">Macros : 145 créées - 2 très utilisées (217 + 195/sem), 143 à 0</div>
       <div style="display:flex;align-items:center;gap:16px;margin-top:8px;">
         <div style="flex:1;">
-          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;"><span>Macros utilisées (7 derniers jours)</span><span style="font-weight:700;color:#991B1B;">0 / 145</span></div>
-          <div class="progress-bar" style="height:10px;"><div class="progress-fill" style="width:0%;background:#EF4444;"></div></div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:4px;"><span>Macros utilisées (7 derniers jours)</span><span style="font-weight:700;color:#D97706;">2 / 145</span></div>
+          <div class="progress-bar" style="height:10px;"><div class="progress-fill" style="width:1.4%;background:#D97706;"></div></div>
         </div>
         <div style="font-size:10px;color:var(--text-mid);max-width:300px;line-height:1.5;">145 macros dont 2 très utilisées (217 + 195 fois/sem), 143 à 0. Usage concentré sur Service Client FR uniquement - pas d'organisation en dossiers, les autres macros restent invisibles.</div>
       </div>
@@ -756,7 +756,7 @@
 <div class="slide" id="slide-9">
   <div class="slide-header">
     <h2>📋 Formulaires, Apps &amp; Équipe</h2>
-    <span class="sh-badge">1 FORMULAIRE · 25 CHAMPS · 5 ADMINS · 14 AGENTS · 14 GROUPES</span>
+    <span class="sh-badge">1 FORMULAIRE · 25 CHAMPS · 5 ADMINS · 19 AGENTS · 14 GROUPES</span>
   </div>
   <div class="slide-body">
     <div class="grid grid-3" style="margin-bottom:14px;">
@@ -771,12 +771,18 @@
           <tbody>
             <tr><td>Catégories</td><td><span class="badge badge-orange">Existe, sans sous-catégories</span></td></tr>
             <tr><td>Commande n°</td><td><span class="badge badge-green">Utile, actif</span></td></tr>
-            <tr><td>Résumé</td><td><span class="badge badge-yellow">Rempli manuellement</span></td></tr>
+            <tr><td>Résumé IA</td><td><span class="badge badge-green">IA Summarization active (API)</span></td></tr>
+            <tr><td>Date et heure du résumé</td><td><span class="badge badge-green">Champ IA auto</span></td></tr>
+            <tr><td>Identifiant de l'agent</td><td><span class="badge badge-green">Champ IA auto</span></td></tr>
+            <tr><td>Paramètres régionaux</td><td><span class="badge badge-green">Champ IA auto</span></td></tr>
             <tr><td>Transfert SC N2 demandé</td><td><span class="badge badge-yellow">À connecter aux triggers</span></td></tr>
             <tr><td>Info Call</td><td><span class="badge badge-yellow">Usage à vérifier</span></td></tr>
             <tr><td>Priorité</td><td><span class="badge badge-red">ABSENT - bloque les SLA</span></td></tr>
           </tbody>
         </table>
+        <div class="alert alert-indigo" style="margin-top:8px;margin-bottom:4px;">
+          <div class="alert-body" style="font-size:10px;">✅ <strong>IA Summarization (Zendesk AI) active</strong> : 4 champs système configurés (Résumé · Date/heure · Identifiant agent · Paramètres régionaux). Le résumé automatique des tickets est disponible pour les agents.</div>
+        </div>
         <div class="section-label" style="margin-top:10px;">Champs utilisateur</div>
         <ul class="check-list cross-list">
           <li>Champ VIP : seul champ personnalisé utilisateur</li>
@@ -791,7 +797,7 @@
         <table>
           <thead><tr><th>App</th><th>Utilité</th><th>Source</th><th>Statut</th></tr></thead>
           <tbody>
-            <tr><td>Tymeshift</td><td>Suivi du temps agents</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé API</span></td></tr>
+            <tr><td>Time Tracking</td><td>Suivi du temps agents</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé API</span></td></tr>
             <tr><td>VoiceManagement</td><td>Gestion voix/téléphonie</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé API</span></td></tr>
             <tr><td>Knowledge Capture</td><td>Capture d'articles HC depuis ticket</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé API</span></td></tr>
             <tr><td>Reminder App</td><td>Rappels sur tickets</td><td><span class="badge badge-blue">API</span></td><td><span class="badge badge-green">Confirmé API</span></td></tr>
@@ -811,7 +817,7 @@
         <div class="section-label">Équipe (données API)</div>
         <div class="grid grid-4" style="gap:8px;margin-bottom:10px;">
           <div style="text-align:center;"><div style="font-size:22px;font-weight:800;color:#8B5CF6;">5</div><div style="font-size:9px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;">Admins</div></div>
-          <div style="text-align:center;"><div style="font-size:22px;font-weight:800;color:#374151;">14</div><div style="font-size:9px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;">Agents</div></div>
+          <div style="text-align:center;"><div style="font-size:22px;font-weight:800;color:#374151;">19</div><div style="font-size:9px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;">Agents</div></div>
           <div style="text-align:center;"><div style="font-size:22px;font-weight:800;color:#374151;">14</div><div style="font-size:9px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;">Groupes</div></div>
           <div style="text-align:center;"><div style="font-size:22px;font-weight:800;color:#374151;">24</div><div style="font-size:9px;color:#9CA3AF;text-transform:uppercase;letter-spacing:1px;">Total</div></div>
         </div>
@@ -1095,7 +1101,7 @@
     <div class="grid grid-4" style="margin-bottom:16px;">
       <div class="card stat"><div class="stat-num">106 545</div><div class="stat-label">Tickets total (API)</div><div class="stat-sub">200 new · 2 104 open · 10 482 pending · 493 solved</div></div>
       <div class="card stat"><div class="stat-num" style="color:#F97316;">59%</div><div class="stat-label">Score CSAT (API)</div><div class="stat-sub">24 bons · 17 mauvais · 41 notes au total</div></div>
-      <div class="card stat"><div class="stat-num">24</div><div class="stat-label">Agents actifs (API)</div><div class="stat-sub">5 admins · 14 agents · 14 groupes</div></div>
+      <div class="card stat"><div class="stat-num">24</div><div class="stat-label">Agents actifs (API)</div><div class="stat-sub">5 admins · 19 agents · 14 groupes</div></div>
       <div class="card stat"><div class="stat-num" style="color:#F97316;">145</div><div class="stat-label">Macros configurées</div><div class="stat-sub">2 très utilisées · 143 à 0 · pas de dossiers</div></div>
     </div>
 
