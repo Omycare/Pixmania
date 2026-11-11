@@ -479,6 +479,7 @@
           <tr><td>IA flux N8N / Appels entrants / IA engagement</td><td>0 utilisation cette semaine - vérifier si actifs et pertinents. Pour N8N : le flux IA est-il fonctionnel ? Pour Appels entrants : condition basée sur le groupe "Team Pix" avant assignation, ce qui peut expliquer le 0 déclenchement. Pour IA engagement : nécessite contexte pour évaluer l'utilité des tags ia_action_requise / retour_conseillers.</td><td><span class="badge badge-orange">Important</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52064204512657" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52714477588753" target="_blank" class="zd-link">↗</a><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/52714368878097" target="_blank" class="zd-link">↗</a></td></tr>
           <tr><td>Affecter automatiquement au premier agent répondant par e-mail</td><td>Trigger inactif - logique de round-robin par email non active.</td><td><span class="badge badge-orange">Inactif</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/51762443684241" target="_blank" class="zd-link">↗</a></td></tr>
           <tr><td>Priority normal when ticket created</td><td>Trigger inactif - ce trigger devrait pourtant être actif pour que les SLA se déclenchent (99,8% des tickets n'ont pas de priorité).</td><td><span class="badge badge-red">Critique (inactif)</span></td><td></td></tr>
+          <tr><td>Affectation à l'agent qui répond avec un commentaire public</td><td>Trigger absent - très pratique : assigne automatiquement le ticket à l'agent dès qu'il ajoute un commentaire public. À évaluer selon le processus actuel, mais fortement recommandé pour responsabiliser les agents et éviter les tickets sans propriétaire.</td><td><span class="badge badge-yellow">À créer</span></td><td></td></tr>
           <tr><td>France SC Pixmania</td><td>Bon exemple à prendre comme modèle pour les autres : conditions ALL (ticket créé + canal email) bien structurées.</td><td><span class="badge badge-green">OK</span></td><td><a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/10251311724817" target="_blank" class="zd-link">↗</a></td></tr>
         </tbody>
       </table>
@@ -630,8 +631,8 @@
           <ul class="check-list warn-list" style="font-size:10px;margin-top:4px;">
             <li>Vue "SLA en danger" : absente - à créer une fois les SLA configurés</li>
             <li>Supprimer le doublon "Tickets ouverts - Marché FR" (inactif)</li>
-            <li>Convertir les 5 vues personnelles en vues partagées par groupe</li>
-            <li>Ajouter organisation en dossiers (Nouveaux · Ouverts · Marché · IA)</li>
+            <li>Structure à revoir : une meilleure organisation des vues est nécessaire pour faciliter le travail quotidien. L'organisation actuelle manque de clarté et de cohérence entre les groupes.</li>
+            <li>Vues importantes manquantes : tickets non assignés, récemment mis à jour, récemment résolus, tickets en attente de réponse client - indispensables pour le suivi opérationnel.</li>
           </ul>
         </div>
       </div>
@@ -927,6 +928,7 @@
           <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 PriceMinister → Basé sur une adresse e-mail non fonctionnelle. <a href="https://pixmania.zendesk.com/admin/objects-rules/rules/triggers/51762443684241" target="_blank" style="color:#8B5CF6;font-size:8px;text-decoration:none;">↗</a></div>
           <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Affecter automatiquement au premier agent répondant → Inactif.</div>
           <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🔴 Priorité normale à la création du ticket → Inactif.</div>
+          <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟡 Trigger manquant : affectation à l'agent qui répond avec un commentaire public - très pratique, à évaluer et discuter selon le processus actuel.</div>
           <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;font-style:italic;color:#6B7280;">⚠️ Conclusion : logique globalement incorrecte. 8 triggers devraient être réduits à 2 par contenu dynamique. Notifications et affectations aux groupes doivent être des règles distinctes.</div>
           <div style="font-size:8px;font-weight:700;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;margin:6px 0 3px;padding-bottom:2px;border-bottom:1px solid #E5E7EB;">Automatismes</div>
           <div style="padding:2px 0 3px;border-bottom:1px solid #F9FAFB;">🟠 Bump Bump Solve → Inactif.</div>
