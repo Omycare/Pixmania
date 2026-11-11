@@ -585,6 +585,8 @@
       <div class="alert-title">🔴 Pourquoi les SLA ne s'appliquent pas</div>
       <div class="alert-body">
         Les SLA sont configurés par priorité (Urgent = 1h, Normal = 24h), mais <strong>aucun ticket ne reçoit de priorité automatiquement</strong>. Sans trigger définissant la priorité à la création du ticket, les tickets restent sans priorité et les politiques SLA ne se déclenchent jamais. De plus, les SLA sont basés sur des tags plutôt que sur des champs de ticket (pratique fragile et non recommandée par Zendesk).
+        <br><br>
+        Aggravant le problème : <strong>le champ Priorité est désactivé dans le formulaire de ticket</strong>. Les agents ne peuvent donc pas non plus ajuster la priorité manuellement. Le résultat est total : ni automatiquement ni manuellement, aucun ticket ne peut recevoir une priorité - les SLA sont entièrement inopérants.
       </div>
     </div>
 
